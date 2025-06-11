@@ -1,0 +1,112 @@
+%! TeX program = lualatex
+\documentclass[12pt,a4paper]{report}
+\usepackage{dissertation}
+
+% \makeglossaries
+\makenoidxglossaries
+\makeindex
+
+\renewcommand{\glossarysection}[2][]{
+    \chapter*{Acrónimos}
+    \markboth{Lista de Acrónimos}{Lista de Acrónimos}
+    \addcontentsline{toc}{chapter}{Lista de Acrónimos}
+}
+
+\newacronym{rgpd}{RGPD}{Regulamento Geral de Proteção de Dados}
+
+\newacronym{cmp}{CMP}{Plataformas de Gestão de Consentimento}
+
+\newacronym{gdpr}{GDPR}{\textit{General Data Protection Regulation}}
+
+\newacronym{ue}{UE}{União Europeia}
+
+\newacronym{eda}{EA}{Estado da Arte}
+
+\newacronym{ds}{DS}{\textit{Data Subject}}
+\newacronym{dc}{DC}{\textit{Data Controller}}
+\newacronym{dr}{DR}{\textit{Data Recipient}}
+\newacronym{dp}{DP}{\textit{Data Processor}}
+\newacronym{sp}{SP}{\textit{Service Provider}}
+
+\newacronym{api}{API}{\textit{Application Programming Interface}}
+
+
+
+\logo{EE}{Escola de Engenharia}{}
+\logoB{EE}{Escola de Engenharia}{}
+
+\author{Tiago Passos Rodrigues}
+
+\titleA{Um sistema para registo seguro do}
+\titleB{consentimento de processamento}
+\titleC{de dados pessoais}
+
+\masters{Mestrado em Engenharia Informática}
+%\area{Área de especialização}
+\supervisor{João Marco Cardoso da Silva}
+\cosupervisor{Ana Luísa Parreira Nunes Alonso}
+
+\bibpunct[,]{(}{)}{;}{a}{,}{,}
+\begin{document}
+\setlength{\parindent}{0em}
+
+%-- Covers
+\input{covers/Covers}
+
+%-- Document setup
+\newgeometry{right=25mm, left=25mm, top=25mm, bottom=25mm}
+\pagenumbering{roman}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.5em}
+
+%-- Preamble
+%\input{preamble/Copyright}
+%\input{preamble/Acknowledgements}
+%\input{preamble/StatementofIntegrity}
+\input{preamble/Abstract}
+
+\phantomsection
+\tableofcontents
+
+\cleardoublepage
+\listoffigures
+
+% List of tables
+\listoftables
+\clearpage
+
+% Acronyms
+%\printglossary[type=\acronymtype,nonumberlist, title={Acrónimos}]
+%\printglossary[type=\acronymtype, title={Acrónimos}]
+\printnoidxglossaries
+% Glossary
+\printglossary[title={Glossário}, nonumberlist]
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+%-- Dissertation 
+\input{chapters/Introduction}
+\input{chapters/StateOfTheArt}
+\input{chapters/ProblemAndChallenges}
+
+
+\renewcommand{\baselinestretch}{1}
+\bibliographystyle{plainnat}
+\bibliography{dissertation}
+\printindex
+
+%\appendix
+%\renewcommand\chaptername{Apêndice}
+
+%\part{Apêndices}
+
+%\input{appendices/SupportWork}
+%\input{appendices/DetailsOfResults}
+%\input{appendices/Listings}
+%\input{appendices/Tooling}
+
+\input{covers/BackCover}
+
+\end{document}

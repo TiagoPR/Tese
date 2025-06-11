@@ -1,0 +1,76 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[A/S(2025)]{Cookiebot2024}
+Usercentrics A/S.
+\newblock Cookiebot cmp technical documentation, 2025.
+\newblock URL \url{https://support.cookiebot.com/hc/en-us/articles/360003774494-Why-does-your-scanner-say-that-I-have-more-than-50-pages}.
+
+\bibitem[Buterin(2014)]{buterin2014next}
+Vitalik Buterin.
+\newblock A next-generation smart contract and decentralized application platform.
+\newblock \emph{Ethereum White Paper}, 2014.
+\newblock URL \url{https://ethereum.org/en/whitepaper/}.
+
+\bibitem[CookieChimp(2025)]{CookieChimp2024}
+CookieChimp.
+\newblock Cookiechimp api documentation and technical specifications, 2025.
+\newblock URL \url{https://cookiechimp.com/documentation/}.
+
+\bibitem[Daudén-Esmel et~al.(2024)Daudén-Esmel, Castellà-Roca, and Viejo]{Daudén-Esmel2024}
+Cristòfol Daudén-Esmel, Jordi Castellà-Roca, and Alexandre Viejo.
+\newblock Blockchain-based access control system for efficient and gdpr-compliant personal data management.
+\newblock \emph{Computer Communications}, 214:\penalty0 67--87, 2024.
+
+\bibitem[{European Parliament and Council}(2016)]{gdpr2016}
+{European Parliament and Council}.
+\newblock Article 4 - definitions, 2016.
+\newblock URL \url{https://gdpr-info.eu/art-4-gdpr/}.
+\newblock General Data Protection Regulation (GDPR).
+
+\bibitem[Manager(2025)]{ConsentManager2024}
+Consent Manager.
+\newblock Technical implementation and architecture overview, 2025.
+\newblock URL \url{https://help.consentmanager.net/books/cmp/page/cross-device-consent-sharing}.
+
+\bibitem[Nakamoto(2008)]{nakamoto2008bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock \emph{White Paper}, 2008.
+\newblock URL \url{https://bitcoin.org/bitcoin.pdf}.
+
+\bibitem[{Osano}(2025)]{osano}
+{Osano}.
+\newblock Osano - data privacy platform, 2025.
+\newblock URL \url{https://docs.osano.com/hc/en-us/articles/22472101620756-Osano-Cookies}.
+\newblock Acesso em: 07 fev. 2025.
+
+\bibitem[Santos et~al.(2021)Santos, Nouwens, Toth, Bielova, and Roca]{Santos2021}
+Cristiana Santos, Midas Nouwens, Michael Toth, Nataliia Bielova, and Vincent Roca.
+\newblock Consent management platforms under the gdpr: processors and/or controllers?
+\newblock In \emph{APF 2021 - 9th Annual Privacy Forum}, pages 47--69, Oslo, Norway, 2021.
+\newblock \doi{10.1007/978-3-030-76663-4_3}.
+\newblock URL \url{https://inria.hal.science/hal-03169436v1}.
+\newblock HAL Id: hal-03169436.
+
+\bibitem[{Tarteaucitron}(2025)]{tarteaucitron}
+{Tarteaucitron}.
+\newblock Tarteaucitron - gdpr cookie consent manager, 2025.
+\newblock URL \url{https://tarteaucitron.io/en/}.
+\newblock Acesso em: 07 fev. 2025.
+
+\bibitem[Truong et~al.(2020)Truong, Sun, Lee, and Guo]{nguyen2020gdpr}
+Nguyen~Binh Truong, Kai Sun, Gyu~Myoung Lee, and Yike Guo.
+\newblock Gdpr-compliant personal data management: A blockchain-based solution.
+\newblock \emph{IEEE Transactions on Information Forensics and Security}, 15:\penalty0 1746--1761, 2020.
+
+\bibitem[Wirth and Kolain(2018)]{wirth2018privacy}
+Christian Wirth and Martin Kolain.
+\newblock Privacy by blockchain design: A blockchain-enabled gdpr-compliant approach for handling personal data.
+\newblock \emph{Reports of the European Society for Socially Embedded Technologies (EUSSET)}, 2018.
+
+\end{thebibliography}

@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2026/dev/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: dissertation.aux
+The style file: plainnat.bst
+Database file #1: dissertation.bib
+Warning--entry type for "Cookiebot2024" isn't style-file defined
+--line 107 of file dissertation.bib
+Warning--entry type for "ConsentManager2024" isn't style-file defined
+--line 115 of file dissertation.bib
+Warning--entry type for "CookieChimp2024" isn't style-file defined
+--line 123 of file dissertation.bib
+You've used 12 entries,
+            2773 wiz_defined-function locations,
+            666 strings with 7034 characters,
+and the built_in function-call counts, 4585 in all, are:
+= -- 411
+> -- 218
+< -- 10
++ -- 78
+- -- 66
+* -- 304
+:= -- 717
+add.period$ -- 44
+call.type$ -- 12
+change.case$ -- 58
+chr.to.int$ -- 12
+cite$ -- 24
+duplicate$ -- 220
+empty$ -- 412
+format.name$ -- 80
+if$ -- 970
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 6
+newline$ -- 76
+num.names$ -- 48
+pop$ -- 136
+preamble$ -- 1
+purify$ -- 46
+quote$ -- 0
+skip$ -- 180
+stack$ -- 0
+substring$ -- 90
+swap$ -- 19
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 132
+warning$ -- 0
+while$ -- 41
+width$ -- 0
+write$ -- 171
+(There were 3 warnings)
