@@ -1,3 +1,34 @@
+\chapter{O problema e os seus desafios}
+
+O problema e os seus desafios
+
+\section{Imagens}
+Exemplo de inserção de uma imagem como texto exibido,
+\begin{center}
+	\includegraphics[width=0.1\textwidth]{images/UM.jpg}
+\end{center}
+
+\begin{wrapfigure}{r}{0.15\textwidth}	
+	\includegraphics[width=0.1\textwidth]{images/UM.jpg}
+\end{wrapfigure}
+\noindent --- dentro no texto,
+bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
+bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
+bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
+bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
+bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
+bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
+
+\noindent --- ou em formato flutuante
+\begin{figure}
+\begin{center}
+	\includegraphics[width=0.25\textwidth]{images/UM.jpg}
+\end{center}
+\caption{Legenda}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %\chapter{O problema e os seus desafios}
 
 %O problema e os seus desafios
@@ -171,6 +202,138 @@ Redação e Revisão da Dissertação & & & & & & & & & & & $\bullet$ & $\bullet
         \item Preparação da apresentação final para a defesa.
     \end{itemize}
 \end{enumerate}
+
+
+\section{Visão Geral da Arquitectura}
+
+A solução proposta é constituída por quatro componentes principais que colaboram através de protocolos criptográficos para garantir a transparência e auditabilidade dos consentimentos digitais.
+
+\subsection{Componentes da Solução}
+
+\begin{enumerate}
+    \item \textbf{Service Provider (CMP)} - Ponto de interacção com o utilizador
+    \item \textbf{Cliente (Plugin)} - Agente criptográfico do lado do cliente  
+    \item \textbf{Third-Party} - Repositório neutro para auditoria
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{images/Protocolo.png}
+\end{center}
+\caption{Diagrama de fluxos da proposta}
+\label{fig:esquema}
+\end{figure}
+
+\subsection{Lógica de Funcionamento}
+
+A estratégia baseia-se numa abordagem de \textbf{consenso criptográfico bilateral}, onde tanto o cliente como o servidor participam activamente na criação de um registo de consentimento verificável e imutável.
+
+\subsubsection{Princípios Fundamentais}
+\begin{itemize}
+    \item \textbf{Transparência}: Todos os passos são criptograficamente verificáveis
+    \item \textbf{Descentralização}: Nenhuma entidade tem controlo unilateral
+    \item \textbf{Não-Repúdio}: Impossibilidade de negar consentimentos dados
+    \item \textbf{Auditabilidade}: Histórico completo acessível a ambas as partes
+\end{itemize}
+
+\subsection{Algoritmos de criptografia}
+
+A solução utiliza uma estratégia criptográfica baseada em RSA que combina:
+
+\begin{itemize}
+    \item \textbf{RSA} para acordo de chaves e cifragem assimétrica
+    \item \textbf{AES-GCM} para cifragem simétrica dos dados de consentimento
+    \item \textbf{RSA-PSS} para assinaturas digitais bilaterais
+    \item \textbf{HKDF} para derivação segura de chaves simétricas
+\end{itemize}
+
+\subsection{Protocolo de Consenso}
+
+O protocolo estabelece um acordo criptográfico entre cliente e servidor através de três fases:
+
+\begin{enumerate}
+    \item \textbf{Estabelecimento de Confiança}: Troca de chaves públicas RSA
+    \item \textbf{Cifragem Segura}: Utilização de RSA para proteger chave simétrica AES
+    \item \textbf{Validação Bilateral}: Assinaturas digitais de ambas as partes
+\end{enumerate}
+
+\subsection{Lógica de Resolução}
+
+A solução resolve o problema da opacidade através de uma estratégia de \textbf{transparência criptográfica}:
+
+\begin{itemize}
+    \item O utilizador possui as chaves necessárias para verificar os seus próprios consentimentos
+    \item Todos os registos são matematicamente verificáveis
+    \item O processo de consentimento é auditável por ambas as partes
+\end{itemize}
+
+Em vez de confiar numa única entidade, a solução distribui a confiança:
+
+\begin{itemize}
+    \item \textbf{Cliente}: Controla a cifragem inicial dos dados
+    \item \textbf{Servidor}: Valida e co-assina o consentimento  
+    \item \textbf{Terceiro Neutro}: Armazena os registos de forma imutável
+\end{itemize}
+
+\subsection{Interacção Entre Componentes}
+
+\textbf{Interface Web $\leftrightarrow$ Extensão}
+
+A interface web comunica com a extensão através de eventos DOM:
+\begin{itemize}
+    \item Detecta acções do utilizador no banner de consentimento
+    \item Transmite dados de consentimento para processamento criptográfico
+    \item Recebe confirmação de sucesso para feedback ao utilizador
+\end{itemize}
+
+\textbf{Extensão $\leftrightarrow$ Servidor}
+
+A extensão estabelece um canal seguro com o servidor:
+\begin{itemize}
+    \item Obtém chaves públicas RSA do servidor
+    \item Envia pacotes de consentimento cifrados e assinados
+    \item Recebe validação e assinatura do servidor
+\end{itemize}
+
+\textbf{Sistema $\leftrightarrow$ Armazenamento}
+
+Ambos os componentes (extensão e servidor) interagem com o armazenamento:
+\begin{itemize}
+    \item Enviam registos de consentimento de forma independente
+    \item Criam um registo distribuído para auditoria futura
+    \item Permitem consulta posterior por ambas as partes
+\end{itemize}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=1.0\textwidth]{images/swimlanes.png}
+\end{center}
+\caption{Diagrama do protocolo}
+\label{fig:swimlane}
+\end{figure}
+
+\subsection{Benefícios da Arquitectura}
+
+\textbf{Para o Utilizador}
+\begin{itemize}
+    \item Acesso directo ao histórico de consentimentos
+    \item Capacidade de verificar a integridade dos registos
+    \item Controlo sobre os próprios dados de consentimento
+\end{itemize}
+
+\textbf{Para a Organização}
+\begin{itemize}
+    \item Prova criptográfica de consentimentos válidos
+    \item Redução de riscos de conformidade
+    \item Processo de auditoria automatizado
+\end{itemize}
+
+\textbf{Arquitecturais}
+\begin{itemize}
+    \item Escalabilidade através de processamento distribuído
+    \item Resistência a falhas por redundância de registos
+    \item Interoperabilidade através de protocolos padronizados
+\end{itemize}
 
 %\section{Imagens}
 %Exemplo de inserção de uma imagem como texto exibido,

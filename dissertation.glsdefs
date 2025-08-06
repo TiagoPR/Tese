@@ -1,0 +1,476 @@
+\glsdefs@newdocentry{rgpd}%
+{%
+name={\acronymfont {\glsentryshort {rgpd}}},%
+sort={RGPD},%
+type={acronym},%
+first={RGPD},%
+firstplural={RGPDs},%
+text={RGPD},%
+plural={RGPDs},%
+description={Regulamento Geral de Proteção de Dados},%
+descriptionplural={Regulamento Geral de Proteção de Dados},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Regulamento Geral de Proteção de Dados},%
+longplural={Regulamento Geral de Proteção de Dadoss},%
+short={RGPD},%
+shortplural={RGPDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{cmp}%
+{%
+name={\acronymfont {\glsentryshort {cmp}}},%
+sort={CMP},%
+type={acronym},%
+first={CMP},%
+firstplural={CMPs},%
+text={CMP},%
+plural={CMPs},%
+description={Plataformas de Gestão de Consentimento},%
+descriptionplural={Plataformas de Gestão de Consentimento},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Plataformas de Gestão de Consentimento},%
+longplural={Plataformas de Gestão de Consentimentos},%
+short={CMP},%
+shortplural={CMPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gdpr}%
+{%
+name={\acronymfont {\glsentryshort {gdpr}}},%
+sort={GDPR},%
+type={acronym},%
+first={GDPR},%
+firstplural={GDPRs},%
+text={GDPR},%
+plural={GDPRs},%
+description={\textit {General Data Protection Regulation}},%
+descriptionplural={\textit {General Data Protection Regulation}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {General Data Protection Regulation}},%
+longplural={\protect \textit  {General Data Protection Regulation}s},%
+short={GDPR},%
+shortplural={GDPRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ue}%
+{%
+name={\acronymfont {\glsentryshort {ue}}},%
+sort={UE},%
+type={acronym},%
+first={UE},%
+firstplural={UEs},%
+text={UE},%
+plural={UEs},%
+description={União Europeia},%
+descriptionplural={União Europeia},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={União Europeia},%
+longplural={União Europeias},%
+short={UE},%
+shortplural={UEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{eda}%
+{%
+name={\acronymfont {\glsentryshort {eda}}},%
+sort={EA},%
+type={acronym},%
+first={EA},%
+firstplural={EAs},%
+text={EA},%
+plural={EAs},%
+description={Estado da Arte},%
+descriptionplural={Estado da Arte},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Estado da Arte},%
+longplural={Estado da Artes},%
+short={EA},%
+shortplural={EAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ds}%
+{%
+name={\acronymfont {\glsentryshort {ds}}},%
+sort={DS},%
+type={acronym},%
+first={DS},%
+firstplural={DSs},%
+text={DS},%
+plural={DSs},%
+description={\textit {Data Subject}},%
+descriptionplural={\textit {Data Subject}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {Data Subject}},%
+longplural={\protect \textit  {Data Subject}s},%
+short={DS},%
+shortplural={DSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dc}%
+{%
+name={\acronymfont {\glsentryshort {dc}}},%
+sort={DC},%
+type={acronym},%
+first={DC},%
+firstplural={DCs},%
+text={DC},%
+plural={DCs},%
+description={\textit {Data Controller}},%
+descriptionplural={\textit {Data Controller}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {Data Controller}},%
+longplural={\protect \textit  {Data Controller}s},%
+short={DC},%
+shortplural={DCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dr}%
+{%
+name={\acronymfont {\glsentryshort {dr}}},%
+sort={DR},%
+type={acronym},%
+first={DR},%
+firstplural={DRs},%
+text={DR},%
+plural={DRs},%
+description={\textit {Data Recipient}},%
+descriptionplural={\textit {Data Recipient}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {Data Recipient}},%
+longplural={\protect \textit  {Data Recipient}s},%
+short={DR},%
+shortplural={DRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dp}%
+{%
+name={\acronymfont {\glsentryshort {dp}}},%
+sort={DP},%
+type={acronym},%
+first={DP},%
+firstplural={DPs},%
+text={DP},%
+plural={DPs},%
+description={\textit {Data Processor}},%
+descriptionplural={\textit {Data Processor}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {Data Processor}},%
+longplural={\protect \textit  {Data Processor}s},%
+short={DP},%
+shortplural={DPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sp}%
+{%
+name={\acronymfont {\glsentryshort {sp}}},%
+sort={SP},%
+type={acronym},%
+first={SP},%
+firstplural={SPs},%
+text={SP},%
+plural={SPs},%
+description={\textit {Service Provider}},%
+descriptionplural={\textit {Service Provider}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {Service Provider}},%
+longplural={\protect \textit  {Service Provider}s},%
+short={SP},%
+shortplural={SPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{api}%
+{%
+name={\acronymfont {\glsentryshort {api}}},%
+sort={API},%
+type={acronym},%
+first={API},%
+firstplural={APIs},%
+text={API},%
+plural={APIs},%
+description={\textit {Application Programming Interface}},%
+descriptionplural={\textit {Application Programming Interface}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {Application Programming Interface}},%
+longplural={\protect \textit  {Application Programming Interface}s},%
+short={API},%
+shortplural={APIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gcd}%
+{%
+name={\acronymfont {\glsentryshort {gcd}}},%
+sort={MDC},%
+type={acronym},%
+first={MDC},%
+firstplural={MDCs},%
+text={MDC},%
+plural={MDCs},%
+description={Máximo Divisor Comum},%
+descriptionplural={Máximo Divisor Comum},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Máximo Divisor Comum},%
+longplural={Máximo Divisor Comums},%
+short={MDC},%
+shortplural={MDCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{lcm}%
+{%
+name={\acronymfont {\glsentryshort {lcm}}},%
+sort={MMC},%
+type={acronym},%
+first={MMC},%
+firstplural={MMCs},%
+text={MMC},%
+plural={MMCs},%
+description={Mínimo múltiplo comum},%
+descriptionplural={Mínimo múltiplo comum},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mínimo múltiplo comum},%
+longplural={Mínimo múltiplo comums},%
+short={MMC},%
+shortplural={MMCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{maths}%
+{%
+name={matemática},%
+sort={matemática},%
+type={main},%
+first={matemática},%
+firstplural={matemáticas},%
+text={matemática},%
+plural={matemáticas},%
+description={Matemática é o que os matemáticos fazem},%
+descriptionplural={Matemática é o que os matemáticos fazem},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{latex}%
+{%
+name={latex},%
+sort={latex},%
+type={main},%
+first={latex},%
+firstplural={latexs},%
+text={latex},%
+plural={latexs},%
+description={É uma linguagem especialmente adequada para documentos científicos},%
+descriptionplural={É uma linguagem especialmente adequada para documentos científicos},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{formula}%
+{%
+name={fórmula},%
+sort={fórmula},%
+type={main},%
+first={fórmula},%
+firstplural={fórmulas},%
+text={fórmula},%
+plural={fórmulas},%
+description={Expressão matemática},%
+descriptionplural={Expressão matemática},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rpd}%
+{%
+name={\acronymfont {\glsentryshort {rpd}}},%
+sort={RPD},%
+type={acronym},%
+first={RPD},%
+firstplural={RPDs},%
+text={RPD},%
+plural={RPDs},%
+description={Relatório de Pré-Dissertação},%
+descriptionplural={Relatório de Pré-Dissertação},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Relatório de Pré-Dissertação},%
+longplural={Relatório de Pré-Dissertaçãos},%
+short={RPD},%
+shortplural={RPDs},%
+counter={page},%
+parent={},%
+%
+}%
+

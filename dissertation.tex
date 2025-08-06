@@ -1,36 +1,8 @@
 %! TeX program = lualatex
 \documentclass[12pt,a4paper]{report}
 \usepackage{dissertation}
-
-% \makeglossaries
-\makenoidxglossaries
+\makeglossaries
 \makeindex
-
-\renewcommand{\glossarysection}[2][]{
-    \chapter*{Acrónimos}
-    \markboth{Lista de Acrónimos}{Lista de Acrónimos}
-    \addcontentsline{toc}{chapter}{Lista de Acrónimos}
-}
-
-\newacronym{rgpd}{RGPD}{Regulamento Geral de Proteção de Dados}
-
-\newacronym{cmp}{CMP}{Plataformas de Gestão de Consentimento}
-
-\newacronym{gdpr}{GDPR}{\textit{General Data Protection Regulation}}
-
-\newacronym{ue}{UE}{União Europeia}
-
-\newacronym{eda}{EA}{Estado da Arte}
-
-\newacronym{ds}{DS}{\textit{Data Subject}}
-\newacronym{dc}{DC}{\textit{Data Controller}}
-\newacronym{dr}{DR}{\textit{Data Recipient}}
-\newacronym{dp}{DP}{\textit{Data Processor}}
-\newacronym{sp}{SP}{\textit{Service Provider}}
-
-\newacronym{api}{API}{\textit{Application Programming Interface}}
-
-
 
 \logo{EE}{Escola de Engenharia}{}
 \logoB{EE}{Escola de Engenharia}{}
@@ -61,9 +33,9 @@
 \setlength{\parindent}{1.5em}
 
 %-- Preamble
-%\input{preamble/Copyright}
-%\input{preamble/Acknowledgements}
-%\input{preamble/StatementofIntegrity}
+\input{preamble/Copyright}
+\input{preamble/Acknowledgements}
+\input{preamble/StatementofIntegrity}
 \input{preamble/Abstract}
 
 \phantomsection
@@ -77,35 +49,60 @@
 \clearpage
 
 % Acronyms
-%\printglossary[type=\acronymtype,nonumberlist, title={Acrónimos}]
-%\printglossary[type=\acronymtype, title={Acrónimos}]
-\printnoidxglossaries
+\printglossary[type=\acronymtype,nonumberlist, title={Acrónimos}]
+
 % Glossary
 \printglossary[title={Glossário}, nonumberlist]
+
+\newacronym{rgpd}{RGPD}{Regulamento Geral de Proteção de Dados}
+
+\newacronym{cmp}{CMP}{Plataformas de Gestão de Consentimento}
+
+\newacronym{gdpr}{GDPR}{\textit{General Data Protection Regulation}}
+
+\newacronym{ue}{UE}{União Europeia}
+
+\newacronym{eda}{EA}{Estado da Arte}
+
+\newacronym{ds}{DS}{\textit{Data Subject}}
+\newacronym{dc}{DC}{\textit{Data Controller}}
+\newacronym{dr}{DR}{\textit{Data Recipient}}
+\newacronym{dp}{DP}{\textit{Data Processor}}
+\newacronym{sp}{SP}{\textit{Service Provider}}
+
+\newacronym{api}{API}{\textit{Application Programming Interface}}
 
 \cleardoublepage
 \pagenumbering{arabic}
 
 %-- Dissertation 
+\part{Material Introdutório}
+
 \input{chapters/Introduction}
 \input{chapters/StateOfTheArt}
 \input{chapters/ProblemAndChallenges}
 
+\part{Corpo da Dissertação}
+
+\input{chapters/Contribution}
+\input{chapters/Applications}
+\input{chapters/ConclusionsAndFutureWork}
+\input{chapters/PlannedSchedule}
 
 \renewcommand{\baselinestretch}{1}
 \bibliographystyle{plainnat}
 \bibliography{dissertation}
 \printindex
 
-%\appendix
-%\renewcommand\chaptername{Apêndice}
+\appendix
+\renewcommand\chaptername{Apêndice}
 
-%\part{Apêndices}
+\part{Apêndices}
 
-%\input{appendices/SupportWork}
-%\input{appendices/DetailsOfResults}
-%\input{appendices/Listings}
-%\input{appendices/Tooling}
+\input{appendices/SupportWork}
+\input{appendices/DetailsOfResults}
+\input{appendices/Listings}
+\input{appendices/Tooling}
 
 \input{covers/BackCover}
 

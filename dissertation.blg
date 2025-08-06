@@ -4,14 +4,16 @@ The top-level auxiliary file: dissertation.aux
 The style file: plainnat.bst
 Database file #1: dissertation.bib
 Warning--entry type for "Cookiebot2024" isn't style-file defined
---line 107 of file dissertation.bib
+--line 113 of file dissertation.bib
 Warning--entry type for "ConsentManager2024" isn't style-file defined
---line 115 of file dissertation.bib
-Warning--entry type for "CookieChimp2024" isn't style-file defined
 --line 123 of file dissertation.bib
+Warning--entry type for "CookieChimp2024" isn't style-file defined
+--line 133 of file dissertation.bib
+Warning--I didn't find a database entry for "GRM97"
+Warning--I didn't find a database entry for "KeR88"
 You've used 12 entries,
             2773 wiz_defined-function locations,
-            666 strings with 7034 characters,
+            670 strings with 7054 characters,
 and the built_in function-call counts, 4585 in all, are:
 = -- 411
 > -- 218
@@ -50,4 +52,4 @@ warning$ -- 0
 while$ -- 41
 width$ -- 0
 write$ -- 171
-(There were 3 warnings)
+(There were 5 warnings)
