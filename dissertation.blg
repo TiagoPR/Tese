@@ -4,52 +4,54 @@ The top-level auxiliary file: dissertation.aux
 The style file: plainnat.bst
 Database file #1: dissertation.bib
 Warning--entry type for "Cookiebot2024" isn't style-file defined
---line 113 of file dissertation.bib
+--line 115 of file dissertation.bib
 Warning--entry type for "ConsentManager2024" isn't style-file defined
---line 123 of file dissertation.bib
+--line 125 of file dissertation.bib
 Warning--entry type for "CookieChimp2024" isn't style-file defined
---line 133 of file dissertation.bib
-Warning--I didn't find a database entry for "GRM97"
-Warning--I didn't find a database entry for "KeR88"
-You've used 12 entries,
+--line 135 of file dissertation.bib
+Warning--entry type for "MozillaBrowserExtensions" isn't style-file defined
+--line 143 of file dissertation.bib
+Warning--entry type for "VueJS" isn't style-file defined
+--line 153 of file dissertation.bib
+You've used 15 entries,
             2773 wiz_defined-function locations,
-            670 strings with 7054 characters,
-and the built_in function-call counts, 4585 in all, are:
-= -- 411
-> -- 218
-< -- 10
-+ -- 78
-- -- 66
-* -- 304
-:= -- 717
-add.period$ -- 44
-call.type$ -- 12
-change.case$ -- 58
-chr.to.int$ -- 12
-cite$ -- 24
-duplicate$ -- 220
-empty$ -- 412
-format.name$ -- 80
-if$ -- 970
+            681 strings with 7419 characters,
+and the built_in function-call counts, 5301 in all, are:
+= -- 466
+> -- 268
+< -- 12
++ -- 96
+- -- 81
+* -- 344
+:= -- 849
+add.period$ -- 54
+call.type$ -- 15
+change.case$ -- 72
+chr.to.int$ -- 15
+cite$ -- 30
+duplicate$ -- 258
+empty$ -- 472
+format.name$ -- 98
+if$ -- 1106
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 6
-newline$ -- 76
-num.names$ -- 48
-pop$ -- 136
+newline$ -- 92
+num.names$ -- 60
+pop$ -- 169
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 57
 quote$ -- 0
-skip$ -- 180
+skip$ -- 213
 stack$ -- 0
-substring$ -- 90
-swap$ -- 19
+substring$ -- 30
+swap$ -- 15
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 132
+type$ -- 165
 warning$ -- 0
-while$ -- 41
+while$ -- 45
 width$ -- 0
-write$ -- 171
+write$ -- 209
 (There were 5 warnings)

@@ -1,32 +1,3 @@
-\chapter{O problema e os seus desafios}
-
-O problema e os seus desafios
-
-\section{Imagens}
-Exemplo de inserção de uma imagem como texto exibido,
-\begin{center}
-	\includegraphics[width=0.1\textwidth]{images/UM.jpg}
-\end{center}
-
-\begin{wrapfigure}{r}{0.15\textwidth}	
-	\includegraphics[width=0.1\textwidth]{images/UM.jpg}
-\end{wrapfigure}
-\noindent --- dentro no texto,
-bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
-bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
-bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
-bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
-bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
-bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla bla-bla
-
-\noindent --- ou em formato flutuante
-\begin{figure}
-\begin{center}
-	\includegraphics[width=0.25\textwidth]{images/UM.jpg}
-\end{center}
-\caption{Legenda}
-\end{figure}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\chapter{O problema e os seus desafios}
@@ -359,3 +330,102 @@ Ambos os componentes (extensão e servidor) interagem com o armazenamento:
 %\end{center}
 %\caption{Legenda}
 %\end{figure}
+
+\section{Implementação da solução}
+
+Para proceder à implementação da solução, foi necessário selecionar as tecnologias mais adequadas.
+
+\subsection{JWS}
+
+No âmbito da gestão do consentimento, uma questão fundamental prende-se com a forma como este deve ser organizado e validado. Entre várias alternativas possíveis, optou-se pela utilização do \textit{JSON Web Signature} (JWS).  
+
+O JWS permite representar conteúdos assinados digitalmente, recorrendo a estruturas de dados baseadas em JSON. Esta abordagem possibilita a verificação da autenticidade e integridade do consentimento através do \textit{payload}, garantindo simultaneamente que as assinaturas de uma ou mais partes são mantidas de forma estruturada, padronizada e de fácil interpretação \citep{rfc7515}.
+
+\subsection{Extensão no Cliente}
+Do lado do cliente desenvolveu-se uma extensão para o navegador, responsável pela gestão da troca de consentimentos. Esta foi implementada em \textit{JavaScript} \citep{MozillaBrowserExtensions}. Inicialmente recorreu-se ao \texttt{manifest v2}, dado que os testes foram realizados em \textit{Firefox}. Mais tarde, procedeu-se à migração para o \texttt{manifest v3}, o que se revelou um processo simples e sem complicações.
+
+\begin{verbatim}
+{
+  "manifest_version": 3,
+  "name": "CCH",
+  "version": "1.0",
+  "description": "Handles client side consent handshake",
+  "homepage_url": "https://github.com/TiagoPR/cch",
+  "permissions": ["scripting", "activeTab", "http://127.0.0.1/*"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/consent.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "48": "icons/handshake_48.png"
+  }
+}
+\end{verbatim}
+
+\subsection{Gestão de Certificados}
+A extensão necessita ainda de aceder ao certificado e à chave privada do cliente (\texttt{client.crt} e \texttt{client.key}). Estes são armazenados no \textit{local storage} do navegador, sendo depois carregados pela extensão:
+
+\begin{lstlisting}[language=Javascript]
+certPEM = localStorage.getItem("cert");
+certPEM = this.formatPem(certPEM, "CERTIFICATE");
+
+privKey = localStorage.getItem("privKey");
+privKey = this.formatPem(privKey, "PRIVATE KEY");
+\end{lstlisting}
+
+A integração com o módulo \texttt{node-forge} foi fundamental para o manuseamento de chaves e certificados. No entanto, como em extensões de navegador apenas é permitido código \textit{JavaScript} nativo, foi necessário proceder à sua compilação e empacotamento. Para tal recorreu-se a um \textit{bundler}, tendo sido escolhida a framework \textit{Vue.js} \citep{VueJS}, que possibilitou a utilização do \texttt{webpack} para esta função.
+
+\subsection{Fluxo de Consentimento}
+A extensão é ativada após interação do utilizador com o \textit{banner} de consentimento (aceitação ou rejeição). O exemplo da Figura~\ref{fig:klarojs-banner} ilustra o \textit{banner} utilizado, disponibilizado pelo \textit{Klaro.js}. \ref{fig:klarojs-banner}
+
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=0.8\textwidth]{images/klaro_banner.png}
+    \caption{Banner padrão do Klaro.js no sítio onde foi feito \textit{deploy}}
+    \label{fig:klarojs-banner}
+\end{figure}
+
+A captura do evento é feita através de um \texttt{listener}, conforme ilustrado de forma simplificada no excerto seguinte:
+
+\begin{lstlisting}[language=Javascript]
+document.addEventListener('consentUpdated', function(event) {
+	if (processingConsent) {
+		console.log('Already processing consent, skipping...');
+		return;
+	}
+	const consentData = window.klaroConsentData;
+	if (consentData) {
+		processingConsent = true;
+		processConsent(consentData)
+			.then(success => {
+				console.log('Consent processing complete:', success ? 'Success' : 'Failed');
+				processingConsent = false;
+			})
+			.catch(error => {
+				console.error('Consent processing error:', error);
+				processingConsent = false;
+			});
+	}
+});
+\end{lstlisting}
+
+Esta é a função principal do cliente, onde é feita as chamadas para todo o processo do cliente e funções auxiliares.
+
+A função principal do cliente, \texttt{processConsent}, implementa todo o fluxo de comunicação com o servidor:
+\begin{enumerate}
+    \item Obtenção do certificado público do servidor.
+    \item Carregamento das chaves do cliente.
+    \item Assinatura digital do consentimento pelo cliente.
+    \item Envio do consentimento e respetiva assinatura ao servidor.
+    \item Validação da resposta assinada pelo servidor.
+\end{enumerate}
+
+O código completo desta função pode ser consultado no Apêndice~\ref{apendice:process-consent}
+
+\subsection{Consentimento}
+
+No final o consentimento fica registado ambos do lado do cliente e servidor, estecliente pode então depois ter acesso a um JWS (explicar JWS em uma outra secção que não seja nem do cliente nem do servidor)

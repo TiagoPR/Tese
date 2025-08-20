@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,7 +24,7 @@ CookieChimp.
 \bibitem[Daudén-Esmel et~al.(2024)Daudén-Esmel, Castellà-Roca, and Viejo]{Daudén-Esmel2024}
 Cristòfol Daudén-Esmel, Jordi Castellà-Roca, and Alexandre Viejo.
 \newblock Blockchain-based access control system for efficient and gdpr-compliant personal data management.
-\newblock \emph{Computer Communications}, 214:\penalty0 67--87, 2024.
+\newblock \emph{Computer Communications}, 214, 2024.
 
 \bibitem[{European Parliament and Council}(2016)]{gdpr2016}
 {European Parliament and Council}.
@@ -32,10 +32,21 @@ Cristòfol Daudén-Esmel, Jordi Castellà-Roca, and Alexandre Viejo.
 \newblock URL \url{https://gdpr-info.eu/art-4-gdpr/}.
 \newblock General Data Protection Regulation (GDPR).
 
+\bibitem[Jones et~al.(2015)Jones, Bradley, and Sakimura]{rfc7515}
+Michael~B. Jones, John Bradley, and Nat Sakimura.
+\newblock Json web signature (jws).
+\newblock RFC 7515, Internet Engineering Task Force (IETF), 2015.
+\newblock URL \url{https://datatracker.ietf.org/doc/html/rfc7515#section-7.2.1}.
+
 \bibitem[Manager(2025)]{ConsentManager2024}
 Consent Manager.
 \newblock Technical implementation and architecture overview, 2025.
 \newblock URL \url{https://help.consentmanager.net/books/cmp/page/cross-device-consent-sharing}.
+
+\bibitem[Mozilla(2025)]{MozillaBrowserExtensions}
+Mozilla.
+\newblock Browser extensions, 2025.
+\newblock URL \url{https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions}.
 
 \bibitem[Nakamoto(2008)]{nakamoto2008bitcoin}
 Satoshi Nakamoto.
@@ -52,7 +63,7 @@ Satoshi Nakamoto.
 \bibitem[Santos et~al.(2021)Santos, Nouwens, Toth, Bielova, and Roca]{Santos2021}
 Cristiana Santos, Midas Nouwens, Michael Toth, Nataliia Bielova, and Vincent Roca.
 \newblock Consent management platforms under the gdpr: processors and/or controllers?
-\newblock In \emph{APF 2021 - 9th Annual Privacy Forum}, pages 47--69, Oslo, Norway, 2021.
+\newblock In \emph{APF 2021 - 9th Annual Privacy Forum}, Oslo, Norway, 2021.
 \newblock \doi{10.1007/978-3-030-76663-4_3}.
 \newblock URL \url{https://inria.hal.science/hal-03169436v1}.
 \newblock HAL Id: hal-03169436.
@@ -66,7 +77,12 @@ Cristiana Santos, Midas Nouwens, Michael Toth, Nataliia Bielova, and Vincent Roc
 \bibitem[Truong et~al.(2020)Truong, Sun, Lee, and Guo]{nguyen2020gdpr}
 Nguyen~Binh Truong, Kai Sun, Gyu~Myoung Lee, and Yike Guo.
 \newblock Gdpr-compliant personal data management: A blockchain-based solution.
-\newblock \emph{IEEE Transactions on Information Forensics and Security}, 15:\penalty0 1746--1761, 2020.
+\newblock \emph{IEEE Transactions on Information Forensics and Security}, 15, 2020.
+
+\bibitem[Vue(2025)]{VueJS}
+Vue.
+\newblock Working with webpack, 2025.
+\newblock URL \url{https://cli.vuejs.org/guide/webpack.html}.
 
 \bibitem[Wirth and Kolain(2018)]{wirth2018privacy}
 Christian Wirth and Martin Kolain.

@@ -6,49 +6,48 @@
 \contentsline {section}{\numberline {1.1}Contextualização}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivação}{2}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Objetivos}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Estrutura da dissertação}{3}{section.1.4}%
 \contentsline {chapter}{\numberline {2}Estado da arte}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Citações}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Expressões matemáticas}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Notas de rodapé}{4}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Acrónimos e Glossário}{4}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Índice}{5}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Estado da arte}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}\acrfull {cmp}}{6}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Fluxo de Implementação de uma \acrshort {cmp}}{7}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Limitações das \acrshort {cmp}s Existentes}{11}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Discussão}{12}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Trabalho Relacionado}{13}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}\acrfull {rgpd}}{13}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}\textit {{Blockchain}} e Contratos Inteligentes}{14}{subsection.3.3.2}%
-\contentsline {chapter}{\numberline {4}O problema e os seus desafios}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Imagens}{17}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Abordagem proposta}{18}{chapter.5}%
-\contentsline {section}{\numberline {5.1}A Necessidade de \acrshort {cmp}s Open Source}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Extensão do Workflow com \textit {blockchain}}{19}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Planeamento}{21}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Visão Geral da Arquitectura}{23}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Componentes da Solução}{23}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Lógica de Funcionamento}{24}{subsection.5.4.2}%
-\contentsline {subsubsection}{Princípios Fundamentais}{24}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Algoritmos de criptografia}{24}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Protocolo de Consenso}{25}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Lógica de Resolução}{25}{subsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.4.6}Interacção Entre Componentes}{25}{subsection.5.4.6}%
-\contentsline {subsection}{\numberline {5.4.7}Benefícios da Arquitectura}{27}{subsection.5.4.7}%
+\contentsline {section}{\numberline {2.1}\acrfull {cmp}}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Fluxo de Implementação de uma \acrshort {cmp}}{5}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Limitações das \acrshort {cmp}s Existentes}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Discussão}{10}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Trabalho Relacionado}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}\acrfull {rgpd}}{11}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}\textit {{Blockchain}} e Contratos Inteligentes}{12}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Abordagem proposta}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}A Necessidade de \acrshort {cmp}s Open Source}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Extensão do Workflow com \textit {blockchain}}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Planeamento}{18}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Visão Geral da Arquitectura}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Componentes da Solução}{20}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Lógica de Funcionamento}{21}{subsection.3.4.2}%
+\contentsline {subsubsection}{Princípios Fundamentais}{21}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Algoritmos de criptografia}{21}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Protocolo de Consenso}{22}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Lógica de Resolução}{22}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Interacção Entre Componentes}{22}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}Benefícios da Arquitectura}{24}{subsection.3.4.7}%
+\contentsline {section}{\numberline {3.5}Implementação da solução}{24}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}JWS}{24}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Extensão no Cliente}{25}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Gestão de Certificados}{25}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Fluxo de Consentimento}{26}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Consentimento}{27}{subsection.3.5.5}%
 \contentsline {part}{II\hspace {1em}Corpo da Dissertação}{28}{part.2}%
-\contentsline {chapter}{\numberline {6}Contribuição}{29}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introdução}{29}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Sumário}{29}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Aplicações}{30}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Introdução}{30}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Sumário}{30}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Conclusões e trabalho futuro}{31}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Conclusões}{31}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Perspetiva de trabalho futuro}{31}{section.8.2}%
-\contentsline {chapter}{\numberline {9}Planeamento}{32}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Atividades}{32}{section.9.1}%
-\contentsline {part}{III\hspace {1em}Apêndices}{36}{part.3}%
-\contentsline {chapter}{\numberline {A}Trabalho de apoio}{37}{appendix.A}%
+\contentsline {chapter}{\numberline {4}Contribuição}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introdução}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Sumário}{29}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Aplicações}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introdução}{30}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Sumário}{30}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusões e trabalho futuro}{31}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusões}{31}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Perspetiva de trabalho futuro}{31}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Planeamento}{32}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Atividades}{32}{section.7.1}%
+\contentsline {part}{III\hspace {1em}Apêndices}{35}{part.3}%
+\contentsline {chapter}{\numberline {A}Trabalho de apoio}{36}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Detalhes dos resultados}{38}{appendix.B}%
 \contentsline {chapter}{\numberline {C}Listings}{39}{appendix.C}%
 \contentsline {chapter}{\numberline {D}Ferramentas}{40}{appendix.D}%

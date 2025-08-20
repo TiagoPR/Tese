@@ -1,2 +1,76 @@
 \chapter{Trabalho de apoio}
 Resultados auxiliares.
+
+\begin{lstlisting}[language=Javascript]
+async function processConsent(consentData) {
+	console.log('Processing consent data with JWS:', consentData);
+
+	try {
+		// Step 1: Fetch server's certificate and pubKey
+		const serverCert = await fetch('http://127.0.0.1:3000/api/server_certificate');
+		const certPem = await serverCert.json();
+		const cert = forge.pki.certificateFromPem(certPem);
+		const publicKey = forge.pki.publicKeyToPem(cert.publicKey);
+
+		console.log('Received server public key data:', publicKey);
+
+		// Step 2: Import server's RSA public key
+		const serverPublicKey = await cryptoUtils.importRSAPublicKey(publicKey);
+		console.log('Imported server RSA public key');
+
+		// Step 3: Load key pair for client
+		const clientSigningKeyPair = await cryptoUtils.loadSigningKeyPair();
+		const privKeyCrypto = await cryptoUtils.importPrivateKey(clientSigningKeyPair.privKey);
+		console.log('Loaded client RSA signing keys');
+
+		// Step 4: Sign consentData
+		const clientSignature = await cryptoUtils.signData(privKeyCrypto, consentData);
+
+		console.log('Client signed the consent');
+
+		const response = await fetch('http://127.0.0.1:3000/api/consent', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				signature: clientSignature,
+				consent: consentData,
+				pubkey: clientSigningKeyPair.pubKey
+			})
+		});
+
+		console.log('Client sent the info');
+
+		const result = await response.json();
+
+		console.log(result);
+
+		// Step 5: Verify server-signed JWS
+		if (result.success && result.serverSignedJWS) {
+			try {
+				const serverSignedPayload = await cryptoUtils.verifyServerJWS(
+					result.serverSignedJWS,
+					consentData,
+					serverPublicKey
+				);
+
+				console.log('✅ Server-signed JWS verified successfully');
+				console.log('Final payload:', serverSignedPayload);
+
+				return true;
+			} catch (verifyError) {
+				console.error('❌ Server JWS verification failed:', verifyError);
+				return false;
+			}
+		} else {
+			console.error('Server error:', result.error);
+			return false;
+		}
+	} catch (error) {
+		console.error('Error processing consent:', error);
+		return false;
+	}
+}
+\end{lstlisting}
+\label{apendice:process-consent}
