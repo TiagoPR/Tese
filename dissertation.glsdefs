@@ -306,17 +306,17 @@ parent={},%
 %
 }%
 
-\glsdefs@newdocentry{rpd}%
+\glsdefs@newdocentry{ca}%
 {%
-name={\acronymfont {\glsentryshort {rpd}}},%
-sort={RPD},%
+name={\acronymfont {\glsentryshort {ca}}},%
+sort={CA},%
 type={acronym},%
-first={RPD},%
-firstplural={RPDs},%
-text={RPD},%
-plural={RPDs},%
-description={Relatório de Pré-Dissertação},%
-descriptionplural={Relatório de Pré-Dissertação},%
+first={CA},%
+firstplural={CAs},%
+text={CA},%
+plural={CAs},%
+description={\textit {Certificate Authority}},%
+descriptionplural={\textit {Certificate Authority}},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -325,10 +325,10 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Relatório de Pré-Dissertação},%
-longplural={Relatório de Pré-Dissertaçãos},%
-short={RPD},%
-shortplural={RPDs},%
+long={\protect \textit  {Certificate Authority}},%
+longplural={\protect \textit  {Certificate Authority}s},%
+short={CA},%
+shortplural={CAs},%
 counter={page},%
 parent={},%
 %

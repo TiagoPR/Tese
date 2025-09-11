@@ -4,54 +4,54 @@ The top-level auxiliary file: dissertation.aux
 The style file: plainnat.bst
 Database file #1: dissertation.bib
 Warning--entry type for "Cookiebot2024" isn't style-file defined
---line 115 of file dissertation.bib
+--line 123 of file dissertation.bib
 Warning--entry type for "ConsentManager2024" isn't style-file defined
---line 125 of file dissertation.bib
+--line 133 of file dissertation.bib
 Warning--entry type for "CookieChimp2024" isn't style-file defined
---line 135 of file dissertation.bib
-Warning--entry type for "MozillaBrowserExtensions" isn't style-file defined
 --line 143 of file dissertation.bib
+Warning--entry type for "MozillaBrowserExtensions" isn't style-file defined
+--line 151 of file dissertation.bib
 Warning--entry type for "VueJS" isn't style-file defined
---line 153 of file dissertation.bib
-You've used 15 entries,
+--line 161 of file dissertation.bib
+You've used 17 entries,
             2773 wiz_defined-function locations,
-            681 strings with 7419 characters,
-and the built_in function-call counts, 5301 in all, are:
-= -- 466
-> -- 268
-< -- 12
-+ -- 96
-- -- 81
-* -- 344
-:= -- 849
-add.period$ -- 54
-call.type$ -- 15
-change.case$ -- 72
-chr.to.int$ -- 15
-cite$ -- 30
-duplicate$ -- 258
-empty$ -- 472
-format.name$ -- 98
-if$ -- 1106
+            696 strings with 7705 characters,
+and the built_in function-call counts, 6055 in all, are:
+= -- 540
+> -- 299
+< -- 14
++ -- 107
+- -- 90
+* -- 396
+:= -- 966
+add.period$ -- 63
+call.type$ -- 17
+change.case$ -- 81
+chr.to.int$ -- 17
+cite$ -- 34
+duplicate$ -- 293
+empty$ -- 540
+format.name$ -- 111
+if$ -- 1266
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 6
-newline$ -- 92
-num.names$ -- 60
-pop$ -- 169
+missing$ -- 7
+newline$ -- 105
+num.names$ -- 68
+pop$ -- 187
 preamble$ -- 1
-purify$ -- 57
+purify$ -- 64
 quote$ -- 0
-skip$ -- 213
+skip$ -- 242
 stack$ -- 0
-substring$ -- 30
-swap$ -- 15
+substring$ -- 47
+swap$ -- 17
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 165
+type$ -- 187
 warning$ -- 0
-while$ -- 45
+while$ -- 53
 width$ -- 0
-write$ -- 209
+write$ -- 240
 (There were 5 warnings)

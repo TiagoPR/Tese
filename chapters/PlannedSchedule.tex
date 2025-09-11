@@ -1,25 +1,102 @@
 \chapter{Planeamento}
 
-\section{Atividades}
-
-\newacronym{rpd}{RPD}{Relatório de Pré-Dissertação}
-\newacronym{eda}{EA}{Estado da Arte}
-
 \begin{table}[H]
-\begin{center}
-\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c |}
+\centering
+\renewcommand{\arraystretch}{1.3} % Ajusta a altura das linhas
+\setlength{\tabcolsep}{4pt} % Ajusta o espaçamento entre as colunas
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c |}
 \hline
-\textbf{Tarefa} & \textbf{Out} & \textbf{Nov} & \textbf{Dez} & \textbf{Jan} & \textbf{Fev} & \textbf{Mar} & \textbf{Abr} & \textbf{Mai} & \textbf{Jun} & \textbf{Jul}\\
+\textbf{Tarefa} & \textbf{Out} & \textbf{Nov} & \textbf{Dez} & \textbf{Jan} & \textbf{Fev} & \textbf{Mar} & \textbf{Abr} & \textbf{Mai} & \textbf{Jun} & \textbf{Jul} & \textbf{Ag} & \textbf{Set} \\
 \hline
-\textit{Background} e \acrshort{eda} & $\bullet$ & $\bullet$ & $\bullet$ & & & & & & & \\
+\textit{Background} e \acrshort{eda} & $\bullet$ & $\bullet$ & $\bullet$ & & & & & & & & & \\
 \hline
-Preparação do \acrshort{rpd} & & $\bullet$ & $\bullet$ & $\bullet$ & & & & & & \\
+Estudo de abordagens & & $\bullet$ & $\bullet$ & $\bullet$ & & & & & & & & \\
 \hline
-Contribuição & & & &$\bullet$ &$\bullet$ &$\bullet$ &$\bullet$ &$\bullet$ &$\bullet$ & \\
+Análise de Fluxos de Dados & & & & $\bullet$ & $\bullet$ & $\bullet$ & & & & & & \\
 \hline
-Escrita & & & & & & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\
+Desenho da Solução & & & & & & $\bullet$ & $\bullet$ & & & & & \\
 \hline
-\end{tabular}
-\end{center}
+Desenvolvimento da Solução & & & & & & & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & & \\
+\hline
+Otimização do sistema & & & & & & & & & & $\bullet$ & $\bullet$ & \\
+\hline
+Redação e Revisão da Dissertação & & & & & & & & & & & $\bullet$ & $\bullet$ \\
+\hline
+\end{tabular}%
+}
 \caption{Plano de atividades.}
+\label{tab:plano-atividades}
 \end{table}
+
+
+\begin{enumerate} 
+    \item \textbf{Background e \acrlong{eda} (Outubro - Dezembro 2024)} \\
+    \textbf{Objetivo}: Realizar uma pesquisa aprofundada sobre as tecnologias e metodologias existentes no domínio de \acrfull{cmp}. A pesquisa centrada na análise das soluções atuais, como Osano, Cookiebot, Tarteaucitron.js e Google Consent Mode. Também será explorado o impacto das regulamentações como o \acrshort{rgpd} na gestão de consentimento.
+    
+    \textbf{Tarefas}:
+    \begin{itemize}
+        \item Estudo e documentação das práticas atuais de gestão de consentimento.
+        \item Análise de regulamentações como o \acrshort{rgpd} e sua aplicação nas \acrshort{cmp}'s.
+    \end{itemize}
+
+    \item \textbf{Estudo de abordagens (Novembro 2024 - Janeiro 2025)} \\
+    \textbf{Objetivo}: Examinar abordagens e técnicas existentes para a gestão de consentimento e auditoria de dados, considerando alternativas tecnológicas que possam ser incorporadas na solução proposta.
+    
+    \textbf{Tarefas}:
+    \begin{itemize}
+        \item Análise de técnicas de recolha e armazenamento de consentimento.
+        \item Investigação sobre o uso do \textbf{CookieChimp}, incluindo testes e análise da sua \acrshort{api}.
+        \item Leitura de artigos sobre \textbf{\textit{blockchain}} e \textbf{smart contracts} para possível uso na gestão de consentimento e auditoria.
+    \end{itemize}
+
+    \item \textbf{Análise de Fluxos de Dados (Janeiro - Março 2025)} \\
+    \textbf{Objetivo}: Analisar os fluxos de dados típicos de um cliente até à plataforma de gestão de consentimento e avaliar as tecnologias disponíveis para garantir a auditabilidade desses fluxos, com especial ênfase no uso de \textit{blockchain} e contratos inteligentes.
+    
+    \textbf{Tarefas}:
+    \begin{itemize}
+        \item Estudo de casos práticos de fluxos de dados em plataformas \acrshort{cmp}.
+        \item Seleção das tecnologias mais adequadas para garantir a transparência e a rastreabilidade desses fluxos.
+        \item Análise dos desafios da auditoria de dados com \textit{blockchain} e a viabilidade do uso de smart contracts.
+    \end{itemize}
+
+    \item \textbf{Desenho da Solução (Fevereiro - Março 2025)} \\
+    \textbf{Objetivo}: Desenvolver o design da solução auditável de gestão de consentimento. A solução deverá integrar a recolha de consentimento e mecanismos de auditoria, com a possibilidade de utilização de tecnologias como \textit{blockchain} para garantir a transparência.
+    
+    \textbf{Tarefas}:
+    \begin{itemize}
+        \item Desenho do modelo de dados e arquitetura do sistema.
+        \item Definição das principais funcionalidades da plataforma.
+    \end{itemize}
+
+    \item \textbf{Desenvolvimento do Protótipo (Março - Maio 2025)} \\
+    \textbf{Objetivo}: Desenvolver um protótipo funcional do sistema, com foco na recolha, armazenamento e auditoria do consentimento de dados.
+     
+    \textbf{Tarefas}:
+    \begin{itemize}
+        \item Implementação inicial do protótipo, com funcionalidades básicas de recolha de consentimento.
+        \item Armazenamento de consentimento através da \textit{blockchain}.
+        \item Integração com contratos inteligentes.
+        \item Testes preliminares de usabilidade.
+    \end{itemize}
+
+    \item \textbf{Otimização do Sistema (Junho - Julho 2025)} \\
+    \textbf{Objetivo}: Melhorar a usabilidade e desempenho do sistema para garantir que a plataforma seja robusta e eficiente para uso real.
+     
+    \textbf{Tarefas}:
+    \begin{itemize}
+        \item Refinamento do protótipo com base nos testes e \textit{\textit{feedback}s} obtidos.
+        \item Melhorias na interface de utilizador e na arquitetura do sistema.
+    \end{itemize}
+
+    \item \textbf{Redação e Revisão da Dissertação (Junho - Setembro 2025)} \\
+    \textbf{Objetivo}: Documentar todas as fases do projeto, incluindo a implementação, os resultados obtidos e as conclusões finais. Preparar a dissertação para submissão e defesa.
+    
+    \textbf{Tarefas}:
+    \begin{itemize}
+        \item Redação detalhada da dissertação.
+        \item Revisão do documento com os orientadores.
+        \item Preparação da apresentação final para a defesa.
+    \end{itemize}
+\end{enumerate}
+

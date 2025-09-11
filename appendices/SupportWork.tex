@@ -55,12 +55,12 @@ async function processConsent(consentData) {
 					serverPublicKey
 				);
 
-				console.log('✅ Server-signed JWS verified successfully');
+				console.log('Server-signed JWS verified successfully');
 				console.log('Final payload:', serverSignedPayload);
 
 				return true;
 			} catch (verifyError) {
-				console.error('❌ Server JWS verification failed:', verifyError);
+				console.error('Server JWS verification failed:', verifyError);
 				return false;
 			}
 		} else {

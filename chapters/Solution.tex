@@ -1,0 +1,373 @@
+\chapter{Implementação da solução}
+
+Para proceder à implementação da solução, foi necessário estudar e selecionar as tecnologias mais adequadas para cada uma das entidades faladas anteriormente. O \textit{back-end} do servidor foi desenvolvido em \textit{Node.js}, enquanto o website é constituído por uma página em \textit{HTML} simples, integrando um \textit{snippet} do \textit{script} do \acrshort{cmp} Open-Source \textit{Klaro.js} para a apresentação do \textit{banner} de consentimento.
+Do lado do cliente, foi implementada uma extensão de navegador em JavaScript, responsável pela captura das interações do utilizador e pela execução das operações criptográficas necessárias. Embora se trate de uma extensão em JavaScript nativo, recorreu-se ao Vue.js como \textit{framework}, em conjunto com o Vite como \textit{bundler}, de modo a permitir a integração de bibliotecas externas, nomeadamente o \texttt{node-forge} para o tratamento de chaves e certificados. Adicionalmente, o processo de criação e gestão de certificados digitais foi realizado com recurso ao \textit{OpenSSL}, garantindo a relação de confiança entre cliente e servidor. O fluxo de comunicação resultante contempla as etapas de recolha, assinatura, envio, validação e registo do consentimento em ambas as entidades, assegurando a autenticidade, integridade e verificabilidade do processo.
+
+\section{JWS}
+
+No âmbito da gestão do consentimento, a organização e validação dos mesmos exigem um formato seguro, interoperável e verificável. Entre várias alternativas, optou-se por utilizar o \textit{JSON Web Signature} (\textit{JWS}), conforme definido no RFC 7515 \citep{rfc7515}.
+
+\subsection{Descrição Geral (Baseado no RFC 7515)}
+
+De acordo com o RFC 7515, um \textit{JWS} representa conteúdos protegidos com assinaturas digitais ou códigos de autenticação de mensagem (MAC), usando estruturas de dados em JSON.
+
+Existem duas formas de serialização definidas:
+
+\begin{itemize}
+  \item \textbf{Compact Serialization}: uma representação mais concisa, adequada a ambientes com restrições de espaço, como cabeçalhos HTTP ou parâmetros de URL.
+  \item \textbf{JSON Serialization}: uma representação em JSON que permite múltiplas assinaturas ou MACs sobre o mesmo conteúdo, com maior clareza e flexibilidade.
+\end{itemize}
+
+O JWS baseia-se em três componentes principais:
+
+\begin{enumerate}
+  \item \textbf{Header}: contém metadados como o algoritmo de assinatura (por exemplo, \texttt{PS256}), o tipo de objeto (por exemplo, \texttt{JWT}), e possivelmente outros parâmetros relevantes.
+  \item \textbf{Payload}: o conteúdo a assinar (neste caso, os detalhes do consentimento), que é codificado em Base64URL.
+  \item \textbf{Signature}: o resultado da assinatura digital aplicada ao \textit{header} e \textit{payload}, garantindo integridade e autenticidade.
+\end{enumerate}
+
+\subsection{Aplicação ao Caso de Consentimento}
+
+No sistema implementado, o consentimento do utilizador é representado através de um JWS, com estas características específicas:
+
+\begin{itemize}
+  \item O \textbf{payload} inclui informação relevante sobre o consentimento (por exemplo, serviços aceites/rejeitados.
+  \item O \textbf{header} utiliza o algoritmo \texttt{PS256}, que combina RSASSA-PSS com SHA-256.
+  \item São produzidas pelo menos duas assinaturas:
+    \begin{itemize}
+      \item Uma assinatura gerada pelo cliente (extensão do navegador), garantindo que foi o utilizador quem autorizou o consentimento.
+      \item Outra assinatura adicional do servidor, garantindo que o servidor valida e “assina” o consentimento final, reforçando a confiabilidade e verificabilidade.
+    \end{itemize}
+  \item Estas múltiplas assinaturas tornam o esquema equivalente à \textit{JSON Serialization} do JWS, que suporta várias assinaturas sobre o mesmo \textit{payload}.
+\end{itemize}
+
+\subsection{Vantagens neste contexto}
+
+\begin{itemize}
+  \item \textbf{Integridade e Autenticidade}: Qualquer modificação no \textit{payload} ou nas assinaturas invalida o JWS, protegendo contra manipulação.
+  \item \textbf{Não repúdio}: A assinatura do cliente impede que este negue ter dado o consentimento, sendo uma evidência legalmente relevante.
+  \item \textbf{Verificabilidade por ambas as partes}: Cliente e servidor conseguem validar, de forma independente, que o consentimento é autêntico e válido.
+  \item \textbf{Compatível com padrões e interoperável}: Com base nos RFC’s, facilita futuras integrações com outras infraestruturas, auditorias ou sistemas de conformidade.
+\end{itemize}
+
+\section{Extensão no Cliente}
+Do lado do cliente desenvolveu-se uma extensão para o navegador, responsável pela gestão da troca de consentimentos. Esta foi implementada em JavaScript \citep{MozillaBrowserExtensions}. Inicialmente foi utilizado o \texttt{manifest v2}, dado que os testes foram realizados em \textit{Firefox}. Mais tarde, procedeu-se à migração para o \texttt{manifest v3}, o que se revelou um processo simples e sem complicações.
+
+\begin{verbatim}
+{
+  "manifest_version": 3,
+  "name": "CCH",
+  "version": "1.0",
+  "description": "Handles client side consent handshake",
+  "homepage_url": "https://github.com/TiagoPR/cch",
+  "permissions": ["scripting", "activeTab", "http://127.0.0.1/*"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/consent.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "48": "icons/handshake_48.png"
+  }
+}
+\end{verbatim}
+
+\subsubsection{Module Bundlers}
+
+Uma vez que se trata de uma aplicação em JavaScript, não é viável utilizar apenas um ficheiro de JavaScript puro para integrar outras bibliotecas. Para isso, é necessário recorrer a \textit{module bundlers}. Neste caso, como já foi referido acima, foi utilizado o Vite (ferramenta padrão do Vue.js), uma solução \textit{lightweight} que satisfaz esta necessidade. Dado que apenas JavaScript nativo não é totalmente compatível com todos os navegadores, este \textit{bundler} permite gerar o \textit{build} do nosso \textit{source code}, bem como das \textit{third-party dependencies}, de forma recursiva. As próprias \textit{dependencies} podem ter outras \textit{dependencies}, como no caso da biblioteca \texttt{node-forge}, permitindo consolidar todos os ficheiros num único output.
+
+O desenvolvimento web moderno depende fortemente de \textit{module bundlers}. Estas ferramentas processam o código-fonte da aplicação e as suas \textit{dependencies}, produzindo \textit{assets} otimizados e prontos para \textit{deploy}. Ao contrário das linguagens compiladas, como C ou Go, que produzem um único executável binário, o JavaScript é interpretado dinamicamente no \textit{browser}. Isto cria desafios de compatibilidade e \textit{performance}, que os \textit{bundlers} ajudam a resolver.
+
+\subsubsection{Propósito e Funcionalidade}
+
+As aplicações JavaScript são frequentemente compostas por múltiplos módulos, importados utilizando o \texttt{import} ou \texttt{require}. \textit{Module bundlers}, como o Vite (usado pelo Vue por omissão), consolidam estes módulos num ou poucos ficheiros. Durante este processo, podem também:
+
+\begin{itemize}
+    \item Fazer a transpilação de \textit{Modern} JavaScript ou TypeScript para garantir compatibilidade com \textit{browsers} mais antigos;
+    \item \textit{Minify code}, reduzir o tamanho dos ficheiros para carregamento mais rápido;
+    \item \textit{Tree-shaking}, remover código não utilizado;
+    \item \textit{Bundle static assets}, como CSS, imagens e \textit{fonts}.
+\end{itemize}
+
+\subsubsection{Diretório \textit{dist}}
+
+Após o \textit{bundling}, por convenção, os ficheiros processados são normalmente colocados na pasta \texttt{dist} (\textit{distribution}). Esta pasta contém \textit{assets} prontos para produção, totalmente compilados e otimizados. Permite separar o código-fonte de desenvolvimento do \textit{output} final para \textit{deploy}, garantindo consistência e eficiência.
+
+\section{Servidor e Website}
+
+Para capturar a interação do \acrshort{ds} foi necessário disponibilizar um website, este website trata-se de um site estático feito em HTML no qual chamamos o nosso \textit{script} de KlaroJS, como é dito na documentação do próprio \acrshort{cmp}. Podemos definir quais são os nossos serviços em um config.js que tem de estar estruturado como o exemplo disponibilizado pelo \cite{gitklaro}. Neste caso, como não têm peso quais os serviços a ser utilizados, foram mantidos os valores defaults. Podemos ver aqui um exemplo de um serviço:
+
+\begin{lstlisting}[language=Javascript]
+// This is a list of third-party services that Klaro will manage for you.
+services: [
+	{
+		name: 'twitter',
+		default: false,
+		contextualConsentOnly: true,
+		purposes: ['marketing'],
+	},
+\end{lstlisting}
+
+Este ficheiro é depois chamado no \texttt{klaro.js}, que se trata de uma complilação de tudo que compõe o \acrshort{cmp} KlaroJS. Aqui, poderíamos chamar esse \textit{script} através de um \textit{endpoint} exposto pelo o próprio desenvolvedor da ferramenta, ou então importar para o projeto. Nesta solução, foi escolhido o segundo método. Sendo assim, na nossa página, só foi necessário chamar estes dois \textit{scripts} para implementar um \acrshort{cmp} Open-source. 
+
+\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consent Management POC</title>
+
+    <script defer type="text/javascript" src="config.js"></script>
+    <script defer type="text/javascript" src="klaro.js"></script>
+</head>
+<body>
+
+    <h1>Welcome to My Test Klaro Site</h1>
+    <p>This is a test page with Klaro consent manager integration.</p>
+
+    <button class="button is-success" onclick="return klaro.show();">Change consent settings</button>
+
+</body>
+</html>
+\end{lstlisting}
+
+% Posteriormente criei o klaro-custom.js, como auxiliar para fazer dos cosentimentos que são guardados. DAR FIX DE ISTO, SEM NECESSIDADE ESTE AUXILIAR AGORA.
+
+%imagem do website
+
+Com isto, tem-se as ferramentas necessárias para ter um ponto de interação com o \acrshort{ds}.
+
+Toda a lógica de troca de consentimento e de certificados é suportada por um servidor \textit{back-end}, desenvolvido em NodeJS, que expõe dois \textit{endpoints} principais para comunicação com o cliente.
+
+O primeiro \textit{endpoint}, acessível através de um pedido \texttt{GET} em \texttt{/api/server\_certificate}, devolve o certificado público do servidor. Este certificado é utilizado pelo cliente para validar as comunicações e garantir a autenticidade das assinaturas digitais. Em caso de sucesso, o certificado é devolvido em formato \texttt{JSON}, caso contrário, o servidor responde com o respetivo erro.
+
+O segundo \textit{endpoint}, acessível através de um pedido \texttt{POST} em \texttt{/api/consent}, recebe do cliente um consentimento assinado no formato JWS. O corpo da requisição inclui a chave pública do cliente, o consentimento propriamente dito e a assinatura associada. O servidor procede então a várias operações:
+
+\begin{enumerate}
+    \item Verificação da assinatura do cliente — utilizando a chave pública fornecida através do certificado, confirma-se que o consentimento foi efetivamente assinado pelo cliente, assegurando a integridade e autenticidade da informação recebida.
+    \item Criação de um objeto JWS assinado pelo servidor e cliente — após validação, o consentimento é encapsulado na estrutura JWS, assinado com a chave privada do servidor, de modo a gerar evidência verificável para ambas as partes.
+    \item Resposta ao cliente — é devolvido ao cliente um objeto em formato \texttt{JSON}, contendo o JWS assinado pelo cliente e servidor e uma mensagem de confirmação. Em caso de falha, é emitida uma resposta de erro.
+\end{enumerate}
+
+O \textit{snippet} de código seguinte ilustra a implementação desta lógica:
+
+\begin{lstlisting}[language=Javascript]
+this.app.get('/api/server_certificate', (_, res) => {
+	try {
+		const certificate = this.serverCert;
+		res.json(certificate);
+		console.log('Server certificate sent to client');
+	} catch (error) {
+		console.error('Error sending certificate', error);
+		res.status(500).json({ error: 'Failed to get certificate' });
+	}
+});
+
+// Process consent JWS from client
+this.app.post('/api/consent', (req, res) => {
+	try {
+		console.log('Processing consent JWS...');
+		const result = this.processClient(req.body);
+
+		res.json({
+			success: true,
+			serverSignedJWS: result.jws,
+			message: 'JWS processed and server-signed successfully'
+		});
+
+		console.log('JWS processed and server-signed');
+	} catch (error) {
+		console.error('Error processing JWS:', error);
+		res.status(400).json({
+			success: false,
+			error: error.message
+		});
+	}
+});
+
+processClient(clientInfo) {
+	console.log('Received client info...');
+
+	// Step 1: Verify client signature
+	this.verifyClientSignature(clientInfo.pubkey, clientInfo.consent, clientInfo.signature)
+
+	// Step 2: Create server-signed JWS
+	const signedJWS = this.createSignedJWS(clientInfo);
+	console.log('JWS created');
+
+	return { jws: signedJWS };
+}
+\end{lstlisting}
+
+Deste modo, o servidor atua como entidade de confiança, responsável por validar as mensagens recebidas e por emitir, como resposta, um JWS assinado com a sua chave privada. Esse JWS não constitui, por si só, a conclusão do processo: é posteriormente validado pelo cliente com recurso ao certificado público obtido em \texttt{/api/server\_certificate}, confirmando a autenticidade da assinatura do servidor e a integridade/consistência do \textit{payload} antes de proceder ao registo local do consentimento.
+
+
+\section{Gestão de Certificados}
+Para a criação dos certificados, foi usada a ferramenta do OpenSSL para testes locais. Para obter estes mesmos certificados por parte do servidor e cliente, procedemos à criação de uma rootCA. Sendo assim, neste caso, ambas usam a mesma root CA. Com isto, precisamos que cada uma das entidades tenha a sua chave privada.
+
+Criação da rootCA:
+
+\begin{lstlisting}[language=sh]
+CANAME=Uminho-RootCA
+openssl genrsa -out $CANAME.key 2048
+openssl req -x509 -new -nodes -key $CANAME.key -sha256 -days 1826 -out $CANAME.crt
+\end{lstlisting}
+
+Com isto, procedemos à criação das chaves privadas e \textit{certification requests} de ambas as entidades.
+
+\begin{lstlisting}[language=sh]
+openssl genrsa -out {server/client}.key 2048
+openssl req -new -key {server/client}.key -out {server/client}.csr
+openssl x509 -req -in {server/client}.csr -CA ca/rootCA.crt -CAkey ca/rootCA.key  -CAcreateserial -out {server/client}.crt -days 825 -sha256
+\end{lstlisting}
+
+Obtemos assim os certificados de ambas as entidades.
+
+No entanto, a extensão necessita ainda de aceder ao certificado e à chave privada do cliente (\texttt{client.crt} e \texttt{client.key}). Estes são armazenados no \textit{local storage} do navegador, sendo depois carregados pela extensão:
+
+\begin{lstlisting}[language=Javascript]
+certPEM = localStorage.getItem("cert");
+certPEM = this.formatPem(certPEM, "CERTIFICATE");
+
+privKey = localStorage.getItem("privKey");
+privKey = this.formatPem(privKey, "PRIVATE KEY");
+\end{lstlisting}
+
+A integração com o módulo \texttt{node-forge} foi fundamental para o manuseamento de chaves e certificados. Mas como em extensões de navegador apenas é permitido código JavaScript nativo, foi necessário proceder à sua compilação e empacotamento. Para tal, recorreu-se a um \textit{bundler}, tendo sido escolhida a \textit{framework} VueJS \citep{VueJS}.
+
+Do lado do servidor, a gestão de chaves e certificados é simplificada através do recurso ao \texttt{node-forge}, tal como no cliente. O servidor realiza o carregamento das chaves RSA e do certificado diretamente a partir do sistema de ficheiros, extraindo os elementos necessários para validação e assinatura dos consentimentos.
+
+O seguinte \textit{snippet} demonstra a lógica implementada:
+
+\begin{lstlisting}[language=Javascript]
+loadRSASigningKeys() {
+	const certPem = fs.readFileSync('server.crt', 'utf8');
+	const cert = forge.pki.certificateFromPem(certPem);
+	const publicKey = forge.pki.publicKeyToPem(cert.publicKey);
+
+	const privateKey = fs.readFileSync('server.key', 'utf8');
+
+	this.serverKeys.rsaPrivateSigningKey = privateKey;
+	this.serverKeys.rsaPublicSigningKey = publicKey;
+	this.serverCert = certPem;
+}
+\end{lstlisting}
+
+Neste processo:
+\begin{itemize}
+    \item O certificado do servidor é lido e decodificado em formato PEM, permitindo extrair a chave pública para validação das assinaturas.
+    \item A chave privada é carregada diretamente do ficheiro correspondente, sendo utilizada para assinar os JWS recebidos do cliente.
+    \item O \texttt{node-forge} facilita a manipulação de certificados e a conversão entre formatos PEM e objetos manipuláveis em JavaScript.
+\end{itemize}
+
+\section{Fluxo de Consentimento}
+
+O processo inicia-se quando o utilizador interage com o \textit{banner} de consentimento (aceitação ou rejeição), disponibilizado pelo \textit{Klaro.js} (Figura~\ref{fig:klarojs-banner}).
+
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=0.8\textwidth]{images/klaro_banner.png}
+    \caption{Banner padrão do Klaro.js}
+    \label{fig:klarojs-banner}
+\end{figure}
+
+A extensão do navegador captura este evento através de um \textit{listener}, que desencadeia a função principal \texttt{processConsent}. Este processo caracteriza-se pelas seguintes etapas:
+\begin{enumerate}
+    \item Obtenção do certificado público do servidor, essencial para validar a autenticidade das mensagens recebidas.
+    \item Carregamento das chaves do cliente (\texttt{client.key} e \texttt{client.crt}) do \textit{local storage}.
+    \item Assinatura digital do consentimento pelo cliente, criando uma evidência verificável.
+    \item Envio do consentimento assinado ao servidor.
+    \item Validação do consentimento no servidor, incluindo a verificação da assinatura do cliente.
+    \item Criação de um JWS assinado pelo servidor e envio de resposta ao cliente.
+    \item Validação final do JWS pelo cliente, assegurando a integridade e autenticidade do \textit{payload} antes de registar localmente o consentimento.
+\end{enumerate}
+
+Este fluxo garante que todas as interações são auditáveis, permitindo rastreabilidade e conformidade com requisitos legais de proteção de dados.
+
+\section{Consentimento}
+
+O consentimento é o resultado final do fluxo implementado: um registo digital que comprova a aceitação ou rejeição pelo utilizador de determinados serviços ou finalidades. Este registo é implementado como um \textit{JSON Web Signature} (\textit{JWS}), que encapsula:
+
+\begin{itemize}
+    \item O \textit{payload} contendo os detalhes do consentimento do utilizador.
+    \item A assinatura digital do cliente, garantindo que foi realmente o utilizador a autorizar.
+    \item A assinatura digital do servidor, confirmando a validação e integridade do consentimento.
+\end{itemize}
+
+Ambas as entidades (cliente e servidor) mantêm este JWS, permitindo consultas futuras, auditoria e eventual revogação do consentimento. O JWS assegura:
+
+\begin{itemize}
+    \item Autenticidade — a assinatura do cliente comprova que o consentimento foi emitido pelo utilizador correto.
+    \item Integridade — alterações no \textit{payload} invalidam as assinaturas, evitando manipulação.
+    \item Não repúdio — o cliente não pode negar a sua decisão, uma vez que a assinatura digital é inequívoca.
+\end{itemize}
+
+O \textit{snippet} seguinte ilustra como o JWS é gerado do lado do cliente e assinado pelo servidor:
+
+\begin{lstlisting}[language=Javascript]
+createSignedJWS(clientInfo) {
+	const headers = {
+		typ: "JWT",
+		alg: "PS256", // from JWA (RSASSA-PSS using SHA-256 and MGF1 with SHA-256)
+	};
+
+	// Encode header and payload
+	const encodedPayload = this.base64UrlEncode(JSON.stringify(clientInfo.consent));
+
+	// Sign with server private key
+	const signature = this.base64UrlEncode(this.signData(clientInfo.consent));
+
+	const jws = {
+		payload: encodedPayload,
+		signatures: [
+			{
+				header: headers,
+				signature: clientInfo.signature
+			},
+			{
+				header: headers,
+				signature: signature
+			}
+		]
+	};
+	return JSON.stringify(jws);
+}
+\end{lstlisting}
+
+O JWS resultante contém dois elementos principais:
+
+\begin{itemize}
+    \item \textbf{Payload}: o \textit{payload} codificado em \textit{base64} com os dados do consentimento do utilizador.
+    \item \textbf{Signatures}: um array com uma ou mais assinaturas digitais. No nosso caso, inclui a assinatura do cliente e a assinatura do servidor.
+\end{itemize}
+
+Um exemplo de JWS gerado é o seguinte:
+
+\begin{lstlisting}
+{
+  "payload": "eyJjb25zZW50cyI6eyJ0d2l0dGVyIjpmYWxzZSw ...",
+  "signatures": [
+    {
+      "header": {"typ": "JWT", "alg": "PS256"},
+      "signature": "b1Xn5AaxYZWZNfHoeL-SWTAySbT8yFWjJiPTK_rlIoPwTdukp9wpn..."
+    },
+    {
+      "header": {"typ": "JWT", "alg": "PS256"},
+      "signature": "BPVz73atRIFhzRx6YVsHWOkEX6Rb-hL0XoahOc2uxX9EPDs5RSVvYuNzpoX_Vv..."
+    }
+  ]
+}
+\end{lstlisting}
+
+Esta estrutura assegura que tanto o cliente como o servidor possuem uma prova verificável do consentimento, permitindo auditoria, revogação ou consulta futura, garantindo a conformidade com requisitos definidos na criação deste POC (Proof of Concept). Desta forma, o mecanismo fornece uma solução robusta, segura e transparente para a gestão de consentimentos no contexto do sistema implementado.
+
+\chapter{Contribuição}
+
+Principais resultados e as suas evidências cientificas.
+
+\section{Introdução}
+
+\section{Sumário}

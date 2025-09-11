@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -38,6 +38,12 @@ Michael~B. Jones, John Bradley, and Nat Sakimura.
 \newblock RFC 7515, Internet Engineering Task Force (IETF), 2015.
 \newblock URL \url{https://datatracker.ietf.org/doc/html/rfc7515#section-7.2.1}.
 
+\bibitem[{Klaro}(2025)]{gitklaro}
+{Klaro}.
+\newblock Klaro! a simple consent manager, 2025.
+\newblock URL \url{https://github.com/kiprotect/klaro}.
+\newblock Acesso em: 07 set. 2025.
+
 \bibitem[Manager(2025)]{ConsentManager2024}
 Consent Manager.
 \newblock Technical implementation and architecture overview, 2025.
@@ -67,6 +73,13 @@ Cristiana Santos, Midas Nouwens, Michael Toth, Nataliia Bielova, and Vincent Roc
 \newblock \doi{10.1007/978-3-030-76663-4_3}.
 \newblock URL \url{https://inria.hal.science/hal-03169436v1}.
 \newblock HAL Id: hal-03169436.
+
+\bibitem[Subramanya and Yi(2006)]{digitalsignatures}
+S.R. Subramanya and B.K. Yi.
+\newblock Digital signatures.
+\newblock \emph{IEEE Potentials}, 25\penalty0 (2):\penalty0 5--8, 2006.
+\newblock \doi{10.1109/MP.2006.1649003}.
+\newblock URL \url{https://www.researchgate.net/publication/3227862_Digital_signatures}.
 
 \bibitem[{Tarteaucitron}(2025)]{tarteaucitron}
 {Tarteaucitron}.
