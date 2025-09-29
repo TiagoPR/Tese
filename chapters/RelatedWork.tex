@@ -59,12 +59,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Trabalho Relacionado}
+\label{cap:relacionado}
 
 %Estado da arte revisto; trabalho relacionado.
-A gestão de consentimento é um dos principais desafios no tratamento de dados pessoais, especialmente face ao crescimento exponencial da digitalização e às regulamentações como o \acrshort{rgpd}. As \acrshort{cmp}s surgem como uma solução prática para facilitar a recolha e a gestão do consentimento do utilizador, assegurando a conformidade com estas legislações. No entanto, enquanto as \acrshort{cmp}s oferecem mecanismos para gerir o consentimento, existem limitações em termos de transparência e auditabilidade.
+A gestão de consentimento é um dos principais desafios no tratamento de dados pessoais, especialmente face ao crescimento exponencial da digitalização e às regulamentações como o \acrshort{rgpd}. 
+As \acrshort{cmp}s surgem como uma solução prática para facilitar a recolha e a gestão do consentimento do utilizador, assegurando a conformidade com estas legislações. No entanto, enquanto as \acrshort{cmp}s oferecem mecanismos para gerir o consentimento, existem limitações em termos de transparência e auditabilidade.
 
 
-\section{\acrfull{cmp}}
+\section{\texorpdfstring{\acrfull{cmp}}{CMP}}
 
 As \acrfull{cmp} desempenham um papel essencial ao fornecer aos \textit{titulares dos dados} uma forma clara e explícita de consentir com o tratamento dos seus dados pessoais. Estas plataformas surgiram como resposta à crescente necessidade de garantir que os direitos dos Titulares dos Dados sejam respeitados no contexto da recolha e tratamento dos seus dados, especialmente face às exigências do \acrshort{rgpd}. A principal função das \acrshort{cmp}s é proporcionar uma solução eficaz e transparente para a obtenção, armazenamento e gestão do consentimento dos Titulares dos Dados, garantindo que as organizações cumpram as obrigações legais impostas pelas regulamentações de privacidade. Estas plataformas permitem que os Titulares dos Dados tenham controlo sobre o uso dos seus dados pessoais e são devidamente informados sobre as práticas de tratamento destes mesmos.
 
@@ -88,9 +90,9 @@ Apesar dessas soluções estarem bem posicionadas para garantir a conformidade l
 
 \subsection{Fluxo de Implementação de uma \acrshort{cmp}}
 
-Para ilustrar a necessidade destas plataformas, considere-se o seguinte cenário: um desenvolvedor cria um site e precisa garantir que o tratamento de dados dos visitantes esteja em conformidade com o \acrshort{rgpd}.
-
-O fluxo típico para garantir essa conformidade pode ser representado no diagrama de atividades da Figura~\ref{fig:diagrama-cmp}, apresentada em seguida.
+O fluxo típico para garantir essa conformidade pode ser representado no diagrama de atividades da Figura~\ref{fig:diagrama-cmp}.
+Este diagrama ilustra de forma genérica a integração de uma \acrshort{cmp} num website. 
+No âmbito da pesquisa realizada sobre soluções existentes, este fluxo foi exemplificado com a plataforma CookieChimp, utilizada apenas para efeitos de análise comparativa.
 
 \begin{figure}
 \begin{center}
@@ -150,7 +152,7 @@ O processo pode ser descrito da seguinte forma:
     \item A decisão do utilizador é registada e pode ser consultado pelo criador do site, via dashboard do \textbf{CookieChimp} como pode ser visto na figura \ref{fig:dashboard-visualizacao}.
     \begin{figure}[h]
     \begin{center}
-	\includegraphics[width=0.8\textwidth]{images/consent.png}
+	\includegraphics[width=1.0\textwidth]{images/consent.png}
     \end{center}
     \caption{Exemplo de visualização do consentimento na \textit{dashboard} do CookieChimp.}
     \label{fig:dashboard-visualizacao}
@@ -163,25 +165,13 @@ Desta forma, as \acrshort{cmp}s garantem transparência e conformidade com as re
 
 \begin{figure}[h]
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{images/banner.png}
+	\includegraphics[width=1.0\textwidth]{images/banner.png}
 \end{center}
 \caption{Exemplo de banner de consentimento exibido ao utilizador.}
 \label{fig:banner}
 \end{figure}
 
 \newpage
-
-% \section{Limitações das CMPs Existentes}
-
-% As CMPs tradicionais, embora eficientes na recolha e gestão do consentimento, têm algumas limitações notáveis, nomeadamente:
-
-% \begin{itemize}
-%     \item \textbf{Falta de transparência}: Muitas das CMPs atuais não permitem uma visão clara sobre como os dados dos utilizadores são processados ou armazenados após o consentimento. Em muitos casos, os utilizadores não sabem se o consentimento foi transmitido corretamente ao servidor ou se as suas escolhas estão a ser respeitadas.
-
-%     \item \textbf{Ausência de auditoria eficaz}: A capacidade de auditar o processo de consentimento em tempo real é limitada. As CMPs existentes geralmente não oferecem mecanismos robustos para garantir que os dados estão a ser recolhidos e processados de forma conforme às escolhas do utilizador.
-
-%     \item \textbf{Soluções fechadas}: Muitas das principais CMPs do mercado são soluções fechadas, o que dificulta a transparência sobre os seus processos internos. O código-fonte não é acessível ao público, o que impede que pesquisadores ou outras partes interessadas possam verificar a conformidade com as regulamentações de privacidade.
-% \end{itemize}
 
 \section{Limitações das \acrshort{cmp}s Existentes}
 
@@ -224,9 +214,7 @@ Por fim, destaca-se o facto de que muitas soluções disponíveis no mercado sã
 Embora estas \acrshort{cmp}s cumpram aspetos básicos de conformidade regulatória, tornam-se insuficientes para os desafios modernos de gestão de consentimento. Assim, a criação de uma solução mais robusta, aberta e transparente surge como uma necessidade premente, capaz de superar essas limitações e estabelecer novos padrões de confiança no tratamento de dados pessoais.
 
 
-\section{Trabalho Relacionado}
-
-\subsection{\acrfull{rgpd}}
+\section{\acrfull{rgpd}}
 % O \textit{Regulamento Geral de Proteção de Dados} (RGPD), ou \textit{General Data Protection Regulation} (GDPR) na sua designação original, é uma legislação da União Europeia que visa garantir uma maior proteção e privacidade dos dados pessoais dos cidadãos da UE.
 
 %O RGPD introduziu um conjunto de princípios fundamentais para o tratamento de dados, incluindo:
@@ -268,9 +256,9 @@ Por fim, uma das características mais significativas do \acrshort{rgpd} é que 
 %     \item \textbf{Automatização}: Os contratos inteligentes podem ser configurados para permitir ou restringir o acesso aos dados com base nos consentimentos fornecidos, assegurando que as regras do RGPD sejam respeitadas automaticamente.
 % \end{itemize}
 
-\subsection{\textit{{Blockchain}} e Contratos Inteligentes}
+\section{\textit{{Blockchain}} e Contratos Inteligentes}
 
-Uma abordagem promissora para a auditoria de consentimentos de dados é a utilização de \textit{blockchain} e contratos inteligentes. O \textit{blockchain} oferece um registo distribuído e imutável que pode ser usado para documentar as interações relacionadas com o consentimento, enquanto os contratos inteligentes permitem automatizar o cumprimento das condições de consentimento estabelecidas pelos utilizadores. 
+Uma abordagem promissora para a auditoria de consentimentos de dados é a utilização de \textit{blockchain} e contratos inteligentes. O \textit{blockchain} oferece um registo distribuído e imutável que pode ser usado para documentar as interações relacionadas com o consentimento, enquanto os contratos inteligentes permitem automatizar o cumprimento das condições de consentimento estabelecidas pelos utilizadores.
 
 A tecnologia \textit{blockchain} distingue-se por características como descentralização, transparência, integridade e resistência à censura. Estas propriedades tornam-na particularmente adequada para garantir que os consentimentos fornecidos pelos utilizadores sejam armazenados de forma segura e auditável. Além disso, os contratos inteligentes permitem a execução automática de regras predefinidas, garantindo que os dados só sejam partilhados ou processados conforme as permissões concedidas pelo utilizador.
 
@@ -308,5 +296,8 @@ Entre os benefícios da utilização de \textit{blockchain} na gestão de consen
 
 Dessa forma, o uso de \textit{blockchain} na gestão de consentimento representa uma abordagem inovadora que pode aumentar a confiança e garantir maior transparência no tratamento de dados pessoais.
 
+\paragraph*{Síntese do capítulo} 
 
+Neste capítulo foram analisadas as principais soluções existentes para a gestão de consentimento, com destaque para as \acrshort{cmp}s mais utilizadas no mercado. Verificou-se que, embora estas plataformas respondam às exigências básicas de conformidade com o \acrshort{rgpd}, persistem limitações significativas relacionadas com transparência, auditabilidade e abertura do código. Foram ainda discutidas abordagens complementares, nomeadamente o recurso a tecnologias como \textit{blockchain} e contratos inteligentes, que procuram colmatar algumas destas falhas e introduzir novos níveis de confiança e verificabilidade no tratamento de dados pessoais.
 
+A constatação destas limitações motiva o desenvolvimento de uma solução alternativa que combine a flexibilidade das \acrshort{cmp}s existentes com mecanismos robustos de transparência e auditoria. No capítulo seguinte será apresentada a arquitectura proposta, concebida de forma genérica e modular, capaz de responder a estes desafios e de servir como base para a implementação de soluções concretas de gestão de consentimento.

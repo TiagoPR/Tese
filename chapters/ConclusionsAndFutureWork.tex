@@ -1,6 +1,78 @@
 \chapter{Conclusões e trabalho futuro}
-Conclusões e trabalho futuro.
+\label{cap:conclusoes}
 
 \section{Conclusões}
 
+O principal objetivo definido para este trabalho consistia em conceber e prototipar um sistema de gestão de consentimento que, para além de recolher as escolhas do utilizador, permitisse também auditar o processo de forma transparente, verificável e em conformidade com o \acrshort{rgpd}. Para tal, partiu-se da análise crítica das limitações das \acrshort{cmp}s tradicionais, em particular a falta de transparência e de mecanismos de auditoria, e delineou-se uma solução que permite acrescentar estas garantias independentemente da plataforma utilizada. A proposta integra mecanismos criptográficos robustos que podem ser aplicados em qualquer CMP existente, potenciando a transparência e a verificabilidade do processo de gestão de consentimento.
+
+Este objetivo foi alcançado através da definição de uma arquitetura genérica baseada em três entidades principais (utilizador, extensão no navegador e servidor), capaz de registar consentimentos com recurso a assinaturas digitais e certificados. A implementação prática validou a viabilidade deste modelo, recorrendo a tecnologias como Node.js no servidor, Klaro.js para o banner de consentimento e uma extensão de navegador em JavaScript, suportada por bibliotecas de criptografia. O processo resultou num fluxo completo de recolha, assinatura, validação e registo de consentimentos em formato JWS, garantindo autenticidade, integridade, não repúdio e auditabilidade.
+
+Desta forma, pode afirmar-se que os objetivos delineados foram cumpridos. A solução concebida não só demonstra ser possível conjugar simplicidade de utilização com garantias fortes de segurança e confiança, como também responde diretamente ao principal problema identificado: a ausência de mecanismos que permitam ao utilizador salvaguardar-se em caso de não conformidade. Com o registo duplamente assinado em formato JWS, o utilizador dispõe de uma prova verificável do consentimento que efetivamente forneceu, podendo assim contestar eventuais falhas do lado do prestador de serviços. Este mecanismo de auditoria constitui o contributo mais relevante desta dissertação, ao assegurar que tanto utilizador como organização partilham um histórico comum, transparente e verificável.
+
+%Apesar de não ter sido integrada nesta fase, a extensão do workflow com blockchain foi também considerada, tendo sido apresentado um esboço de como poderia reforçar a imutabilidade e a confiança nos registos de consentimento. Este ponto abre caminho para trabalho futuro, assim como a avaliação em cenários mais próximos de ambientes de produção, permitindo aferir o desempenho, escalabilidade e aplicabilidade em contextos organizacionais de maior dimensão.
+
 \section{Trabalho futuro}
+
+Embora a solução apresentada tenha demonstrado a viabilidade de integrar mecanismos de auditoria e verificação de consentimentos em plataformas existentes, permanecem diversas oportunidades para evolução e aprofundamento do trabalho. Esta secção discute possíveis direções para trabalhos futuros, destacando melhorias técnicas e expansão de funcionalidades que possam aumentar a transparência, a confiabilidade e a escalabilidade do sistema. O objetivo é fornecer uma perspetiva sobre como a investigação presente pode ser prolongada, contribuindo para soluções mais robustas e abrangentes no domínio da gestão de consentimento de dados.
+
+\subsection{Complementação do fluxo com \textit{blockchain} e contratos inteligentes}
+
+A prova de conceito desenvolvida assegura a autenticidade, integridade e verificabilidade dos consentimentos através de assinaturas digitais e certificados, no entanto, uma possível extensão futura seria a integração com um \textit{ledger} público.
+
+A utilização desta tecnologia permitiria reforçar a imutabilidade dos registos, uma vez que o consentimento poderia ser armazenado de forma distribuída numa rede pública, resistente a manipulações. Neste cenário, após o consentimento ser validado e assinado por ambas as partes, o servidor poderia proceder ao registo do identificador único associado ao consentimento (ID) numa \textit{blockchain} pública, como a \textbf{Ethereum}.  
+
+Com este mecanismo, seria possível garantir que qualquer entidade interessada — incluindo o próprio utilizador — pudesse verificar, de forma independente, a existência e consistência dos consentimentos registados. O registo em \textit{blockchain} funcionaria, assim, como uma prova adicional de confiança, complementando as garantias já oferecidas pelo sistema atual.  
+
+Além disso, esta abordagem abriria caminho para auditorias independentes e mecanismos automatizados de verificação, assegurando que os consentimentos mantêm-se inalterados ao longo do tempo e promovendo uma maior transparência na gestão de dados pessoais.  
+
+A exploração desta integração com \textit{blockchain} e contratos inteligentes constitui, portanto, um rumo relevante para trabalho futuro, potenciando a robustez e a confiança da solução aqui apresentada.
+
+\subsection{Integração com keychain do sistema do cliente}
+
+Outra direção futura consiste em explorar a integração da extensão com a importação da \textit{keychain} do sistema operativo do utilizador. Esta integração permitiria gerir de forma mais segura as chaves privadas utilizadas na assinatura dos consentimentos, reduzindo o risco de exposição ou uso indevido. Além disso, garantiria maior comodidade para o utilizador, que não precisaria de gerir manualmente chaves criptográficas nem depender de soluções externas para armazenar credenciais sensíveis.
+
+\subsection{Disponibilização da solução como projeto Open-source}
+
+Um objetivo adicional é tornar a solução disponível como projeto Open-source. Esta abordagem facilitaria auditorias independentes, fomentaria a confiança por parte dos utilizadores e permitiria que a comunidade contribuísse para melhorias, correções de segurança e evolução da plataforma. A abertura do código reforçaria ainda a transparência e a auditabilidade do sistema, promovendo uma adoção mais ampla em contextos académicos, corporativos e de investigação.
+
+%\subsection{Extensão do Workflow com \textit{blockchain}}
+%
+%A utilização de \textit{blockchain} apresenta potencial para este trabalho, pois fornece evidências públicas e imutáveis que podem ser utilizadas por um \acrshort{sp} para comprovar os acordos realizados entre ele e o \textit{titular de dados} relativamente ao uso dos seus dados pessoais. Contudo, a verdadeira inovação reside na oportunidade de criar uma plataforma que permita gerir consentimentos de forma totalmente transparente, auditável e em conformidade com as regulamentações de privacidade, promovendo assim uma maior confiança nas soluções digitais.
+%
+%A auditabilidade desempenha um papel fundamental, possibilitando o rastreamento detalhado de todas as interações relacionadas com o consentimento. Para tal, a solução deve integrar tecnologias como \textit{\textit{blockchain}}, com a escolha de uma  rede que seja totalmente descentralizada (ex. \textbf{Ethereum}) para ter um registo que sabemos que não possa ter sido manipulado i.e. que permite criar registos imutáveis, assegurando a integridade dos dados e a conformidade com as escolhas dos utilizadores. Além disso, a capacidade de realizar auditorias independentes será reforçada por meio da transparência do código-fonte, uma vez que a adoção de uma abordagem \textit{open source} possibilitará inspeções externas e contribuições colaborativas.
+%
+%Ao concluir este projeto, teremos um \textit{workflow} robusto e funcional \ref{fig:diagrama-cmp-2} que, seguindo a lógica do figura \ref{fig:diagrama-cmp}, será estruturado da seguinte forma:
+%
+%\begin{figure}[h]
+%\centering
+%\begin{tikzpicture}[node distance=2cm]
+%    \node (K) [processo, below of=J] {Após a configuração da \acrshort{cmp} (Figura \ref{fig:diagrama-cmp})};
+%    \node (L) [processo, below of=K] {Servidor regista consentimento via \acrshort{api}};
+%    \node (M) [processo, below of=L] {ID de consentimento gerado e retornado (JSON)};
+%    \node (N) [processo, below of=M] {Registo na \textit{blockchain} (servidor e utilizador)};
+%    \node (O) [processo, below of=N] {Verificação de consistência dos registos};
+%    \node (P) [processo, below of=O] {Utilizador pode auditar consentimentos};
+%
+%    \draw [seta] (K) -- (L);
+%    \draw [seta] (L) -- (M);
+%    \draw [seta] (M) -- (N);
+%    \draw [seta] (N) -- (O);
+%    \draw [seta] (O) -- (P);
+%\end{tikzpicture}
+%\caption{Fluxo de implementação de uma \acrshort{cmp} com registo em \textit{blockchain}.}
+%\label{fig:diagrama-cmp-2}
+%\end{figure}
+%
+%Após a recolha do consentimento, tanto no lado do utilizador quanto no servidor (através de um pedido \acrfull{api} que devolve um JSON contendo o ID do consentimento), esse consentimento será armazenado utilizando tecnologia \textit{blockchain}. O objetivo é garantir a imutabilidade e auditabilidade dos registos de consentimento.
+%
+%O processo pode ser descrito da seguinte forma:
+%
+%\begin{enumerate}
+%    \item Após o consentimento ser dado, um pedido \acrshort{api} é feito ao servidor para registar esse evento.
+%    \item O servidor gera um identificador único (ID) para o consentimento e retorna um JSON contendo essas informações.
+%    \item Esse ID de consentimento é então registado em uma \textit{blockchain}, tanto do lado do servidor quanto do lado do utilizador.
+%    \item Uma verificação é feita para garantir que os registos de ambas as partes coincidem, i.e, os consentimentos que o utilizador permitiu são os mesmos que o \acrshort{cmp} guardou do seu lado.
+%    \item Com esse mecanismo, o utilizador pode, a qualquer momento, auditar os consentimentos dados, garantindo transparência e conformidade com o \acrshort{rgpd}.
+%\end{enumerate}
+%
+%Com essa abordagem, é possível estabelecer um sistema automatizado e confiável para que o utilizador possa verificar e auditar os seus consentimentos de maneira segura e transparente.

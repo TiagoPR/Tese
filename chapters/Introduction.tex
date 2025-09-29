@@ -1,8 +1,5 @@
 \chapter{Introdução}
-
-%Contexto, motivação, principais objetivos.
-
-\section{Contextualização}
+\label{cap:introducao}
 
 Com a digitalização em crescimento e a utilização crescente de plataformas online, a quantidade de dados pessoais recolhidos dos utilizadores tem aumentado exponencialmente. Contudo, muitos utilizadores desconhecem como esses dados são recolhidos, processados e partilhados pelos servidores. Quando um utilizador acede a um site, ele frequentemente não tem uma visão clara sobre o que acontece com os dados fornecidos nem se o servidor recebeu exatamente aquilo a que deu consentimento. Este cenário levanta questões de privacidade, especialmente no que diz respeito ao cumprimento de regulamentações como o \acrfull{rgpd} e outras legislações de privacidade.
 
@@ -14,10 +11,29 @@ A motivação para este projeto surge precisamente da necessidade de permitir a 
 
 \section{Objetivos}
 
-O objetivo deste trabalho é criar uma solução que permita não só recolher e gerir o consentimento dos utilizadores, mas também auditar o processo de forma transparente e verificável. Uma possível solução para isso é o uso de tecnologias como \textit{blockchain}, que, ao permitir registar de forma imutável as interações e escolhas dos utilizadores, pode assegurar a conformidade e aumentar a confiança no processo. O principal objetivo deste trabalho é, portanto, desenhar e prototipar um sistema que ajuda na gestão do consentimento do utilizador uma vez que se integra a recolha de consentimento com mecanismos de auditoria transparentes, utilizando tecnologias como \textit{blockchain}, de forma a criar transparência entre as decisões dos utilizadores e os dados que são armazenados nas \acrshort{cmp} e que esteja conforme o \acrshort{rgpd}.
+O objetivo deste trabalho é criar uma solução que permita não só recolher e gerir o consentimento dos utilizadores, mas também auditar o processo de forma transparente e verificável. 
+Uma possível solução para isso é o uso de tecnologias como assinaturas digitais, certificados, que, ao permitir registar de forma imutável as interações e escolhas dos utilizadores, pode assegurar a conformidade e aumentar a confiança no processo. O principal objetivo deste trabalho é, portanto, desenhar e prototipar um sistema que ajuda na gestão do consentimento do utilizador uma vez que se integra a recolha de consentimento com mecanismos de auditoria transparentes, utilizando estratégias criptográficas, de forma a criar transparência entre as decisões dos utilizadores e os dados que são armazenados nas \acrshort{cmp} e que esteja conforme o \acrshort{rgpd}.
 
-Para atingir este objetivo, será realizada inicialmente uma revisão de literatura sobre \acrshort{cmp}s, \acrshort{rgpd} e a utilização de \textit{blockchain} para auditoria de consentimento e integração de contratos inteligentes. Em seguida, proceder-se-á à análise das abordagens existentes para plataformas de gestão de consentimento, identificando as suas limitações e as melhores alternativas para o nosso sistema. Com base nesta análise, será desenhado um modelo arquitetural para uma plataforma que integre auditoria transparente e registo imutável de consentimentos atráves de uma rede de \textit{blockchain} (ex. Ethereum). Posteriormente, será desenvolvido um protótipo funcional da solução proposta, garantindo a integração entre a \acrshort{cmp} e um registo \textit{blockchain}. O sistema será testado e otimizado, avaliando-se o seu desempenho, segurança e usabilidade.
+Para atingir este objetivo, será realizada inicialmente uma revisão de literatura sobre \acrshort{cmp}s, \acrshort{rgpd} e a utilização de \textit{blockchain} para auditoria de consentimento e integração de contratos inteligentes. Em seguida, proceder-se-á à análise das abordagens existentes para plataformas de gestão de consentimento, identificando as suas limitações e as melhores alternativas para o nosso sistema. Com base nesta análise, foi desenhado um modelo arquitetural para uma plataforma que integre auditoria transparente e registo imutável de consentimentos. Posteriormente, foi desenvolvido uma prova de conceita utilizando essa mesma arquitetura, com a integração um \acrshort{cmp} Open-source. O sistema foi testado e otimizado, avaliando-se o seu desempenho, segurança e usabilidade.
 
-%\section{Estrutura da dissertação}
+\section{Contribuições}
 
+As contribuições desta dissertação podem ser agrupadas em dois níveis complementares: conceptual e prático. 
 
+No plano conceptual, destaca-se o desenho de uma arquitetura genérica para a gestão de consentimento. Esta arquitetura foi concebida de forma modular e independente de tecnologias específicas, permitindo que qualquer pessoa ou organização a possa implementar segundo os seus próprios requisitos. Para reforçar a generalidade da proposta, optou-se por separar a descrição da arquitetura da implementação concreta, salientando a sua reusabilidade e extensibilidade.
+
+No plano prático, apresenta-se a proposta e a implementação de uma solução funcional que materializa a arquitetura definida. O protótipo desenvolvido baseia-se em tecnologias \textit{open-source} e integra mecanismos de assinatura digital, certificados e \textit{JSON Web Signatures} (JWS), demonstrando a viabilidade da abordagem proposta. Entre os contributos técnicos concretos incluem-se a criação de uma extensão de navegador, o desenvolvimento de um servidor, a integração com o \acrshort{cmp} \textit{open-source} Klaro.js e a gestão de certificados, garantindo que o processo de consentimento é registado de forma transparente e auditável.
+
+Em conjunto, estas contribuições oferecem não só uma abordagem para a recolha e auditoria de consentimentos, mas também uma solução prática que pode ser replicada e adaptada em diferentes contextos.
+
+\section{Estrutura da dissertação}
+
+A presente dissertação encontra-se organizada em três partes principais, compreendendo um total de seis capítulos.
+
+Na primeira parte é introduzido o problema (Capítulo~\ref{cap:introducao}), bem como a motivação, os objectivos e o estudo do trabalho relacionado, apresentando algumas das soluções existentes para problemas semelhantes (Capítulo~\ref{cap:relacionado}).
+
+A segunda parte descreve os contributos principais do trabalho, incluindo o desenho detalhado da arquitectura proposta (Capítulo~\ref{cap:arquitectura}), a implementação da solução e a respectiva análise (Capítulo~\ref{cap:implementacao}), e as conclusões gerais acompanhadas de perspectivas de trabalho futuro (Capítulo~\ref{cap:conclusoes}).
+
+A terceira parte é dedicada à avaliação, onde se discute o funcionamento e a validação da solução proposta (Capítulo~\ref{cap:avaliacao}).
+
+Por fim, os apêndices apresentam material de apoio, detalhes complementares dos resultados experimentais, listagens de código relevante e documentação das ferramentas utilizadas.

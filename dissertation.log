@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.2)  11 SEP 2025 15:01
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.2)  29 SEP 2025 03:37
  restricted system commands enabled.
  file:line:error style messages enabled.
 **dissertation.tex
@@ -1327,12 +1327,12 @@ Package hyperref Info: Link coloring ON on input line 22.
 \openout8 = dissertation.out
 \c@lstlisting=\count441
  (./dissertation.glsdefs) (./covers/Covers.tex
-<images/logos/UM.jpg, id=208, 1084.05pt x 1084.05pt>
+<images/logos/UM.jpg, id=187, 1084.05pt x 1084.05pt>
 File: images/logos/UM.jpg Graphic file (type jpg)
 <use images/logos/UM.jpg>
 Package luatex.def Info: images/logos/UM.jpg  used on input line 3.
 (luatex.def)             Requested size: 73.97716pt x 73.97246pt.
-<images/logos/EE.jpg, id=209, 1084.05pt x 1084.05pt>
+<images/logos/EE.jpg, id=188, 1084.05pt x 1084.05pt>
 File: images/logos/EE.jpg Graphic file (type jpg)
 <use images/logos/EE.jpg>
 Package luatex.def Info: images/logos/EE.jpg  used on input line 3.
@@ -1358,12 +1358,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--16
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1]
-<images/logosB/UM.jpg, id=221, 1084.05pt x 1084.05pt>
+<images/logosB/UM.jpg, id=200, 1084.05pt x 1084.05pt>
 File: images/logosB/UM.jpg Graphic file (type jpg)
 <use images/logosB/UM.jpg>
 Package luatex.def Info: images/logosB/UM.jpg  used on input line 29.
 (luatex.def)             Requested size: 73.97716pt x 73.97246pt.
-<images/logosB/EE.jpg, id=222, 1084.05pt x 1084.05pt>
+<images/logosB/EE.jpg, id=201, 1084.05pt x 1084.05pt>
 File: images/logosB/EE.jpg Graphic file (type jpg)
 <use images/logosB/EE.jpg>
 Package luatex.def Info: images/logosB/EE.jpg  used on input line 29.
@@ -1421,7 +1421,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
  (./preamble/Copyright.tex
-<images/CCBY.png, id=226, 66.2475pt x 24.09pt>
+<images/CCBY.png, id=205, 66.2475pt x 24.09pt>
 File: images/CCBY.png Graphic file (type png)
 <use images/CCBY.png>
 Package luatex.def Info: images/CCBY.png  used on input line 17.
@@ -1440,7 +1440,7 @@ Overfull \hbox (7.199pt too wide) in paragraph at lines 16--23
 [][]$\TU/lmtt/m/n/12 https://creativecommons.org/licenses/by/4.0/$[][] \TU/NewsGotT.ttf(1)/m/it/12 [Esta li-cença per-mite que out-ros dis-tribuam,
  []
 
-<images/CCBYSA.png, id=228, 66.2475pt x 24.09pt>
+<images/CCBYSA.png, id=207, 66.2475pt x 24.09pt>
 File: images/CCBYSA.png Graphic file (type png)
 <use images/CCBYSA.png>
 Package luatex.def Info: images/CCBYSA.png  used on input line 27.
@@ -1456,12 +1456,12 @@ Overfull \hbox (3.83273pt too wide) in paragraph at lines 26--33
 
 
 <./images/CCBY.png><./images/CCBYSA.png>]
-<images/CCBYND.png, id=239, 66.2475pt x 24.09pt>
+<images/CCBYND.png, id=219, 66.2475pt x 24.09pt>
 File: images/CCBYND.png Graphic file (type png)
 <use images/CCBYND.png>
 Package luatex.def Info: images/CCBYND.png  used on input line 37.
 (luatex.def)             Requested size: 66.24733pt x 24.08992pt.
-<images/CCBYNC.png, id=241, 66.2475pt x 24.09pt>
+<images/CCBYNC.png, id=221, 66.2475pt x 24.09pt>
 File: images/CCBYNC.png Graphic file (type png)
 <use images/CCBYNC.png>
 Package luatex.def Info: images/CCBYNC.png  used on input line 47.
@@ -1471,12 +1471,12 @@ Overfull \hbox (3.83273pt too wide) in paragraph at lines 46--53
 [][]$\TU/lmtt/m/n/12 https://creativecommons.org/licenses/by-[]nc/4.0/$[][] \TU/NewsGotT.ttf(1)/m/it/12 [Esta li-cença per-mite que out-ros remis-
  []
 
-<images/CCBYNCSA.png, id=243, 66.2475pt x 24.09pt>
+<images/CCBYNCSA.png, id=223, 66.2475pt x 24.09pt>
 File: images/CCBYNCSA.png Graphic file (type png)
 <use images/CCBYNCSA.png>
 Package luatex.def Info: images/CCBYNCSA.png  used on input line 57.
 (luatex.def)             Requested size: 66.24733pt x 24.08992pt.
-<images/CCBYNCND.png, id=245, 66.2475pt x 24.09pt>
+<images/CCBYNCND.png, id=225, 66.2475pt x 24.09pt>
 File: images/CCBYNCND.png Graphic file (type png)
 <use images/CCBYNCND.png>
 Package luatex.def Info: images/CCBYNCND.png  used on input line 67.
@@ -1500,7 +1500,7 @@ Package luatex.def Info: images/CCBYNCND.png  used on input line 67.
 ]
 
 LaTeX Font Warning: Font shape `TU/NewsGotT.ttf(1)/b/it' undefined
-(Font)              using `TU/NewsGotT.ttf(1)/b/n' instead on input line 13.
+(Font)              using `TU/NewsGotT.ttf(1)/b/n' instead on input line 16.
 
 
 
@@ -1512,21 +1512,19 @@ LaTeX Font Warning: Font shape `TU/NewsGotT.ttf(1)/b/it' undefined
 [8
 
 
-]
-
-[9])
+])
 \tf@toc=\write9
 
 \openout9 = dissertation.toc
 
 
-[10] (./dissertation.lof)
+[9] (./dissertation.lof)
 \tf@lof=\write10
 
 \openout10 = dissertation.lof
 
 
-[11
+[10
 
 
 ] (./dissertation.lot)
@@ -1535,7 +1533,7 @@ LaTeX Font Warning: Font shape `TU/NewsGotT.ttf(1)/b/it' undefined
 \openout11 = dissertation.lot
 
 
-[12
+[11
 
 ]
 No file dissertation.acr.
@@ -1545,31 +1543,25 @@ No file dissertation.gls.
 \openout12 = dissertation.glsdefs
 
 
-[13
+[12
 
-]
+] (./chapters/Introduction.tex
+Cap\'{\i }tulo 1.
+
 
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
-] (./chapters/Introduction.tex
-Cap\'{\i }tulo 1.
+]
 
-
-[2
-
-]) (./chapters/StateOfTheArt.tex
+[2]) (./chapters/RelatedWork.tex
 
 [3]
 Cap\'{\i }tulo 2.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrfull' on input line 67.
-
-
-Overfull \hbox (21.46646pt too wide) in paragraph at lines 71--72
+Overfull \hbox (21.46646pt too wide) in paragraph at lines 73--74
 []\TU/NewsGotT.ttf(1)/m/n/12 En-tre as soluções mais pop-u-lares encontrou-se platafor-mas como \TU/NewsGotT.ttf(1)/b/n/12 Os-ano\TU/NewsGotT.ttf(1)/m/n/12 , \TU/NewsGotT.ttf(1)/b/n/12 Cook-iebot\TU/NewsGotT.ttf(1)/m/n/12 , \TU/NewsGotT.ttf(1)/b/n/12 Tarteaucitron.js\TU/NewsGotT.ttf(1)/m/n/12 ,
  []
 
@@ -1580,18 +1572,18 @@ Overfull \hbox (21.46646pt too wide) in paragraph at lines 71--72
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 89.
+(hyperref)                removing `\acrshort' on input line 91.
 
 
 
 [5]
 
 [6]
-<images/consent.png, id=494, 1511.6475pt x 883.3pt>
+<images/consent.png, id=469, 1511.6475pt x 883.3pt>
 File: images/consent.png Graphic file (type png)
 <use images/consent.png>
-Package luatex.def Info: images/consent.png  used on input line 153.
-(luatex.def)             Requested size: 364.19667pt x 212.80501pt.
+Package luatex.def Info: images/consent.png  used on input line 155.
+(luatex.def)             Requested size: 455.24411pt x 266.0029pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1599,11 +1591,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [7]
-<images/banner.png, id=508, 693.59125pt x 606.265pt>
+<images/banner.png, id=483, 693.59125pt x 606.265pt>
 File: images/banner.png Graphic file (type png)
 <use images/banner.png>
-Package luatex.def Info: images/banner.png  used on input line 166.
-(luatex.def)             Requested size: 364.19667pt x 318.3494pt.
+Package luatex.def Info: images/banner.png  used on input line 168.
+(luatex.def)             Requested size: 455.24411pt x 397.93443pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1613,7 +1605,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [8<./images/consent.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 186.
+(hyperref)                removing `\acrshort' on input line 176.
 
 
 
@@ -1622,7 +1614,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrfull' on input line 229.
+(hyperref)                removing `\acrfull' on input line 217.
 
 
 
@@ -1631,140 +1623,125 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [12]
 
 [13]
-Overfull \hbox (4.20511pt too wide) in paragraph at lines 297--298
+Overfull \hbox (4.20511pt too wide) in paragraph at lines 285--286
 []\TU/NewsGotT.ttf(1)/m/n/12 Es-tas soluções diferem da nossa abor-dagem prin-ci-pal-mente nos seguintes as-pec-tos: en-quanto ([][]Truong
  []
 
-) (./chapters/ProblemAndChallenges.tex
 
-[14]
+
+[14]) (./chapters/Architecture.tex
+
+[15]
 Cap\'{\i }tulo 3.
 
 
-[15
+[16
+
+]
+
+[17]
+<images/swimlanes.png, id=630, 2609.75pt x 1451.4225pt>
+File: images/swimlanes.png Graphic file (type png)
+<use images/swimlanes.png>
+Package luatex.def Info: images/swimlanes.png  used on input line 60.
+(luatex.def)             Requested size: 455.24411pt x 253.1833pt.
+
+
+[18<./images/swimlanes.png>]
+
+[19]
+
+[20]) (./chapters/Solution.tex
+
+[21]
+Cap\'{\i }tulo 4.
+
+
+[22
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 27.
+(hyperref)                removing `\acrshort' on input line 17.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[16])
-
-[17]
-
-[18]
-
-[19
-
-] (./chapters/Contribution.tex
-Cap\'{\i }tulo 4.
-
-
-[20
-
-]
-
-[21]
-<images/swimlanes.png, id=692, 1304.875pt x 756.8275pt>
-File: images/swimlanes.png Graphic file (type png)
-<use images/swimlanes.png>
-Package luatex.def Info: images/swimlanes.png  used on input line 59.
-(luatex.def)             Requested size: 455.24411pt x 264.03902pt.
-
-
-[22<./images/swimlanes.png>]
 
 [23]
-
-[24]) (./chapters/Solution.tex
-
-[25]
-Cap\'{\i }tulo 5.
-
-
-[26
-
-]
-
-[27]
-
-[28]
-Overfull \hbox (5.918pt too wide) in paragraph at lines 89--90
-[]\TU/NewsGotT.ttf(1)/m/n/12 Fazer a tran-spi-lação de \TU/NewsGotT.ttf(1)/m/it/12 Mod-ern \TU/NewsGotT.ttf(1)/m/n/12 JavaScript ou Type-Script para garan-tir com-pat-i-bil-i-dade com \TU/NewsGotT.ttf(1)/m/it/12 browsers
- []
-
-
-
-[29]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 108.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 37.
  (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 
-[30]
+[24]
 
-[31]
+[25]
 
-[32] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+[26]
+Overfull \hbox (5.918pt too wide) in paragraph at lines 209--210
+[]\TU/NewsGotT.ttf(1)/m/n/12 Fazer a tran-spi-lação de \TU/NewsGotT.ttf(1)/m/it/12 Mod-ern \TU/NewsGotT.ttf(1)/m/n/12 JavaScript ou Type-Script para garan-tir com-pat-i-bil-i-dade com \TU/NewsGotT.ttf(1)/m/it/12 browsers
+ []
+
+
+
+[27] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-Overfull \hbox (18.53708pt too wide) in paragraph at lines 229--230
+Overfull \hbox (18.53708pt too wide) in paragraph at lines 240--241
 []\TU/NewsGotT.ttf(1)/m/n/12 No en-tanto, a ex-ten-são ne-ces-sita ainda de aceder ao cer-ti-fi-cado e à chave pri-vada do cliente (\TU/lmtt/m/n/12 client.crt
  []
 
 
 
-[33]
-<images/klaro_banner.png, id=868, 761.84625pt x 129.48375pt>
+[28]
+<images/klaro_banner.png, id=764, 761.84625pt x 129.48375pt>
 File: images/klaro_banner.png Graphic file (type png)
 <use images/klaro_banner.png>
-Package luatex.def Info: images/klaro_banner.png  used on input line 272.
+Package luatex.def Info: images/klaro_banner.png  used on input line 285.
 (luatex.def)             Requested size: 364.19667pt x 61.89857pt.
 
 
-[34]
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35<./images/klaro_banner.png>]
+
+
+[29]
+<images/swimlanes_solution.png, id=785, 2609.75pt x 1680.2775pt>
+File: images/swimlanes_solution.png Graphic file (type png)
+<use images/swimlanes_solution.png>
+Package luatex.def Info: images/swimlanes_solution.png  used on input line 307.
+(luatex.def)             Requested size: 455.24411pt x 293.10432pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[30<./images/klaro_banner.png>]
+
+[31<./images/swimlanes_solution.png>]) (./chapters/ConclusionsAndFutureWork.tex
+
+[32]
+
+[33]
+Cap\'{\i }tulo 5.
+
+
+[34
+
+]
+
+[35]) (./chapters/Evaluation.tex
 
 [36]
-
-[37]
 Cap\'{\i }tulo 6.
-) (./chapters/Applications.tex
+) (./dissertation.bbl
 
-[38
-
-]
-Cap\'{\i }tulo 7.
-) (./chapters/ConclusionsAndFutureWork.tex
-
-[39
+[37
 
 ]
-Cap\'{\i }tulo 8.
-) (./chapters/PlannedSchedule.tex
-
-[40
-
-]
-Cap\'{\i }tulo 9.
-
-
-[41
-
-]
-
-[42]) (./dissertation.bbl
-
-[43]
 Underfull \hbox (badness 10000) in paragraph at lines 9--12
 []\TU/NewsGotT.ttf(1)/m/n/12 User-centrics A/S.  Cook-iebot cmp tech-ni-cal doc-u-men-ta-tion, 2025.
  []
@@ -1776,48 +1753,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
 
 
-[44
+[38
 
 ])
 
-[45] (./dissertation.ind)
+[39] (./dissertation.ind)
 
-[46
+[40
 
 
 ] (./appendices/SupportWork.tex
 Ap\^endice A.
 
 
-[47
+[41
 
 ]) (./appendices/DetailsOfResults.tex
 
-[48]
+[42]
 Ap\^endice B.
 ) (./appendices/Listings.tex
 
-[49
+[43
 
 ]
 Ap\^endice C.
 ) (./appendices/Tooling.tex
 
-[50
+[44
 
 ]
 Ap\^endice D.
 ) (./covers/BackCover.tex
 
-[51
+[45
 
 
-\indexentry{\LaTeX  }{51}
-\indexentry{TeX!TeX Users Group (TUG)}{51}
-\indexentry{TeX!TeX Users Group (TUG)}{51}
+\indexentry{\LaTeX  }{45}
+\indexentry{TeX!TeX Users Group (TUG)}{45}
+\indexentry{TeX!TeX Users Group (TUG)}{45}
 ]
 
-[52
+[46
 
 ]
 
@@ -1833,20 +1810,18 @@ L3 programming layer <2025-01-18>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 0D5DCD64B058DBF40EC7C5B169543AEE;7509.
+(rerunfilecheck)             Checksum: 6ED7627B66D4073FC52BFD504C6CFEB2;7624.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47727 strings out of 475506
- 305247,1977958 words of node,token memory allocated
+ 47552 strings out of 475506
+ 305243,1977958 words of node,token memory allocated
  1026 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 disc, 4 glue, 4 kern, 20 glyph, 45 attribute, 81 glue_spec, 24 attribute_list, 2 write, 1 close, 15 pdf_action nodes
-   avail lists: 2:6523,3:803,4:962,5:7680,6:88,7:11150,8:117,9:15535,10:34,11:774
- 69046 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:6523,3:804,4:962,5:7680,6:88,7:11150,8:118,9:15535,10:34,11:774
+ 68986 multiletter control sequences out of 65536+600000
  60 fonts using 3875247 bytes
- 113i,10n,110p,2412b,1216s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-warning  (pdf backend): unreferenced destination with name 'glo:eda'
+ 113i,9n,110p,2412b,1096s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'glo:ca'
 
@@ -1870,10 +1845,10 @@ warning  (pdf backend): unreferenced destination with name 'glo:cmp'
 
 warning  (pdf backend): unreferenced destination with name 'glo:rgpd'
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf><./NewsGotT.ttf><./NewsGotTLight.ttf><./NewsGotTBold.ttf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on dissertation.pdf (69 pages, 725368 bytes).
+Output written on dissertation.pdf (62 pages, 908568 bytes).
 
-PDF statistics: 1200 PDF objects out of 1200 (max. 8388607)
- 1075 compressed objects within 11 object streams
- 414 named destinations out of 1000 (max. 131072)
- 416 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1046 PDF objects out of 1200 (max. 8388607)
+ 928 compressed objects within 10 object streams
+ 308 named destinations out of 1000 (max. 131072)
+ 376 words of extra memory for PDF output out of 10000 (max. 100000000)
 
