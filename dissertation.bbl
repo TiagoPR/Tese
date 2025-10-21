@@ -1,14 +1,31 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{25}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[ETS(2023)]{ETSI_EN_319_411_1}
+Electronic signatures and infrastructures (esi); policy and security requirements for trust service providers issuing certificates; part 1: General requirements, October 2023.
+\newblock URL \url{https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.04.01_60/en_31941101v010401p.pdf}.
+\newblock Part 1: General requirements.
+
 \bibitem[A/S(2025)]{Cookiebot2024}
 Usercentrics A/S.
 \newblock Cookiebot cmp technical documentation, 2025.
 \newblock URL \url{https://support.cookiebot.com/hc/en-us/articles/360003774494-Why-does-your-scanner-say-that-I-have-more-than-50-pages}.
+
+\bibitem[Auth0(2025)]{Auth0SigningAlgorithms}
+Auth0.
+\newblock Signing algorithms, 2025.
+\newblock URL \url{https://auth0.com/docs/get-started/applications/signing-algorithms}.
+\newblock Acedido em: 19 de Outubro de 2025.
+
+\bibitem[Brady(2020)]{ScottBrady2020}
+Scott Brady.
+\newblock Jwts: Which signing algorithm should i use?
+\newblock \url{ https://www.scottbrady.io/jose/jwts-which-signing-algorithm-should-i-use }, 2020.
+\newblock Acedido em: 19 de Outubro de 2025.
 
 \bibitem[Buterin(2014)]{buterin2014next}
 Vitalik Buterin.
@@ -31,6 +48,18 @@ Cristòfol Daudén-Esmel, Jordi Castellà-Roca, and Alexandre Viejo.
 \newblock Article 4 - definitions, 2016.
 \newblock URL \url{https://gdpr-info.eu/art-4-gdpr/}.
 \newblock General Data Protection Regulation (GDPR).
+
+\bibitem[{European Union}(2016)]{gdpr}
+{European Union}.
+\newblock {R}egulation {(EU)} 2016/679 of the {E}uropean {P}arliament and of the {C}ouncil of 27 {A}pril 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing {D}irective 95/46/ {EC} ({G}eneral {D}ata {P}rotection {R}egulation), 2016.
+\newblock URL \url{https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679}.
+\newblock Official Journal of the European Union, L 119/1.
+
+\bibitem[Frank(2018)]{Frank2018}
+Fabian Frank.
+\newblock Consent management on the ethereum blockchain.
+\newblock Thesis, University of Twente, Enschede, October 2018.
+\newblock URL \url{https://purl.utwente.nl/essays/76745}.
 
 \bibitem[Jones et~al.(2015)Jones, Bradley, and Sakimura]{rfc7515}
 Michael~B. Jones, John Bradley, and Nat Sakimura.
@@ -60,11 +89,27 @@ Satoshi Nakamoto.
 \newblock \emph{White Paper}, 2008.
 \newblock URL \url{https://bitcoin.org/bitcoin.pdf}.
 
+\bibitem[of~Standards and Technology()]{NISTMAC}
+National~Institute of~Standards and Technology.
+\newblock Glossary: Message authentication code (mac).
+\newblock \url{ https://csrc.nist.gov/glossary/term/message_authentication_code }.
+\newblock Acedido em: 19 de Outubro de 2025.
+
 \bibitem[{Osano}(2025)]{osano}
 {Osano}.
 \newblock Osano - data privacy platform, 2025.
 \newblock URL \url{https://docs.osano.com/hc/en-us/articles/22472101620756-Osano-Cookies}.
 \newblock Acesso em: 07 fev. 2025.
+
+\bibitem[Ramos and Silva(2019)]{ramos2019privacy}
+Luis Felipe~M Ramos and Jo{\~a}o Marco~C Silva.
+\newblock Privacy and data protection concerns regarding the use of blockchains in smart cities.
+\newblock In \emph{Proceedings of the 12th international conference on theory and practice of electronic governance}, pages 342--347, 2019.
+
+\bibitem[Ribeiro et~al.(2025)Ribeiro, Fonte, Ramos, and Silva]{ribeiro2025assessing}
+Diogo Ribeiro, V{\'\i}tor Fonte, Luis~Felipe Ramos, and Jo{\~a}o~Marco Silva.
+\newblock Assessing the information security posture of online public services worldwide: Technical insights, trends, and policy implications.
+\newblock \emph{Government Information Quarterly}, 42\penalty0 (2):\penalty0 102031, 2025.
 
 \bibitem[Santos et~al.(2021)Santos, Nouwens, Toth, Bielova, and Roca]{Santos2021}
 Cristiana Santos, Midas Nouwens, Michael Toth, Nataliia Bielova, and Vincent Roca.

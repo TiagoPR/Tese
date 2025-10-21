@@ -48,11 +48,7 @@
 \listoftables
 \clearpage
 
-% Acronyms
-\printglossary[type=\acronymtype,nonumberlist, title={Acrónimos}]
-
-% Glossary
-\printglossary[title={Glossário}, nonumberlist]
+% garantir que definicao de acronomimos aparecem na primeira vez
 
 \newacronym{rgpd}{RGPD}{Regulamento Geral de Proteção de Dados}
 
@@ -73,6 +69,14 @@
 \newacronym{api}{API}{\textit{Application Programming Interface}}
 
 \newacronym{ca}{CA}{\textit{Certificate Authority}}
+
+\newacronym{ccpa}{CCPA}{\textit{California Privacy Rights Act}}
+
+% Acronyms
+\printglossary[type=\acronymtype,nonumberlist, title={Acrónimos}]
+
+% Glossary
+\printglossary[title={Glossário}, nonumberlist]
 
 \cleardoublepage
 \pagenumbering{arabic}
@@ -103,9 +107,9 @@
 \part{Apêndices}
 
 \input{appendices/SupportWork}
-\input{appendices/DetailsOfResults}
-\input{appendices/Listings}
-\input{appendices/Tooling}
+%\input{appendices/DetailsOfResults}
+%\input{appendices/Listings}
+%\input{appendices/Tooling}
 
 \input{covers/BackCover}
 

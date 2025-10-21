@@ -1,76 +1,15 @@
-%\chapter{Estado da arte}
-%
-%Estado da arte revisto; trabalho relacionado.
-%
-%\section{Citações}
-%Exemplo de uma citação: \cite{GRM97}, cf. esta entrada em \texttt{dissertation.bib}.
-%Outra forma de citar \citep{KeR88}.
-%
-%\section{Expressões matemáticas}
-%A equivalência massa-energia é descrita pela famosa equação
-%\begin{equation}
-%E=mc^2
-%\end{equation}
-%descoberta em 1905 por Albert Einstein.
-%Em unidades naturais ($c = 1$), a fórmula expressa a identidade
-%\[
-%E=m
-%\]
-%
-%\section{Notas de rodapé}
-%Este é um exemplo de uma nota de rodapé\footnote{The quick brown fox jumps over the lazy dog.}.
-%
-%\section{Acrónimos e Glossário}
-%\newacronym{gcd}{MDC}{
-%Máximo Divisor Comum}
-%\newacronym{lcm}{MMC}{Mínimo múltiplo comum}
-%\newglossaryentry{maths}
-%{
-%    name=matemática,
-%    description={Matemática é o que os matemáticos fazem}
-%}
-%\newglossaryentry{latex}
-%{
-%    name=latex,
-%    description={É uma linguagem especialmente adequada para
-%documentos científicos}
-%}
-%\newglossaryentry{formula}
-%{
-%    name=fórmula,
-%    description={Expressão matemática}
-%}
-%
-%Dado um conjunto de números, existem métodos elementares para calcular
-%seu \acrlong{gcd}, que é abreviado como \acrshort{gcd}. Este processo
-%é semelhante ao usado para o \acrfull{lcm}.
-%
-%O \Gls{latex} é especialmente adequado
-%para documentos que incluam \gls{maths}. \Glspl{formula} são corretamente e facilmente renderizados a partir do momento que nos habituamos aos comandos.
-%
-%\section{Índice}
-%
-%Neste exemplo, várias palavras-chave\index{palavras-chave} importantes serão usadas pelo que merecem aparecer no Índice\index{Índice}.
-%
-%Os termos no índice também podem ser aninhados \index{Índice!aninhados}.
-%
-%Cf. o ficheiro \texttt{dissertation.bib} para ver algumas definições como \uminho{UMinho}.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\chapter{Trabalho Relacionado}
 \label{cap:relacionado}
+\chapter{Trabalho Relacionado}
 
 %Estado da arte revisto; trabalho relacionado.
-A gestão de consentimento é um dos principais desafios no tratamento de dados pessoais, especialmente face ao crescimento exponencial da digitalização e às regulamentações como o \acrshort{rgpd}. 
+A gestão de consentimento é um dos principais desafios no tratamento de dados pessoais, especialmente face ao crescimento exponencial da digitalização e às regulamentações como o \acrshort{rgpd} \citep{gdpr}.
 As \acrshort{cmp}s surgem como uma solução prática para facilitar a recolha e a gestão do consentimento do utilizador, assegurando a conformidade com estas legislações. No entanto, enquanto as \acrshort{cmp}s oferecem mecanismos para gerir o consentimento, existem limitações em termos de transparência e auditabilidade.
-
 
 \section{\texorpdfstring{\acrfull{cmp}}{CMP}}
 
-As \acrfull{cmp} desempenham um papel essencial ao fornecer aos \textit{titulares dos dados} uma forma clara e explícita de consentir com o tratamento dos seus dados pessoais. Estas plataformas surgiram como resposta à crescente necessidade de garantir que os direitos dos Titulares dos Dados sejam respeitados no contexto da recolha e tratamento dos seus dados, especialmente face às exigências do \acrshort{rgpd}. A principal função das \acrshort{cmp}s é proporcionar uma solução eficaz e transparente para a obtenção, armazenamento e gestão do consentimento dos Titulares dos Dados, garantindo que as organizações cumpram as obrigações legais impostas pelas regulamentações de privacidade. Estas plataformas permitem que os Titulares dos Dados tenham controlo sobre o uso dos seus dados pessoais e são devidamente informados sobre as práticas de tratamento destes mesmos.
+As \acrfull{cmp} desempenham um papel essencial ao fornecer aos \textit{titulares dos dados} uma forma clara e explícita de consentir com o tratamento dos seus dados pessoais. Estas plataformas surgiram como resposta à crescente necessidade de garantir que os direitos dos \textit{titulares dos Dados} sejam respeitados no contexto da recolha e tratamento dos seus dados, especialmente face às exigências do \acrshort{rgpd}. A principal função das \acrshort{cmp}s é proporcionar uma solução eficaz e transparente para a obtenção, armazenamento e gestão do consentimento dos Titulares dos Dados, garantindo que as organizações cumpram as obrigações legais impostas pelas regulamentações de privacidade. Estas plataformas permitem que os Titulares dos Dados tenham controlo sobre o uso dos seus dados pessoais e são devidamente informados sobre as práticas de tratamento destes mesmos.
 
-Entre as soluções mais populares encontrou-se plataformas como \textbf{Osano}, \textbf{Cookiebot}, \textbf{Tarteaucitron.js}, \textbf{Klaro.js} e \textbf{Consent Manager}. Cada uma destas plataformas oferece funcionalidades específicas, mas todas têm em comum o foco na conformidade com as regulamentações de privacidade, como o \acrshort{rgpd}.
+Entre as soluções mais populares encontra-se plataformas como Osano, Cookiebot, Tarteaucitron.js, Klaro.js e Consent Manager. Cada uma destas plataformas oferece funcionalidades específicas, mas todas têm em comum o foco na conformidade com as regulamentações de privacidade existentes.
 
 \begin{itemize}
     \item \textbf{Osano}: Oferece uma interface intuitiva de personalização e um sistema eficiente de gestão de preferências \cite{osano}. Inclui recursos avançados como armazenamento local de preferências e bloqueio automático de rastreamento não autorizado. Contudo, por ser uma solução proprietária, apresenta limitações na verificação do processamento de dados entre o navegador e o servidor.
@@ -78,7 +17,7 @@ Entre as soluções mais populares encontrou-se plataformas como \textbf{Osano},
     \item \textbf{Cookiebot}: Fornece uma solução robusta que analisa automaticamente até 10.000 páginas por domínio \cite{Cookiebot2024}. Implementa um sistema inteligente para detetar mudanças nos \textit{cookies} e rastreadores do site. A principal limitação 
     está na sua natureza fechada do código, que dificulta verificações independentes do funcionamento interno.
 
-    \item \textbf{Tarteaucitron.js \& Klaro.js}: São soluções de código aberto que se destacam pela flexibilidade \cite{tarteaucitron}. O Tarteaucitron.js permite extensões personalizadas e um carregamento otimizado de \textit{scripts}, enquanto o Klaro.js oferece um sistema flexível de armazenamento de preferências e suporte a múltiplos idiomas. Ambos permitem personalização completa do controlo de \textit{cookies}.
+    \item \textbf{Tarteaucitron.js \& Klaro.js}: São soluções de código aberto que se destacam pela flexibilidade \cite{tarteaucitron}. O Tarteaucitron.js permite extensões personalizadas e um carregamento otimizado de \textit{scripts}, enquanto o Klaro.js oferece um sistema flexível de armazenamento de preferências e suporte a múltiplos idiomas. Ambos permitem personalização completa do controlo dos serviços existentes como também o registo explícito do consentimento do lado cliente via cookies.
 
     \item \textbf{Consent Manager}: Utiliza uma estrutura moderna que permite sincronização instantânea das preferências do utilizador entre diferentes \textit{tabs} do navegador \cite{ConsentManager2024}. Embora ofereça recursos avançados de gestão, devido à sua natureza fechada, limita a possibilidade de auditorias independentes.
 
@@ -88,17 +27,18 @@ Entre as soluções mais populares encontrou-se plataformas como \textbf{Osano},
 
 Apesar dessas soluções estarem bem posicionadas para garantir a conformidade legal, um problema recorrente nas \acrshort{cmp}s existentes é a falta de visibilidade sobre os dados transmitidos. Os utilizadores podem não saber exatamente o que acontece com as suas informações depois de fornecerem o consentimento. Não há uma forma clara e acessível para verificar se as escolhas feitas são efetivamente respeitadas, o que levanta questões sobre a transparência e a auditoria.
 
-\subsection{Fluxo de Implementação de uma \acrshort{cmp}}
+\subsection{Fluxo de implementação de uma \acrshort{cmp}}
 
-O fluxo típico para garantir essa conformidade pode ser representado no diagrama de atividades da Figura~\ref{fig:diagrama-cmp}.
-Este diagrama ilustra de forma genérica a integração de uma \acrshort{cmp} num website. 
+O fluxo típico para um \textit{provedor de serviços} mostrar que um website esta em conformidade com os regulamentos pode ser representado no diagrama de atividades da Figura~\ref{fig:diagrama-cmp}.
+Este diagrama ilustra de forma genérica a integração de uma \acrshort{cmp} num website.
 No âmbito da pesquisa realizada sobre soluções existentes, este fluxo foi exemplificado com a plataforma CookieChimp, utilizada apenas para efeitos de análise comparativa.
 
+\label{fig:diagrama-cmp}
 \begin{figure}
 \begin{center}
     \begin{tikzpicture}[node distance=2cm]
 
-        \node (A) [inicio] {Desenvolvedor cria site};
+        \node (A) [inicio] {Desenvolvedor cria um website};
         \node (B) [processo, below of=A] {Integra \acrshort{cmp} (ex: CookieChimp)};
         \node (C) [processo, below of=B] {Configura \acrshort{cmp} e adiciona JavaScript};
         \node (D) [inicio, below of=C] {Utilizador acessa site};
@@ -130,46 +70,48 @@ No âmbito da pesquisa realizada sobre soluções existentes, este fluxo foi exe
     \end{tikzpicture}
 \end{center}
     \caption{Fluxo de implementação de uma \acrshort{cmp} num site.}
-    \label{fig:diagrama-cmp}
 \end{figure}
 
 \newpage
 
-O processo pode ser descrito da seguinte forma:
+O processo pode ser descrito da seguinte forma, detalhando os passos e as suas implicações:
 
 \begin{enumerate}
-    \item O desenvolvedor cria um site.
-    \item Para cumprir o \acrshort{rgpd}, decide integrar uma \acrshort{cmp}, como o \textbf{CookieChimp}.
-    \item Escolhe uma plataforma e configura a ferramenta escolhida, adicionando o seu código JavaScript ao site.
-    \item Quando um utilizador acessa o site, o \textit{plugin} da \acrshort{cmp} exibe um \textit{banner} (fig. \ref{fig:banner}) solicitando consentimento.
-    \item O utilizador pode:
-          \begin{itemize}
-              \item Aceitar todos os \textit{cookies} e tecnologias de rastreamento.
-              \item Recusar todos os \textit{cookies} não essenciais.
-              \item Personalizar as suas preferências, selecionando categorias específicas (ex: marketing, estatísticas, essenciais).
-          \end{itemize}
-    \item A \acrshort{cmp} armazena as preferências do utilizador e bloqueia os \textit{cookies} de terceiros até que o consentimento seja dado.
-    \item A decisão do utilizador é registada e pode ser consultado pelo criador do site, via dashboard do \textbf{CookieChimp} como pode ser visto na figura \ref{fig:dashboard-visualizacao}.
-    \begin{figure}[h]
+    \item Desenvolvedor cria um site e identifica a necessidade de conformidade: O primeiro passo no ciclo de vida do projeto web é a sua conceção e implementação. É nesta fase inicial que o desenvolvedor mapea as cookies necessárias e tecnologias de rastreamento utilizados (próprios e de terceiros) para determinar o nível de risco e as obrigações regulamentares (ex: \acrshort{rgpd}, \acrshort{ccpa}).
+    \item Integração e Escolha da \acrshort{cmp}: Para cumprir os requisitos legais de obtenção de consentimento, o desenvolvedor decide integrar uma \acrshort{cmp}, como o CookieChimp.
+    \item Configuração da \acrshort{cmp} e Adição do JavaScript: Após a escolha, o desenvolvedor configura a ferramenta para o seu domínio (definindo políticas, idioma, e aspeto do banner). O passo mais importante é a inserção de um pequeno código JavaScript fornecido pela \acrshort{cmp} no cabeçalho (\textit{header}) do site. Este script é o responsável por carregar o banner.
+    \item Acesso do Utilizador e Exibição do Banner: Quando um utilizador acessa o site, o script da \acrshort{cmp} é o primeiro a ser executado, exibindo imediatamente um banner (figura \ref{fig:banner}) solicitando o consentimento.
+    \item Decisão do Utilizador: O utilizador tem controlo sobre a sua decisão, podendo:
+
+    \begin{itemize}
+        \item Aceitar todos os cookies e tecnologias de rastreamento.
+        \item Recusar cookies não essenciais: A \acrshort{cmp} exige cookies estritamente necessários para o funcionamento básico do site (como \textit{tokens} de sessões) sejam carregados. Todos os de marketing, estatísticas ou personalização permanecem bloqueados.
+        \item Personalizar as suas preferências: O utilizador pode ligar/desligar categorias específicas de cookies (ex: marketing, estatísticas).
+    \end{itemize}
+    \item Armazenamento de Preferências e Bloqueio de Cookies: Independentemente da escolha, a \acrshort{cmp} armazena a decisão numa cookie do lado do cliente com uma referência com o qual o servidor do CookieChimp interage de maneira a conseguir obter informação dos consentimentos guardados. Esta cookie serve como prova de consentimento e evita que o banner seja exibido novamente nas visitas subsequentes durante o período de validade do consentimento (ex: 6 ou 12 meses).
+    \item Registo da Decisão (Proof of Consent): A decisão detalhada do utilizador, a data e hora do consentimento (e até o ID de sessão para auditoria) são registadas e enviadas para o CookieChimp e pode ser acedido através do dashboard do \textit{provedor de serviço}, como pode ser visto na figura \ref{fig:dashboard-visualizacao}.
+    \item Alteração de Preferências: Para cumprir o princípio de que o consentimento deve ser tão fácil de retirar quanto de dar, o utilizador pode alterar as suas preferências a qualquer momento. Isto é geralmente feito através de um botão ou link discreto, mas acessível (ex: um ícone flutuante ou link no rodapé), que reabre o banner do \acrshort{cmp}.
+\end{enumerate}
+
+
+\label{fig:dashboard-visualizacao}
+\begin{figure}[h]
     \begin{center}
 	\includegraphics[width=1.0\textwidth]{images/consent.png}
     \end{center}
     \caption{Exemplo de visualização do consentimento na \textit{dashboard} do CookieChimp.}
-    \label{fig:dashboard-visualizacao}
-    \end{figure}
-    \newpage
-    \item Se o utilizador desejar alterar as preferências, pode fazê-lo através de um botão de configuração acessível no site.
-\end{enumerate}
+\end{figure}
 
-Desta forma, as \acrshort{cmp}s garantem transparência e conformidade com as regulamentações de privacidade, permitindo que os utilizadores tenham maior controlo sobre os seus dados pessoais.
+Desta forma, as \acrshort{cmp}s transmitem transparência e conformidade com as regulamentações de privacidade aos \textit{provedores de serviço} e permitir que os utilizadores tenham escolhas sobre quais dos seus dados pessoais quer partilhar.
 
+\label{fig:banner}
 \begin{figure}[h]
 \begin{center}
 	\includegraphics[width=1.0\textwidth]{images/banner.png}
 \end{center}
 \caption{Exemplo de banner de consentimento exibido ao utilizador.}
-\label{fig:banner}
 \end{figure}
+% Tenho alguma duvida sobre a utilidade da figura
 
 \newpage
 
@@ -177,16 +119,20 @@ Desta forma, as \acrshort{cmp}s garantem transparência e conformidade com as re
 
 As \acrshort{cmp}s desempenham um papel crucial ao fornecer aos utilizadores uma forma de consentir explicitamente com o uso dos seus dados pessoais. Entre as soluções mais populares, destacam-se \textbf{Osano}, \textbf{Cookiebot}, \textbf{Tarteaucitron.js}, \textbf{Klaro.js}, \textbf{Consent Manager} e \textbf{CookieChimp}. Cada uma destas plataformas oferece funcionalidades específicas e foca-se na conformidade com regulamentações de privacidade, como o \acrshort{rgpd}. No entanto, apesar da sua importância, essas plataformas apresentam várias limitações que comprometem a transparência, a auditabilidade e a confiança no processamento de dados.
 
-Para uma gestão de consentimento mais eficiente e alinhada com as expectativas dos utilizadores e as exigências regulamentares, certas características são fundamentais. Por exemplo, a abertura do código-fonte (\textit{open source}) é uma característica valorizada, pois permite uma auditoria mais rigorosa do processo, garantindo que os utilizadores possam verificar a integridade da plataforma. Além disso, a \textit{auditabilidade} é uma qualidade essencial, uma vez que possibilita confirmar que as escolhas dos utilizadores são efetivamente respeitadas, fornecendo uma camada adicional de confiança ao assegurar que ele tem clareza sobre como as suas informações são tratadas.
+Para uma gestão de consentimento mais eficiente e alinhada com as expectativas dos utilizadores e as exigências regulamentares, certas características são fundamentais.
+Por exemplo, a capacidade de uma auditoria mais rigorosa do processo, garantindo que os utilizadores possam comprovar a integridade da plataforma.
+Além disso, a auditabilidade é uma qualidade essencial, uma vez que possibilita aos os utilizadores a possiblidade de comprovar se os seus pedidos são efetivamente respeitados, fornecendo uma camada adicional de confiança ao assegurar que ele tem como provar de como as suas informações foram guardadas sem possível repúdio.
 
-A \textit{intuitividade} da interface também é importante para garantir que os utilizadores consigam facilmente compreender e controlar as suas preferências de consentimento. Complementarmente, a \textit{personalização} das configurações de consentimento oferece maior flexibilidade, permitindo que as plataformas possam ser adaptadas a diferentes contextos organizacionais, respeitando as necessidades específicas de cada caso. Por fim, a presença de uma \textit{API RESTful} permite que a \acrshort{cmp} se integre facilmente com outros sistemas, o que é particularmente relevante em ambientes corporativos mais complexos.
+A intuitividade da interface também é importante para garantir que os utilizadores consigam facilmente compreender e controlar as suas preferências de consentimento.
+Complementarmente, a personalização das configurações de consentimento oferece maior flexibilidade, permitindo que as plataformas possam ser adaptadas a diferentes contextos organizacionais, respeitando as necessidades específicas de cada caso.
+Por fim, a presença de uma \textit{API RESTful} permite que a \acrshort{cmp} se integre facilmente com outros sistemas, o que é particularmente relevante em ambientes mais complexos.
 
-A tabela a seguir (\ref{tab:cmp-caracteristicas}) compara algumas das plataformas mais populares, destacando as suas capacidades em relação a estas características-chave e as suas limitações:
+A tabela \ref{tab:cmp-caracteristicas} compara algumas das plataformas mais populares, destacando as suas capacidades em relação a estas características-chave e as suas limitações:
 
+\label{tab:cmp-caracteristicas}
 \begin{table}[H]
 \centering
 \caption{Comparação das principais características das \acrshort{cmp}s existentes}
-\label{tab:cmp-caracteristicas}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
@@ -205,44 +151,36 @@ RESTful API            &                & X                   &                 
 
 Além das limitações específicas de cada plataforma, existem problemas mais gerais que afetam as \acrshort{cmp}s tradicionais:
 
-Primeiramente, verifica-se uma \textbf{falta de transparência} em como os dados dos utilizadores são processados e armazenados após o consentimento. Muitas plataformas não oferecem uma visão clara aos utilizadores, que frequentemente desconhecem se o consentimento foi transmitido corretamente ao servidor ou se as suas escolhas estão a ser respeitadas.
+Primeiramente, verifica-se uma falta de transparência em como os dados dos utilizadores são processados e armazenados após o consentimento. Muitas plataformas não oferecem uma visão clara aos utilizadores, que frequentemente desconhecem se o consentimento foi transmitido corretamente ao servidor ou se as suas escolhas estão a ser respeitadas.
 
-Outra limitação crítica é a \textbf{ausência de mecanismos robustos de auditoria}. As \acrshort{cmp}s existentes não permitem uma verificação em tempo real do cumprimento das escolhas do utilizador. Esta ausência torna difícil garantir que os dados recolhidos são processados de forma consistente com os regulamentos de privacidade, como o \acrshort{rgpd}.
+No domínio da gestão do consentimento, esta é também uma lacuna presente em praticamente todas as \acrshort{cmp}s. A maioria das plataformas oferece funcionalidades e estatísticas orientadas para o \textit{Provedor de Serviços}, mas do lado do utilizador não existe uma ferramenta que permita uma gestão eficiente dos consentimentos. Esta limitação impede o armazenamento e a consulta sistemática dos consentimentos estabelecidos entre ambas as entidades, comprometendo a transparência e o controlo efetivo por parte do utilizador.
 
-Por fim, destaca-se o facto de que muitas soluções disponíveis no mercado são \textbf{soluções fechadas}. Isto significa que o código-fonte não está acessível ao público, impossibilitando auditorias independentes ou personalizações técnicas por terceiros. Este aspeto não apenas limita a flexibilidade técnica, mas também reduz a confiança geral nos processos internos das plataformas.
+Com isto, outra limitação crítica é a ausência de mecanismos robustos de confiança. As \acrshort{cmp}s existentes não permitem uma verificação em tempo real do cumprimento das escolhas do utilizador. Esta ausência torna difícil garantir que os dados recolhidos são processados de forma consistente com os regulamentos de privacidade, como o \acrshort{rgpd}.
+
+Por fim, destaca-se o facto de que muitas soluções disponíveis no mercado são soluções fechadas. Isto significa que o código-fonte não está acessível ao público, impossibilitando auditorias independentes ou personalizações técnicas por terceiros. Este aspeto não apenas limita a flexibilidade técnica, mas também reduz a confiança geral nos processos internos das plataformas.
 
 Embora estas \acrshort{cmp}s cumpram aspetos básicos de conformidade regulatória, tornam-se insuficientes para os desafios modernos de gestão de consentimento. Assim, a criação de uma solução mais robusta, aberta e transparente surge como uma necessidade premente, capaz de superar essas limitações e estabelecer novos padrões de confiança no tratamento de dados pessoais.
 
 
 \section{\acrfull{rgpd}}
-% O \textit{Regulamento Geral de Proteção de Dados} (RGPD), ou \textit{General Data Protection Regulation} (GDPR) na sua designação original, é uma legislação da União Europeia que visa garantir uma maior proteção e privacidade dos dados pessoais dos cidadãos da UE.
 
-%O RGPD introduziu um conjunto de princípios fundamentais para o tratamento de dados, incluindo:
-%\begin{itemize}
-%    \item \textbf{Licitude, lealdade e transparência}: Os dados pessoais devem ser processados de forma legal, justa e transparente em relação aos titulares dos dados.
-%    \item \textbf{Limitação da finalidade}: Os dados devem ser recolhidos para finalidades específicas, explícitas e legítimas, e não processados de maneira incompatível com essas finalidades.
-%    \item \textbf{Minimização dos dados}: Apenas os dados pessoais necessários para atingir os objetivos do processamento devem ser recolhidos.
-    % \item \textbf{Limitação da conservação}: Os dados pessoais não devem ser mantidos por um período superior ao necessário para as finalidades para as quais foram recolhidos.
-%     \item \textbf{Integridade e confidencialidade}: Os dados devem ser tratados de forma segura, protegendo-os contra acesso não autorizado, perda ou destruição.
-% \end{itemize}
+O \acrshort{rgpd} é o instrumento legislativo da \acrfull{ue} que define as regras relativas à proteção das pessoas singulares no que respeita ao tratamento de dados pessoais e à livre circulação desses dados. Reconhecendo que a proteção de dados pessoais constitui um direito fundamental, o \acrshort{rgpd} visa harmonizar as legislações dos Estados-Membros, garantindo a privacidade dos cidadãos e permitindo, dentro desse quadro, a circulação segura e legal de dados no mercado interno da União Europeia.
 
-O \acrshort{rgpd} é uma legislação da \acrfull{ue} que visa garantir uma maior proteção e privacidade dos dados pessoais dos cidadãos da \acrshort{ue}.
-
-Além de estabelecer normas rigorosas para o tratamento de dados, o \acrshort{rgpd} reforça os direitos dos titulares dos dados, incluindo o direito de acesso, retificação, remoção (\textit{direito a ser esquecido}), portabilidade, limitação do tratamento e oposição. As organizações são também obrigadas a obter o consentimento explícito e informado dos utilizadores para o processamento dos seus dados pessoais. \citep{Daudén-Esmel2024}
+Além de estabelecer normas rigorosas para o tratamento de dados, o \acrshort{rgpd} reforça os direitos dos titulares dos dados, incluindo o direito de acesso, retificação, remoção (direito a ser esquecido), portabilidade, limitação do tratamento e oposição. As organizações são também obrigadas a obter o consentimento explícito e informado dos utilizadores para o processamento dos seus dados pessoais. \citep{Daudén-Esmel2024}
 
 O \acrshort{rgpd} identifica quatro intervenientes principais no seu quadro legal \citep{gdpr2016}:  
 \begin{itemize}
-    \item Titular dos Dados (\acrfull{ds}): A pessoa natural identificada ou identificável de quem as entidades podem recolher informações pessoais.  
-    \item Responsável pelo Tratamento (\acrfull{dc}): A pessoa natural ou entidade legal que determina as finalidades e os meios pelos quais os dados pessoais são processados.  
-    \item Destinatário dos Dados (\acrfull{dr}): A pessoa natural ou entidade legal para a qual os dados pessoais são divulgados (pode ser o próprio \acrshort{dc} ou um terceiro).  
-    \item Subcontratante (\acrfull{dp}): A pessoa natural ou entidade legal que processa dados pessoais em nome do \acrshort{dc}.
+    \item \textit{Titular dos Dados} (\textit{Data Subject} (\acrshort{ds})): A pessoa natural identificada ou identificável de quem as entidades podem recolher informações pessoais.  
+    \item \textit{Responsável pelo Tratamento} (\textit{Data Controller} (\acrshort{dc})): A pessoa natural ou entidade legal que determina as finalidades e os meios pelos quais os dados pessoais são processados.  
+    \item \textit{Destinatário dos Dados} (\textit{Data Recipient} (\acrshort{dr})): A pessoa natural ou entidade legal para a qual os dados pessoais são divulgados (pode ser o próprio \acrshort{dc} ou um terceiro).  
+    \item \textit{Subcontratante} (\textit{Data Processor} (\acrshort{dp})): A pessoa natural ou entidade legal que processa dados pessoais em nome do \acrshort{dc}.
 \end{itemize}
 
 O principal objetivo do \acrshort{rgpd} é garantir direitos de privacidade específicos aos titulares dos dados, assegurando que os seus dados pessoais “só podem ser recolhidos legalmente, sob condições estritas e para um propósito legítimo”. O regulamento procura devolver o controlo total sobre os dados aos seus titulares. Adicionalmente, o \acrshort{rgpd} trouxe benefícios relevantes, como o aumento da consciência sobre a segurança e proteção de dados e a capacitação dos consumidores para controlar as suas preferências e participar ativamente na preservação dos seus direitos.
 
-A conformidade com o \acrshort{rgpd} é essencial para todas as organizações que tratem dados de cidadãos da \acrshort{ue}, independentemente da sua localização geográfica. A não conformidade pode resultar em sanções severas, o que tem impulsionado o desenvolvimento de ferramentas como as \acrshort{cmp}s. Estas plataformas ajudam as organizações a cumprir os requisitos legais impostos por este regulamento, mas frequentemente enfrentam limitações em termos de transparência e auditabilidade.
+A conformidade com o \acrshort{rgpd} é obrigatória para todas as organizações que tratem dados de cidadãos da \acrshort{ue}, independentemente da sua localização geográfica. A não conformidade pode resultar em sanções severas, o que tem impulsionado o desenvolvimento de ferramentas como as \acrshort{cmp}s. Estas plataformas ajudam as organizações a cumprir os requisitos legais impostos por este regulamento, mas frequentemente enfrentam limitações em termos de transparência e auditabilidade (\cite{ribeiro2025assessing}, \cite{ramos2019privacy}).
 
-Por fim, uma das características mais significativas do \acrshort{rgpd} é que ele fornece evidências públicas e imutáveis, úteis para um \acrfull{sp} comprovar os acordos realizados entre um \textit{titular de dados} e o próprio \acrshort{sp} sobre os dados pessoais do titular. Esse aspecto reforça ainda mais a importância de adotar abordagens inovadoras e ferramentas tecnológicas que promovam maior confiança e conformidade com as normas regulatórias.
+Por fim, uma das características mais relevantes do \acrshort{rgpd} é o seu enfoque na responsabilização e transparência no tratamento de dados pessoais. O regulamento exige que os \acrfull{sp} sejam capazes de demonstrar a conformidade com as disposições legais e de documentar os acordos estabelecidos com os \textit{titulares dos dados}. Este princípio de responsabilização reforça a importância de adoptar abordagens inovadoras e ferramentas tecnológicas que promovam maior confiança, rastreabilidade e conformidade com as normas regulamentares.
 
 % \subsection{\textit{blockchain} e Contratos Inteligentes}
 
@@ -258,13 +196,13 @@ Por fim, uma das características mais significativas do \acrshort{rgpd} é que 
 
 \section{\textit{{Blockchain}} e Contratos Inteligentes}
 
-Uma abordagem promissora para a auditoria de consentimentos de dados é a utilização de \textit{blockchain} e contratos inteligentes. O \textit{blockchain} oferece um registo distribuído e imutável que pode ser usado para documentar as interações relacionadas com o consentimento, enquanto os contratos inteligentes permitem automatizar o cumprimento das condições de consentimento estabelecidas pelos utilizadores.
+Uma abordagem promissora para a auditoria de consentimentos de dados é a utilização de \textit{blockchain} e contratos inteligentes. A \textit{blockchain} oferece um registo distribuído e imutável que pode ser usado para documentar as interações relacionadas com o consentimento, enquanto os contratos inteligentes permitem automatizar a verificação e aplicação das condições definidas pelos utilizadores, garantindo que as regras definidas são cumpridas de forma autónoma e transparente.
 
-A tecnologia \textit{blockchain} distingue-se por características como descentralização, transparência, integridade e resistência à censura. Estas propriedades tornam-na particularmente adequada para garantir que os consentimentos fornecidos pelos utilizadores sejam armazenados de forma segura e auditável. Além disso, os contratos inteligentes permitem a execução automática de regras predefinidas, garantindo que os dados só sejam partilhados ou processados conforme as permissões concedidas pelo utilizador.
+A tecnologia \textit{blockchain} distingue-se por características como descentralização, transparência, integridade e imutabilidade, tornando o registo de dados resistente a alterações não autorizadas e à manipulação por qualquer entidade central. Estas propriedades tornam-na particularmente adequada para garantir que os consentimentos fornecidos pelos utilizadores sejam armazenados de forma segura e auditável. Além disso, os contratos inteligentes permitem a execução automática de regras predefinidas, garantindo que os dados só sejam partilhados ou processados conforme as permissões concedidas pelo utilizador.
 
 O conceito de \textit{blockchain} foi inicialmente popularizado com o surgimento do Bitcoin \citep{nakamoto2008bitcoin}, a primeira criptomoeda descentralizada. O Bitcoin utiliza \textit{blockchain} como um livro-razão público e imutável, onde todas as transações são registadas de forma segura e verificável sem a necessidade de uma entidade central. Com o tempo, novas aplicações da tecnologia \textit{blockchain} emergiram, indo além das criptomoedas e incluindo domínios como gestão de identidade digital, rastreamento de cadeias de fornecimento e, mais recentemente, gestão de consentimento de dados.
 
-Além do Bitcoin, outro marco importante na evolução da tecnologia \textit{blockchain} foi o surgimento da Ethereum \citep{buterin2014next}, que introduziu a capacidade de executar contratos inteligentes. Diferente do Bitcoin, cujo foco principal é a transferência segura de valor, a Ethereum foi projetada para suportar aplicações descentralizadas através de contratos inteligentes, permitindo que regras e condições predefinidas sejam automaticamente executadas sem necessidade de intermediários. Essas capacidades tornaram a Ethereum uma das principais plataformas para aplicações \textit{blockchain}, incluindo soluções para gestão de consentimento de dados baseadas em contratos inteligentes.
+Além do Bitcoin, outro marco importante na evolução da tecnologia \textit{blockchain} foi o surgimento da Ethereum \citep{buterin2014next}, que introduziu a capacidade de executar contratos inteligentes. Diferente do Bitcoin, cujo foco principal é a transferência segura de valor, a Ethereum foi projetada para suportar aplicações descentralizadas através de contratos inteligentes, permitindo que regras e condições predefinidas sejam automaticamente executadas sem necessidade de intermediários. Essas capacidades tornaram a Ethereum uma das principais plataformas para aplicações \textit{blockchain}, incluindo soluções para gestão de consentimento de dados baseadas em contratos inteligentes \citep{Frank2018}.
 
 Nos últimos anos, investigadores têm proposto diferentes abordagens baseadas no uso de contratos inteligentes e na tecnologia \textit{blockchain}, que oferecem características desejáveis, como transparência, rastreabilidade, não-repúdio e imutabilidade. Essas propostas podem ser classificadas de acordo com dois principais cenários:
 
@@ -282,22 +220,25 @@ Algumas das principais soluções incluem:
     \item Privacy by \textit{blockchain Design}: Uma abordagem proposta por \citep{wirth2018privacy} que foca no registo e verificação do consentimento através da \textit{blockchain}. O sistema utiliza \textit{smart contracts} especializados para gerir o ciclo de vida do consentimento, permitindo que os dados pessoais sejam armazenados \textit{off-chain} enquanto a \textit{blockchain} mantém apenas \textit{hashes} e ponteiros criptográficos dos dados (\textit{data\_pointer}). A solução implementa uma arquitetura que permite que o \textit{titular dos dados} seja notificado sempre que os seus dados são acedidos, através de um contrato inteligente que verifica a validade dos pedidos de acesso e regista todas as operações de forma transparente. Desta forma, o sistema garante que o consentimento é dado de forma específica e verificável para cada caso de uso, em vez de ser baseado em cláusulas abstratas predefinidas.
 \end{itemize}
 
-Estas soluções diferem da nossa abordagem principalmente nos seguintes aspectos: enquanto \citep{nguyen2020gdpr} implementa dois sistemas de registo separados com foco no controlo de acesso e o \citep{wirth2018privacy} centra-se na verificação do consentimento por caso de uso, onde, a nossa proposta foca-se na integração com uma \acrshort{cmp} existente (ex. CookieChimp) e na validação em tempo real do cumprimento do consentimento.
-
 Entre os benefícios da utilização de \textit{blockchain} na gestão de consentimento, destacam-se:
 
 \begin{itemize}
-    \item Transparência e Imutabilidade: O \textit{blockchain} permite o registo transparente de consentimentos, garantindo que os dados não sejam alterados ou manipulados após serem armazenados.
+    \item Transparência e Imutabilidade: Em blockchains públicas, o registo de consentimentos é transparente, permitindo que qualquer participante verifique as transações, enquanto a estrutura imutável garante que os dados não possam ser alterados ou manipulados após serem armazenados.
     \item Automatização: Os contratos inteligentes podem ser configurados para permitir ou restringir o acesso aos dados com base nos consentimentos fornecidos, assegurando que as regras do \acrshort{rgpd} sejam respeitadas automaticamente.
     \item Auditabilidade: Qualquer alteração nos consentimentos pode ser rastreada, permitindo a verificação da conformidade com a regulamentação e aumentando a confiança dos utilizadores.
     \item Descentralização: Ao eliminar a necessidade de intermediários para armazenar e gerir consentimentos, o \textit{blockchain} reduz riscos de manipulação e aumenta a segurança dos dados.
     \item Não Repúdio: Uma vez registado um consentimento no \textit{blockchain}, ele não pode ser repudiado ou modificado de forma fraudulenta, garantindo que todas as partes envolvidas possam verificar e comprovar a autenticidade do registo.
 \end{itemize}
 
-Dessa forma, o uso de \textit{blockchain} na gestão de consentimento representa uma abordagem inovadora que pode aumentar a confiança e garantir maior transparência no tratamento de dados pessoais.
+No entanto, apresenta também algumas desvantagens. Um dos principais desafios associados à utilização da \textit{blockchain} na gestão de consentimento decorre precisamente da sua transparência. Os desenvolvedores têm de considerar cuidadosamente os inconvenientes de tornar toda a informação acessível publicamente e encontrar soluções que permitam proteger os dados sensíveis. Por exemplo, dependendo da forma como este registo é armazenado, é possível rastrear os serviços que um utilizador visita, permitindo inferir os seus interesses pessoais.Para mitigar este risco, seria necessária a inclusão de uma camada criptográfica adicional, de modo a preservar o anonimato e assegurar que os dados sensíveis permanecem privados, sem comprometer a transparência e a integridade do sistema.
+Outro desafio associado em aplicações como a gestão de consentimento, prende-se com a eficiência e os custos. Cada transação não é processada por uma única unidade, mas por toda a rede, o que implica uma repetição massiva das operações e um custo significativamente superior ao de sistemas tradicionais. Para além disso, a velocidade da rede é limitada pelos mecanismos de consenso, que tendem a criar um trade-off entre descentralização e rapidez. Adicionalmente, a introdução de aplicações baseadas em \textit{blockchain} enfrenta barreiras regulatórias e legais, nomeadamente quanto à validade e enquadramento dos \textit{smart contracts}. Estes fatores devem ser ponderados cuidadosamente, de modo a justificar o valor acrescentado da tecnologia face às suas limitações operacionais e jurídicas.
 
-\paragraph*{Síntese do capítulo} 
+Contudo, o uso de \textit{blockchain} na gestão de consentimento representa uma abordagem inovadora que pode aumentar a confiança e garantir maior transparência no tratamento de dados pessoais.
 
-Neste capítulo foram analisadas as principais soluções existentes para a gestão de consentimento, com destaque para as \acrshort{cmp}s mais utilizadas no mercado. Verificou-se que, embora estas plataformas respondam às exigências básicas de conformidade com o \acrshort{rgpd}, persistem limitações significativas relacionadas com transparência, auditabilidade e abertura do código. Foram ainda discutidas abordagens complementares, nomeadamente o recurso a tecnologias como \textit{blockchain} e contratos inteligentes, que procuram colmatar algumas destas falhas e introduzir novos níveis de confiança e verificabilidade no tratamento de dados pessoais.
+ 
 
-A constatação destas limitações motiva o desenvolvimento de uma solução alternativa que combine a flexibilidade das \acrshort{cmp}s existentes com mecanismos robustos de transparência e auditoria. No capítulo seguinte será apresentada a arquitectura proposta, concebida de forma genérica e modular, capaz de responder a estes desafios e de servir como base para a implementação de soluções concretas de gestão de consentimento.
+\section{Síntese do capítulo} 
+
+Neste capítulo são analisadas as principais soluções existentes para a gestão de consentimento, com destaque para as \acrshort{cmp}s mais utilizadas no mercado. Verificou-se que, embora estas plataformas respondam às exigências básicas de conformidade com o \acrshort{rgpd}, persistem limitações significativas relacionadas com transparência, auditabilidade e abertura do código. Foram ainda discutidas abordagens complementares, nomeadamente o recurso a tecnologias como \textit{blockchain} e contratos inteligentes, que procuram colmatar algumas destas falhas e introduzir novos níveis de confiança e verificabilidade no tratamento de dados pessoais.
+
+A constatação destas limitações motiva o desenvolvimento de uma solução alternativa que combine a flexibilidade das \acrshort{cmp}s existentes com mecanismos robustos de transparência e auditoria. No capítulo seguinte é apresentada a solução proposta, concebida de forma genérica e modular, capaz de responder a estes desafios e de servir como base para a implementação de soluções concretas de gestão de consentimento.

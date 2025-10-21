@@ -1,35 +1,105 @@
-\chapter{Implementação da solução}
 \label{cap:implementacao}
+\chapter{Implementação da solução}
 
-A implementação da solução envolveu a escolha das tecnologias mais adequadas para cada uma das entidades faladas anteriormente. O \textit{back-end} do servidor foi desenvolvido em \textit{Node.js}, enquanto o website é constituído por uma página em \textit{HTML} simples, integrando um \textit{snippet} do \textit{script} de um \acrshort{cmp} Open-Source (\textit{Klaro.js}) para a apresentação do \textit{banner} de consentimento.
+Neste capítulo apresenta-se a prova de conceito da solução proposta, demonstrando a viabilidade da arquitectura definida no capítulo anterior, seguida da implementação de um protótipo funcional. O protótipo permite testar os principais componentes do sistema, as tecnologias utilizadas e o fluxo de comunicação que assegura a recolha, assinatura, validação e registo do consentimento digital. Por fim, são apresentados os resultados dos testes funcionais, que permitem avaliar se a implementação cumpre os objetivos definidos para o sistema.
+
+\section{Prova de Conceito}
+
+O objetivo é demonstrar a viabilidade técnica e conceptual da \textit{Prova de consentimento} apresentada no Capítulo~\ref{cap:arquitectura}, validando os princípios de autenticidade, integridade, não repúdio, transparência e auditabilidade sem recorrer a uma implementação completa.
+
+Para efeitos da prova de conceito, o sistema é reduzido aos componentes essenciais: o cliente, que representa o utilizador final (\acrshort{ds}), o servidor, que representa o prestador de serviços (\acrshort{sp}), e o fluxo de comunicação entre ambos. O cliente simulado é responsável por gerar o registo de consentimento e assinar digitalmente o conteúdo, criando uma prova verificável da decisão do utilizador. O servidor simulado recebe esse registo, valida a assinatura do cliente, acrescenta a sua própria assinatura e mantém um registo final verificável. O fluxo de comunicação é simplificado, permitindo validar a consistência do registo e a integridade das assinaturas sem necessidade de implementação completa de uma extensão de navegador ou interface web funcional.
+
+O fluxo conceptual inicia-se com a geração do registo de consentimento pelo cliente, contendo as decisões relativas aos serviços. O registo é então assinado digitalmente com a chave privada do cliente e enviado ao servidor, que valida a assinatura, garantindo integridade e autenticidade. Em seguida, o servidor adiciona a sua própria assinatura digital, reforçando a prova e assegurando o não repúdio. O registo final, agora assinado por ambas as partes, é armazenado ou devolvido ao cliente, que pode verificar novamente as assinaturas. Qualquer alteração posterior no registo invalida as assinaturas, garantindo verificabilidade e auditabilidade do processo.
+
+Na prova de conceito, o registo de consentimento é representado como um objeto estruturado, contendo o \textit{payload} com as decisões do utilizador, a assinatura digital do cliente e a assinatura digital do servidor. Esta abordagem demonstra que o sistema suporta múltiplas assinaturas sobre o mesmo conteúdo, conforme previsto na \textit{JSON Serialization} do JWS, assegurando verificabilidade e auditabilidade mesmo num modelo simplificado.
+
+A prova de conceito permite confirmar que é possível gerar, assinar e verificar registos de consentimento de forma independente, validando a integridade e autenticidade dos dados e assegurando o não repúdio. Além disso, evidencia que a arquitetura conceptual é flexível e pode ser posteriormente implementada num protótipo funcional com componentes reais, incluindo extensões de navegador, servidores e CMPs diferentes. Assim, esta demonstração serve como validação experimental da arquitetura, reforçando a confiança na abordagem e evidenciando os benefícios do modelo proposto.
+\section{Protótipo e testes funcionais}
+
+O \textit{back-end} do servidor foi desenvolvido em \textit{Node.js}, enquanto o website é constituído por uma página em \textit{HTML} simples, integrando um \textit{snippet} do \textit{script} de um \acrshort{cmp} Open-Source (\textit{Klaro.js}) para a apresentação do \textit{banner} de consentimento.
 Do lado do cliente, foi implementada uma extensão de navegador em JavaScript, responsável pela captura das interações do utilizador e pela execução das operações criptográficas necessárias. Embora se trate de uma extensão em JavaScript nativo, recorreu-se ao Vue.js como \textit{framework}, em conjunto com o Vite como \textit{bundler}, de modo a permitir a integração de bibliotecas externas, nomeadamente o \texttt{node-forge} para o tratamento de chaves e certificados. Adicionalmente, o processo de criação e gestão de certificados digitais foi realizado com recurso ao \textit{OpenSSL}, garantindo a relação de confiança entre cliente e servidor. O fluxo de comunicação resultante contempla as etapas de recolha, assinatura, envio, validação e registo do consentimento em ambas as entidades, assegurando a autenticidade, integridade e verificabilidade do processo.
 
-\section{Open-Source}
+\subsection{Open-Source}
 
 A recolha de consentimentos do lado do servidor apresenta-se como um desafio, tanto em termos de arquitetura como de conformidade regulatória. Este desafio é amplificado pelo facto de que a maioria das soluções disponíveis de \acrshort{cmp}s são soluções fechadas, dificultando a transparência e assim a auditabilidade dos processos.
 
-As soluções fechadas limitam a capacidade de compreender como os dados são processados e armazenados após o consentimento, dificultando a verificação independente de que as escolhas do utilizador estão a ser respeitadas. Esta falta de visibilidade cria barreiras à adoção de práticas verdadeiramente transparentes e auditáveis, essenciais para garantir a conformidade com regulamentações como o \acrshort{rgpd}.
+As soluções fechadas limitam a capacidade de compreender como os dados são processados e armazenados após o consentimento, dificultando a verificação independente de que as escolhas do utilizador estão a ser respeitadas. Esta falta de visibilidade cria barreiras à adoção de práticas verdadeiramente transparentes e auditáveis, essenciais para garantir a conformidade com regulamentações.
 
-Para alcançar este objetivo sem a necessidade da criação de um \acrshort{cmp}, a solução adota uma abordagem que combina transparência, auditabilidade e eficiência com o uso de um \acrshort{cmp} Open-source. A transparência deve ser garantida, permitindo aos utilizadores compreender exatamente como os seus dados estão a ser processados. Idealmente esta mesma interface deve permitir uma visão clara de como os dados são armazenados e utilizados, assegurando que o utilizador tem algum controlo sobre as suas escolhas, pois caso seja evidenciado que as suas escolhas não são cumpridas este mesmo utilizador tem às suas mãos a ferramenta necessária para o provar e agir sobre essa falha.
+Para alcançar este objetivo sem a necessidade da criação de um \acrshort{cmp}, a solução adota uma abordagem que combina transparência, auditabilidade e eficiência com o uso de um \acrshort{cmp} Open-source. Idealmente esta mesma interface deve permitir uma visão clara de como os dados são armazenados e utilizados, assegurando que o utilizador tem algum controlo sobre as suas escolhas, pois caso seja evidenciado que as suas escolhas não são cumpridas este mesmo utilizador tem às suas mãos a ferramenta necessária para o provar e agir sobre essa falha.
 
-Com estas características, a solução não pretende apenas abordará os desafios técnicos e regulatórios, mas também promover confiança, transparência e conformidade no tratamento de dados pessoais.
+Com estas características, a solução não pretende apenas abordar os desafios técnicos e regulatórios, mas também promover confiança, transparência e conformidade no tratamento de dados pessoais.
 
-\subsection{A Necessidade de \acrshort{cmp}s Open-Source}
 
-Uma das principais motivações deste trabalho é a necessidade de soluções mais transparentes e auditáveis. As \acrshort{cmp}s tradicionais, muitas das quais são soluções fechadas, não permitem aos utilizadores ou aos investigadores uma verificação independente de como os dados são tratados. Por outro lado, \acrshort{cmp}s Open-source oferecem a vantagem de serem transparentes e acessíveis, permitindo que o código-fonte seja inspecionado e auditado.
+\subsubsection{A Necessidade de \acrshort{cmp}s Open-Source}
 
-Plataformas Open-source como o \textbf{Klaro.js} oferecem uma maior transparência, permitindo que os desenvolvedores compreendam melhor como os dados são processados e oferecendo a possibilidade de auditar o processo de consentimento. Através do acesso ao código-fonte, os utilizadores e empresas podem verificar se a implementação está em conformidade com as regulamentações de privacidade e garantir que o consentimento dos utilizadores é gerido de forma adequada.
+Uma das principais motivações deste trabalho é a necessidade de soluções mais transparentes e auditáveis. As \acrshort{cmp}s tradicionais, muitas das quais são soluções fechadas, não permitem aos utilizadores ou aos investigadores uma verificação independente de como os consentimentos são tratados. Por outro lado, \acrshort{cmp}s Open-source oferecem a vantagem de serem transparentes, acessíveis e adaptáveis, permitindo que o código-fonte seja inspecionado, auditado e modificado para se adequar a diferentes contextos.
 
-% Embora o \textbf{CookieChimp} não seja totalmente \textit{open source}, foi escolhido para este trabalho devido à sua transparência em termos de funcionamento e pela flexibilidade que oferece para integrar e personalizar a gestão de consentimento. Apesar de não permitir uma auditoria total do código, a plataforma fornece uma interface clara e funcionalidades robustas, permitindo realizar uma possível auditoria dos consentimentos fornecidos pelo utilizador e os dados recebidos pelo servidor. Assim, torna-se uma solução prática para as necessidades específicas deste trabalho.
+Plataformas Open-source como o \textbf{Klaro.js} oferecem uma maior flexibilidade: permitem que a solução seja utilizada como base para o desenvolvimento de sistemas próprios, sem a necessidade de criar um CMP do zero. Isto reduz o esforço de implementação e facilita a integração com diferentes navegadores, serviços ou fluxos de consentimento. Para o utilizador, o benefício reside não apenas na possibilidade de verificar e auditar o funcionamento da ferramenta, mas também na garantia de que os seus consentimentos são processados de forma consistente e que a implementação pode ser adaptada para reforçar a sua privacidade e controlo sobre os dados.
 
-\section{Servidor e Website}
+\subsection{JWS}
 
-Para capturar a interação do \acrshort{ds} é disponibilizado um website, este website trata-se de um site estático feito em HTML no qual chamamos o \textit{script} de KlaroJS integrado no nosso HTML, como é comum na integração de \acrshort{cmp}s. Podemos definir quais são os nossos serviços em um ficheiro chamado \texttt{config.js} que deve estar estruturado como o exemplo disponibilizado pelo \cite{gitklaro}. Neste caso, como não têm peso quais os serviços a ser utilizados, foram mantidos os valores defaults. 
+No âmbito da gestão do consentimento, a organização e validação dos mesmos exigem um formato seguro, interoperável e verificável. Entre várias alternativas, optou-se por utilizar o \textit{JSON Web Signature} (\textit{JWS}), conforme definido no RFC 7515 \citep{rfc7515}.
+
+\subsubsection{Descrição Geral}
+
+De acordo com o RFC 7515, um \textit{JWS} representa conteúdos protegidos com assinaturas digitais ou códigos de autenticação de mensagem (MAC) \citep{NISTMAC}, usando estruturas de dados em JSON.
+
+Existem duas formas de serialização definidas:
+
+\begin{itemize}
+  \item \textit{Compact Serialization}: uma representação mais concisa, adequada a ambientes com restrições de espaço, como cabeçalhos HTTP ou parâmetros de URL.
+  \item \textit{JSON Serialization}: uma representação em JSON que permite múltiplas assinaturas ou MACs sobre o mesmo conteúdo, com maior clareza e flexibilidade.
+\end{itemize}
+
+O JWS baseia-se em três componentes principais:
+
+\begin{enumerate}
+  \item \textit{Header}: contém metadados como o algoritmo de assinatura (por exemplo, \texttt{PS256} \citep{Auth0SigningAlgorithms}
+), o tipo de objeto (por exemplo, \texttt{JWT}), e possivelmente outros parâmetros relevantes.
+  \item \textit{Payload}: o conteúdo a assinar que é codificado em Base64URL.
+  \item \textit{Signature}: o resultado da assinatura digital aplicada ao \textit{header} e \textit{payload}, garantindo integridade e autenticidade.
+\end{enumerate}
+
+\subsubsection{Aplicação ao Caso de Consentimento}
+
+No sistema implementado, o consentimento do utilizador é representado através de um JWS, com estas características específicas:
+
+\begin{itemize}
+  \item O \textit{payload} inclui informação relevante sobre o consentimento (por exemplo, serviços aceites/rejeitados).
+  \item O \textit{header} utiliza o algoritmo \texttt{PS256}, que combina RSASSA-PSS com SHA-256, tendo sido escolhido devido às suas vantagens de segurança face ao RS256. O PS256 utiliza o esquema de preenchimento probabilístico (PSS), gerando assinaturas diferentes para o mesmo \textit{header} e \textit{payload}, o que aumenta a resistência contra ataques a assinaturas determinísticas e fornece maior robustez criptográfica \citep{ScottBrady2020}.
+  \item São produzidas, pelo menos, duas assinaturas:
+    \begin{itemize}
+      \item Uma assinatura gerada pelo cliente (extensão do navegador), garantindo que foi o utilizador quem autorizou o consentimento.
+      \item Outra assinatura adicional do servidor, garantindo que o servidor valida e “assina” o consentimento final, reforçando a confiabilidade e verificabilidade.
+    \end{itemize}
+  \item A presença de múltiplas assinaturas segue o modelo da \textit{JSON Serialization} do JWS, que suporta várias assinaturas sobre o mesmo \textit{payload}.
+\end{itemize}
+
+\subsubsection{Vantagens neste contexto}
+
+Neste contexto, a utilização do JWS oferece várias vantagens. Em primeiro lugar, garante a integridade e autenticidade do consentimento, uma vez que qualquer modificação no \textit{payload} ou nas assinaturas invalida o JWS, protegendo contra manipulação. 
+Em segundo lugar, assegura o não repúdio, uma vez que as assinaturas do cliente e do servidor permitem verificar que o consentimento foi efectivamente fornecido pelo utilizador e validado pelo servidor.
+Além disso, tanto o cliente como o servidor conseguem verificar de forma independente a autenticidade do consentimento, reforçando a confiança no processo.
+Por fim, o JWS segue padrões abertos e é interoperável, o que facilita a integração com outras ferramentas e sistemas, permitindo que os registos de consentimento sejam utilizados de forma consistente em diferentes contextos e aplicações.
+
+\begin{itemize}
+  \item \textbf{Integridade e Autenticidade}: Qualquer modificação no \textit{payload} ou nas assinaturas invalida o JWS, protegendo contra manipulação.
+  \item \textbf{Não repúdio}: A assinatura do cliente impede que este negue ter dado o consentimento, sendo uma evidência legalmente relevante.
+  \item \textbf{Verificabilidade por ambas as partes}: Cliente e servidor conseguem validar, de forma independente, que o consentimento é autêntico e válido.
+  \item \textbf{Compatível com padrões e interoperável}: Facilita futuras integrações com outras ferramentas.
+\end{itemize}
+
+
+\subsection{Servidor e Website}
+
+Para capturar a interação do \acrshort{ds}, é disponibilizado um website estático em HTML, no qual se integra o \textit{script} do KlaroJS, seguindo a prática comum na implementação de \acrshort{cmp}s.
+É possível definir quais são os nossos serviços em um ficheiro chamado \texttt{config.js} que deve estar estruturado como o exemplo disponibilizado pelo \cite{gitklaro}. Neste caso, como não têm relevância quais os serviços a ser utilizados, foram mantidos os valores defaults.
 
 % adicionar ao avaliacoes?
-Podemos ver aqui um exemplo de um serviço:
+Pode-se ver um exemplo de serviço configurado (Listagem~\ref{lst:klaro-service-example}):
 
-\begin{lstlisting}[language=Javascript]
+
+\begin{lstlisting}[language=Javascript, caption={Exemplo de serviço configurado no KlaroJS}, label={lst:klaro-service-example}]
 // This is a list of third-party services that Klaro will manage for you.
 services: [
 	{
@@ -40,9 +110,10 @@ services: [
 	},
 \end{lstlisting}
 
-Este ficheiro é depois chamado no referido script anteriormente \texttt{klaro.js}, que se trata de uma complilação de tudo que compõe o \acrshort{cmp} KlaroJS. Aqui, é possível chamar o \textit{script} através de um \textit{endpoint} exposto pelo o próprio desenvolvedor da ferramenta, ou então importar para o projeto. Nesta solução, foi escolhido o segundo método para a utilização da nossa própria configuração. Sendo assim, na nossa página, só foi necessário chamar estes dois \textit{scripts} para implementar o serviço. 
+Este ficheiro é depois chamado no referido script anteriormente \texttt{klaro.js}, que se trata de uma complilação de tudo que compõe o \acrshort{cmp} KlaroJS. Aqui, é possível chamar o \textit{script} através de um \textit{endpoint} exposto pelo o próprio desenvolvedor da ferramenta, ou então importar para o projeto. Nesta solução, foi escolhido o segundo método para a utilização da configuração.
+Sendo assim só foi necessário chamar estes dois \textit{scripts} para implementar o serviço (ver Listagem~\ref{lst:klaro-integration}).
 
-\begin{lstlisting}[language=HTML]
+\begin{lstlisting}[language=HTML, caption={Integração do KlaroJS com a configuração local}, label={lst:klaro-integration}]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,13 +126,11 @@ Este ficheiro é depois chamado no referido script anteriormente \texttt{klaro.j
 ...
 \end{lstlisting}
 
-%imagem do website?
-
 Com isto, tem-se as ferramentas necessárias para ter um ponto de interação com o \acrshort{ds}.
 
 Toda a lógica de troca de consentimento e de certificados é suportada por um servidor \textit{back-end}, desenvolvido em NodeJS, que expõe dois \textit{endpoints} principais para comunicação com o cliente.
 
-O primeiro \textit{endpoint}, acessível através de um pedido \texttt{GET} em \texttt{/api/server\_certificate}, devolve o certificado público do servidor. Este certificado é utilizado pelo cliente para validar as comunicações e garantir a autenticidade das assinaturas digitais. Em caso de sucesso, o certificado é devolvido em formato \texttt{JSON}, caso contrário, o servidor responde com o respetivo erro.
+O primeiro \textit{endpoint}, acessível através de um pedido \texttt{GET} em \texttt{/api/server\_certificate}, devolve o certificado do servidor. Este certificado é utilizado pelo cliente para validar as comunicações e garantir a autenticidade das assinaturas digitais. Em caso de sucesso, o certificado é devolvido em formato \texttt{JSON}, caso contrário, o servidor responde com o respetivo erro.
 
 O segundo \textit{endpoint}, acessível através de um pedido \texttt{POST} em \texttt{/api/consent}, recebe do cliente um consentimento assinado no formato JWS. O corpo da requisição inclui a chave pública do cliente, o consentimento propriamente dito e a assinatura associada. O servidor procede então a várias operações:
 
@@ -71,175 +140,25 @@ O segundo \textit{endpoint}, acessível através de um pedido \texttt{POST} em \
     \item Resposta ao cliente — é devolvido ao cliente um objeto em formato \texttt{JSON}, contendo o JWS assinado pelo cliente e servidor e uma mensagem de confirmação. Em caso de falha, é emitida uma resposta de erro.
 \end{enumerate}
 
-%O \textit{snippet} de código seguinte ilustra a implementação desta lógica:
-%
-%\begin{lstlisting}[language=Javascript]
-%this.app.get('/api/server_certificate', (_, res) => {
-%	try {
-%		const certificate = this.serverCert;
-%		res.json(certificate);
-%		console.log('Server certificate sent to client');
-%	} catch (error) {
-%		console.error('Error sending certificate', error);
-%		res.status(500).json({ error: 'Failed to get certificate' });
-%	}
-%});
-%
-%// Process consent JWS from client
-%this.app.post('/api/consent', (req, res) => {
-%	try {
-%		console.log('Processing consent JWS...');
-%		const result = this.processClient(req.body);
-%
-%		res.json({
-%			success: true,
-%			serverSignedJWS: result.jws,
-%			message: 'JWS processed and server-signed successfully'
-%		});
-%
-%		console.log('JWS processed and server-signed');
-%	} catch (error) {
-%		console.error('Error processing JWS:', error);
-%		res.status(400).json({
-%			success: false,
-%			error: error.message
-%		});
-%	}
-%});
-%
-%processClient(clientInfo) {
-%	console.log('Received client info...');
-%
-%	// Step 1: Verify client signature
-%	this.verifyClientSignature(clientInfo.pubkey, clientInfo.consent, clientInfo.signature)
-%
-%	// Step 2: Create server-signed JWS
-%	const signedJWS = this.createSignedJWS(clientInfo);
-%	console.log('JWS created');
-%
-%	return { jws: signedJWS };
-%}
-%\end{lstlisting}
+A implementação completa dos \textit{endpoints} e da lógica de verificação e assinatura pode ser consultada no Apêndice~\ref{apendice:server-endpoints}.
 
-Deste modo, o servidor é responsável por atuar como entidade de confiança, responsável por validar as mensagens recebidas e por emitir, como resposta, um JWS assinado com a sua chave privada. Esse JWS não constitui, por si só, a conclusão do processo: é posteriormente validado pelo cliente com recurso ao certificado público obtido em \texttt{/api/server\_certificate}, confirmando a autenticidade da assinatura do servidor e a integridade/consistência do \textit{payload} antes de proceder ao registo local do consentimento.
+Deste modo, o servidor é responsável por validar as mensagens recebidas e por emitir, como resposta, um JWS assinado com a sua chave privada. Esse JWS não constitui, por si só, a conclusão do processo: é posteriormente validado pelo cliente com recurso ao certificado público obtido em \texttt{/api/server\_certificate}, confirmando a autenticidade da assinatura do servidor e a integridade/consistência do \textit{payload} antes de proceder ao registo local do consentimento.
 
-\section{JWS}
-
-No âmbito da gestão do consentimento, a organização e validação dos mesmos exigem um formato seguro, interoperável e verificável. Entre várias alternativas, optou-se por utilizar o \textit{JSON Web Signature} (\textit{JWS}), conforme definido no RFC 7515 \citep{rfc7515}.
-
-\subsection{Descrição Geral (Baseado no RFC 7515)}
-
-De acordo com o RFC 7515, um \textit{JWS} representa conteúdos protegidos com assinaturas digitais ou códigos de autenticação de mensagem (MAC), usando estruturas de dados em JSON.
-
-Existem duas formas de serialização definidas:
-
-\begin{itemize}
-  \item \textbf{Compact Serialization}: uma representação mais concisa, adequada a ambientes com restrições de espaço, como cabeçalhos HTTP ou parâmetros de URL.
-  \item \textbf{JSON Serialization}: uma representação em JSON que permite múltiplas assinaturas ou MACs sobre o mesmo conteúdo, com maior clareza e flexibilidade.
-\end{itemize}
-
-O JWS baseia-se em três componentes principais:
-
-\begin{enumerate}
-  \item \textbf{Header}: contém metadados como o algoritmo de assinatura (por exemplo, \texttt{PS256}), o tipo de objeto (por exemplo, \texttt{JWT}), e possivelmente outros parâmetros relevantes.
-  \item \textbf{Payload}: o conteúdo a assinar (neste caso, os detalhes do consentimento), que é codificado em Base64URL.
-  \item \textbf{Signature}: o resultado da assinatura digital aplicada ao \textit{header} e \textit{payload}, garantindo integridade e autenticidade.
-\end{enumerate}
-
-\subsection{Aplicação ao Caso de Consentimento}
-
-No sistema implementado, o consentimento do utilizador é representado através de um JWS, com estas características específicas:
-
-\begin{itemize}
-  \item O \textbf{payload} inclui informação relevante sobre o consentimento (por exemplo, serviços aceites/rejeitados.
-  \item O \textbf{header} utiliza o algoritmo \texttt{PS256}, que combina RSASSA-PSS com SHA-256.
-  \item São produzidas pelo menos duas assinaturas:
-    \begin{itemize}
-      \item Uma assinatura gerada pelo cliente (extensão do navegador), garantindo que foi o utilizador quem autorizou o consentimento.
-      \item Outra assinatura adicional do servidor, garantindo que o servidor valida e “assina” o consentimento final, reforçando a confiabilidade e verificabilidade.
-    \end{itemize}
-  \item Estas múltiplas assinaturas tornam o esquema equivalente à \textit{JSON Serialization} do JWS, que suporta várias assinaturas sobre o mesmo \textit{payload}.
-\end{itemize}
-
-\subsection{Vantagens neste contexto}
-
-\begin{itemize}
-  \item \textbf{Integridade e Autenticidade}: Qualquer modificação no \textit{payload} ou nas assinaturas invalida o JWS, protegendo contra manipulação.
-  \item \textbf{Não repúdio}: A assinatura do cliente impede que este negue ter dado o consentimento, sendo uma evidência legalmente relevante.
-  \item \textbf{Verificabilidade por ambas as partes}: Cliente e servidor conseguem validar, de forma independente, que o consentimento é autêntico e válido.
-  \item \textbf{Compatível com padrões e interoperável}: Facilita futuras integrações com outras ferramentas.
-\end{itemize}
-
-\section{Extensão no Cliente}
-Do lado do cliente desenvolveu-se uma extensão para o navegador, responsável pela gestão da troca de consentimentos. Esta foi implementada em JavaScript \citep{MozillaBrowserExtensions}. Inicialmente foi utilizado o \texttt{manifest v2}, dado que os testes foram realizados em \textit{Firefox}. Mais tarde, procedeu-se à migração para o \texttt{manifest v3}, o que se revelou um processo simples e sem complicações.
-
-%\begin{verbatim}
-%{
-%  "manifest_version": 3,
-%  "name": "CCH",
-%  "version": "1.0",
-%  "description": "Handles client side consent handshake",
-%  "homepage_url": "https://github.com/TiagoPR/cch",
-%  "permissions": ["scripting", "activeTab", "http://127.0.0.1/*"],
-%  "content_scripts": [
-%    {
-%      "matches": ["<all_urls>"],
-%      "js": ["dist/consent.js"],
-%      "run_at": "document_idle",
-%      "all_frames": true
-%    }
-%  ],
-%  "icons": {
-%    "48": "icons/handshake_48.png"
-%  }
-%}
-%\end{verbatim}
+\subsection{Extensão no Cliente}
+Do lado do cliente desenvolveu-se uma extensão para o navegador \textit{Firefox}, responsável pela gestão da troca de consentimentos. Esta foi implementada em JavaScript \citep{MozillaBrowserExtensions}. Inicialmente foi utilizado o \texttt{manifest v2}. O manifest é um ficheiro de configuração obrigatório em qualquer extensão de navegador, que define informações essenciais sobre a extensão, como nome, versão, permissões, scripts a executar e outros recursos necessários para o seu funcionamento. O \texttt{manifest v3} foi uma atualização do formato usado pelas extensões, focada sobretudo em reforçar a segurança e privacidade, limitando certas funcionalidades usadas por ad blockers e scripts de terceiros. No entanto, para a extensão desenvolvida a migração do v2 para o v3 não trouxe diferenças práticas significativas, uma vez que o seu funcionamento não depende das funcionalidades que foram restringidas nesta atualização.
 
 \subsubsection{Module Bundlers}
 
-Uma vez que se trata de uma aplicação em JavaScript, não é viável utilizar apenas um ficheiro de JavaScript puro para integrar outras bibliotecas. Para isso, é necessário recorrer a \textit{module bundlers}. Neste caso, como já foi referido acima, foi utilizado o Vite (ferramenta padrão do Vue.js), uma solução \textit{lightweight} que satisfaz esta necessidade. Dado que apenas JavaScript nativo não é totalmente compatível com todos os navegadores, este \textit{bundler} permite gerar o \textit{build} do nosso \textit{source code}, bem como das \textit{third-party dependencies}, de forma recursiva. As próprias \textit{dependencies} podem ter outras \textit{dependencies}, como no caso da biblioteca \texttt{node-forge}, permitindo consolidar todos os ficheiros num único output.
+Durante o desenvolvimento da extensão em JavaScript, foi necessário recorrer a um \textit{module bundler} para gerir as bibliotecas externas e garantir compatibilidade entre navegadores. Para tal, utilizou-se o Vite, ferramenta padrão do Vue.js, que simplifica a integração das dependências e a preparação do código para testes e distribuição. O Vite permitiu organizar o código e as dependências de forma eficiente, facilitando o desenvolvimento e a disponibilização da extensão.
 
-O desenvolvimento web moderno depende fortemente de \textit{module bundlers}. Estas ferramentas processam o código-fonte da aplicação e as suas \textit{dependencies}, produzindo \textit{assets} otimizados e prontos para \textit{deploy}. Ao contrário das linguagens compiladas, como C ou Go, que produzem um único executável binário, o JavaScript é interpretado dinamicamente no \textit{browser}. Isto cria desafios de compatibilidade e \textit{performance}, que os \textit{bundlers} ajudam a resolver.
+\subsection{Gestão de Certificados}
+Para a criação dos certificados, foi usada a ferramenta do OpenSSL para testes locais. Para obter estes mesmos certificados por parte do servidor e cliente, procedemos à criação de uma rootCA. Sendo assim, neste caso, ambas utilizam a mesma root CA. Os certificados utilizados na solução são do tipo \textbf{X.509 v3}. Com isto, é necessário também que cada uma das entidades tenha a sua chave privada.
 
-\subsubsection{Propósito e Funcionalidade}
+Detalhes sobre a criação dos certificados e das chaves podem ser encontrados no Apêndice~\ref{ap:certificados}.
 
-As aplicações JavaScript são frequentemente compostas por múltiplos módulos, importados utilizando o \texttt{import} ou \texttt{require}. \textit{Module bundlers}, como o Vite (usado pelo Vue por omissão), consolidam estes módulos num ou poucos ficheiros. Durante este processo, podem também:
+No entanto, a extensão necessita ainda de aceder ao certificado e à chave privada do cliente (\texttt{client.crt} e \texttt{client.key}). Estes são armazenados no \textit{local storage} do navegador e carregados pela própria extensão, como é visível na Listagem~\ref{lst:client-cert-load}.
 
-\begin{itemize}
-    \item Fazer a transpilação de \textit{Modern} JavaScript ou TypeScript para garantir compatibilidade com \textit{browsers} mais antigos;
-    \item \textit{Minify code}, reduzir o tamanho dos ficheiros para carregamento mais rápido;
-    \item \textit{Tree-shaking}, remover código não utilizado;
-    \item \textit{Bundle static assets}, como CSS, imagens e \textit{fonts}.
-\end{itemize}
-
-\subsubsection{Diretório \textit{dist}}
-
-Após o \textit{bundling}, por convenção, os ficheiros processados são normalmente colocados na pasta \texttt{dist} (\textit{distribution}). Esta pasta contém \textit{assets} prontos para produção, totalmente compilados e otimizados. Permite separar o código-fonte de desenvolvimento do \textit{output} final para \textit{deploy}, garantindo consistência e eficiência.
-
-\section{Gestão de Certificados}
-Para a criação dos certificados, foi usada a ferramenta do OpenSSL para testes locais. Para obter estes mesmos certificados por parte do servidor e cliente, procedemos à criação de uma rootCA. Sendo assim, neste caso, ambas utilizam a mesma root CA. Com isto, precisamos que cada uma das entidades tenha a sua chave privada.
-
-Criação da rootCA:
-
-\begin{lstlisting}[language=sh]
-CANAME=Uminho-RootCA
-openssl genrsa -out $CANAME.key 2048
-openssl req -x509 -new -nodes -key $CANAME.key -sha256 -days 1826 -out $CANAME.crt
-\end{lstlisting}
-
-Com isto, procedemos à criação das chaves privadas e \textit{certification requests} de ambas as entidades.
-
-\begin{lstlisting}[language=sh]
-openssl genrsa -out {server/client}.key 2048
-openssl req -new -key {server/client}.key -out {server/client}.csr
-openssl x509 -req -in {server/client}.csr -CA ca/rootCA.crt -CAkey ca/rootCA.key  -CAcreateserial -out {server/client}.crt -days 825 -sha256
-\end{lstlisting}
-
-Obtemos assim os certificados de ambas as entidades.
-
-No entanto, a extensão necessita ainda de aceder ao certificado e à chave privada do cliente (\texttt{client.crt} e \texttt{client.key}). Estes são armazenados no \textit{local storage} do navegador, sendo depois carregados pela extensão:
-
-\begin{lstlisting}[language=Javascript]
+\begin{lstlisting}[language=Javascript, caption={Carregamento do certificado e da chave privada do cliente a partir do \textit{local storage}}, label={lst:client-cert-load}]
 ...
 certPEM = localStorage.getItem("cert");
 certPEM = this.formatPem(certPEM, "CERTIFICATE");
@@ -249,13 +168,13 @@ privKey = this.formatPem(privKey, "PRIVATE KEY");
 ...
 \end{lstlisting}
 
-A integração com o módulo \texttt{node-forge} foi fundamental para o manuseamento de chaves e certificados. Mas como em extensões de navegador apenas é permitido código JavaScript nativo, foi necessário proceder à sua compilação e empacotamento. Para tal, recorreu-se a um \textit{bundler}, tendo sido escolhida a \textit{framework} VueJS \citep{VueJS}.
+A integração com o módulo \texttt{node-forge} foi utilizada para o tratamento e gestão de chaves criptográficas e certificados digitais, suportando as operações de assinatura e verificação do sistema. Mas como em extensões de navegador apenas é permitido código JavaScript nativo, foi necessário proceder à sua compilação e empacotamento. Para tal, recorreu-se a um \textit{bundler}, tendo sido escolhida a \textit{framework} VueJS \citep{VueJS}.
 
 Do lado do servidor, a gestão de chaves e certificados é simplificada através do recurso ao \texttt{node-forge}, tal como no cliente. O servidor realiza o carregamento das chaves RSA e do certificado diretamente a partir do sistema de ficheiros, extraindo os elementos necessários para validação e assinatura dos consentimentos.
 
-O seguinte \textit{snippet} demonstra a lógica implementada:
+O seguinte excerto de código (Listagem~\ref{lst:server-rsa-key-load}) demonstra a lógica implementada:
 
-\begin{lstlisting}[language=Javascript]
+\begin{lstlisting}[language=Javascript, caption={Carregamento das chaves RSA do servidor e do certificado associado}, label={lst:server-rsa-key-load}]
 loadRSASigningKeys() {
 	const certPem = fs.readFileSync('server.crt', 'utf8');
 	const cert = forge.pki.certificateFromPem(certPem);
@@ -276,20 +195,20 @@ Neste processo:
     \item O \texttt{node-forge} facilita a manipulação de certificados e a conversão entre formatos PEM e objetos manipuláveis em JavaScript.
 \end{itemize}
 
-\section{Fluxo de Consentimento}
+\subsection{Fluxo de Consentimento}
 
 O processo inicia-se quando o utilizador interage com o \textit{banner} de consentimento (aceitação ou rejeição), disponibilizado pelo \textit{Klaro.js} (Figura~\ref{fig:klarojs-banner}).
 
+\label{fig:klarojs-banner}
 \begin{figure}[h]
     \centering
 	\includegraphics[width=0.8\textwidth]{images/klaro_banner.png}
     \caption{Banner padrão do Klaro.js}
-    \label{fig:klarojs-banner}
 \end{figure}
 
 A extensão do navegador captura este evento através de um \textit{listener}, que desencadeia a função principal \texttt{processConsent}. Este processo caracteriza-se pelas seguintes etapas:
 \begin{enumerate}
-    \item Obtenção do certificado público do servidor, essencial para validar a autenticidade das mensagens recebidas.
+    \item Obtenção do certificado digital do servidor, essencial para validar a autenticidade das mensagens recebidas.
     \item Carregamento das chaves do cliente (\texttt{client.key} e \texttt{client.crt}) do \textit{local storage}.
     \item Assinatura digital do consentimento pelo cliente, criando uma evidência verificável.
     \item Envio do consentimento assinado ao servidor.
@@ -300,67 +219,27 @@ A extensão do navegador captura este evento através de um \textit{listener}, q
 
 Este fluxo garante que todas as interações são auditáveis, permitindo rastreabilidade e conformidade com requisitos legais de proteção de dados.
 
+Para maior detalhe sobre a implementação prática deste fluxo, incluindo a captura do evento de consentimento, assinatura digital, envio ao servidor e verificação do JWS, consulte o Apêndice~\ref{apendice:process-consent}, onde a função \texttt{processConsent} é apresentada na íntegra.
+
 O fluxo descrito pode ser visualizado no diagrama da Figura~\ref{fig:swimlane-solution}.
 
+\label{fig:swimlane-solution}
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=1\textwidth]{images/swimlanes_solution.png}
 \end{center}
 \caption{Diagrama do protocolo}
-\label{fig:swimlane-solution}
 \end{figure}
 
 \newpage
 
-\section{Registo do consentimento}
+\subsection{Registo do consentimento}
 
-O registo com o consentimento e as assinaturas é o resultado final do fluxo implementado: um registo digital que comprova a aceitação ou rejeição pelo utilizador de determinados serviços ou finalidades. Este registo é implementado como um \textit{JSON Web Signature} (\textit{JWS}), que encapsula:
+O registo do consentimento, juntamente com as respetivas assinaturas, constitui o resultado final do fluxo implementado. Trata-se de um registo digital que comprova a aceitação ou rejeição, pelo utilizador, de determinados serviços ou finalidades. Este registo é implementado sob a forma de um \textit{JSON Web Signature} (\textit{JWS}), que encapsula o \textit{payload} com os detalhes do consentimento do utilizador, a assinatura digital do cliente — garantindo que foi efetivamente o utilizador a autorizar — e a assinatura digital do servidor, que confirma a validação e integridade do consentimento.
 
-\begin{itemize}
-    \item O \textit{payload} contendo os detalhes do consentimento do utilizador.
-    \item A assinatura digital do cliente, garantindo que foi realmente o utilizador a autorizar.
-    \item A assinatura digital do servidor, confirmando a validação e integridade do consentimento.
-\end{itemize}
+O JWS é mantido por ambas as entidades, cliente e servidor, permitindo consultas futuras, auditoria e eventual revogação do consentimento. Este mecanismo assegura a \textit{autenticidade}, uma vez que a assinatura do cliente comprova que o consentimento foi emitido pela pessoa correta; a \textit{integridade}, já que qualquer alteração no \textit{payload} invalida as assinaturas e impede manipulação; e o \textit{não repúdio}, pois o cliente não pode negar a sua decisão devido à assinatura digital inequívoca.
 
-Ambas as entidades (cliente e servidor) mantêm este JWS, permitindo consultas futuras, auditoria e eventual revogação do consentimento. O JWS assegura:
-
-\begin{itemize}
-    \item Autenticidade — a assinatura do cliente comprova que o consentimento foi emitido pelo utilizador correto.
-    \item Integridade — alterações no \textit{payload} invalidam as assinaturas, evitando manipulação.
-    \item Não repúdio — o cliente não pode negar a sua decisão, uma vez que a assinatura digital é inequívoca.
-\end{itemize}
-
-%O \textit{snippet} seguinte ilustra como o JWS é gerado do lado do cliente e assinado pelo servidor:
-%
-%\begin{lstlisting}[language=Javascript]
-%createSignedJWS(clientInfo) {
-%	const headers = {
-%		typ: "JWT",
-%		alg: "PS256", // from JWA (RSASSA-PSS using SHA-256 and MGF1 with SHA-256)
-%	};
-%
-%	// Encode header and payload
-%	const encodedPayload = this.base64UrlEncode(JSON.stringify(clientInfo.consent));
-%
-%	// Sign with server private key
-%	const signature = this.base64UrlEncode(this.signData(clientInfo.consent));
-%
-%	const jws = {
-%		payload: encodedPayload,
-%		signatures: [
-%			{
-%				header: headers,
-%				signature: clientInfo.signature
-%			},
-%			{
-%				header: headers,
-%				signature: signature
-%			}
-%		]
-%	};
-%	return JSON.stringify(jws);
-%}
-%\end{lstlisting}
+Podemos consultar no apêndice \ref{apendice:jws-client} a implementação do JWS do lado do cliente.
 
 O JWS resultante contém dois elementos principais:
 
@@ -387,10 +266,12 @@ Um exemplo de JWS gerado é o seguinte:
 }
 \end{lstlisting}
 
-Esta estrutura assegura que tanto o cliente como o servidor possuem uma prova verificável do consentimento, permitindo auditoria, revogação ou consulta futura, garantindo a conformidade com requisitos definidos na criação deste POC (Proof of Concept). Desta forma, o mecanismo fornece uma solução robusta, segura e transparente para a gestão de consentimentos no contexto do sistema implementado.
+Esta estrutura assegura que tanto o cliente como o servidor possuem uma prova verificável do consentimento, permitindo auditoria, revogação ou consulta futura. Deste modo, o mecanismo implementado cumpre os objetivos definidos na criação desta prova de conceito, ao fornecer uma forma de registar e gerir consentimentos de forma transparente e técnica, garantindo a criação de registos verificáveis, imutáveis e não repudiáveis.
 
-\paragraph*{Síntese do capítulo}
+A solução permite não só a recolha e gestão dos consentimentos dos utilizadores, mas também possibilita auditar os dados em caso de não cumprimento, promovendo a transparência e fornecendo evidência técnica irrefutável de que as decisões dos utilizadores foram, ou não foram, respeitadas no tratamento dos dados. Embora não garanta a conformidade integral dos prestadores de serviços com regulamentos como o \acrshort{rgpd}, o sistema permite aos utilizadores demonstrar a não-conformidade em caso de violação das suas escolhas de privacidade, cumprindo assim os objetivos principais do projeto. Os testes funcionais e de desempenho descritos no Capítulo~\ref{cap:avaliacao} confirmam a viabilidade do modelo, validando o fluxo de consentimento, a criação e verificação de JWS e a robustez das assinaturas digitais.
 
-Neste capítulo foi descrita a implementação prática da solução proposta, detalhando as tecnologias selecionadas e a forma como foram integradas para concretizar a arquitectura conceptual apresentada anteriormente. Foram discutidos os diferentes componentes cliente, servidor e interface web, bem como o papel de elementos fundamentais como certificados digitais, assinaturas digitais e o formato JWS na criação de registos de consentimento auditáveis e verificáveis. Esta implementação demonstrou a viabilidade técnica da proposta e a sua adequação a um ambiente real de gestão de consentimento.
+\section{Síntese do capítulo}
+
+Neste capítulo foram apresentadas duas fases complementares da implementação da solução proposta. A prova de conceito permitiu validar a arquitetura conceptual, demonstrando a viabilidade técnica dos princípios de integridade, autenticidade, não repúdio, transparência e auditabilidade num modelo simplificado. Seguiu-se o desenvolvimento do protótipo funcional, integrando cliente, servidor e interface web, com a utilização de certificados digitais, assinaturas e o formato JWS para criar registos de consentimento auditáveis e verificáveis. Foram realizados testes funcionais e de desempenho, descritos no Capítulo~\ref{cap:avaliacao}, que confirmaram o correto funcionamento do fluxo de consentimento e a robustez das assinaturas digitais.  
 
 No capítulo seguinte são apresentadas as conclusões finais deste trabalho, destacando os principais contributos alcançados e a forma como estes respondem às limitações identificadas no trabalho relacionado. Serão igualmente discutidas as perspectivas de evolução futura, apontando caminhos para o aprofundamento e expansão da solução aqui desenvolvida.

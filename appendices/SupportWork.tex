@@ -1,5 +1,75 @@
 \chapter{Trabalho de apoio}
-Resultados auxiliares.
+
+Este capítulo apresenta o código e componentes desenvolvidos que suportam o funcionamento do sistema, incluindo implementações no lado do servidor e do cliente.
+
+\section{Implementação do Servidor}
+\label{apendice:server-endpoints}
+Este apêndice apresenta a implementação do \textit{back-end} responsável pela gestão do processo de consentimento.
+O servidor, desenvolvido em \textit{Node.js} com o \textit{framework Express}, disponibiliza dois \textit{endpoints} principais:
+um para a distribuição do certificado e outro para o processamento do consentimento assinado pelo cliente.
+
+O código seguinte demonstra a lógica central associada a estes \textit{endpoints}, incluindo:
+\begin{itemize}
+    \item Disponibilização do certificado do servidor para validação de comunicações seguras;
+    \item Receção, verificação e assinatura do consentimento submetido pelo cliente;
+    \item Geração do registo final no formato \textit{JSON Web Signature} (JWS), que comprova a integridade e autenticidade das trocas.
+\end{itemize}
+
+O fragmento de código apresentado foi simplificado para fins de legibilidade, mantendo apenas as operações essenciais do processo.
+
+\begin{lstlisting}[language=Javascript]
+this.app.get('/api/server_certificate', (_, res) => {
+	try {
+		const certificate = this.serverCert;
+		res.json(certificate);
+		console.log('Server certificate sent to client');
+	} catch (error) {
+		console.error('Error sending certificate', error);
+		res.status(500).json({ error: 'Failed to get certificate' });
+	}
+});
+
+// Process consent JWS from client
+this.app.post('/api/consent', (req, res) => {
+	try {
+		console.log('Processing consent JWS...');
+		const result = this.processClient(req.body);
+
+		res.json({
+			success: true,
+			serverSignedJWS: result.jws,
+			message: 'JWS processed and server-signed successfully'
+		});
+
+		console.log('JWS processed and server-signed');
+	} catch (error) {
+		console.error('Error processing JWS:', error);
+		res.status(400).json({
+			success: false,
+			error: error.message
+		});
+	}
+});
+
+processClient(clientInfo) {
+	console.log('Received client info...');
+
+	// Step 1: Verify client signature
+	this.verifyClientSignature(clientInfo.pubkey, clientInfo.consent, clientInfo.signature)
+
+	// Step 2: Create server-signed JWS
+	const signedJWS = this.createSignedJWS(clientInfo);
+	console.log('JWS created');
+
+	return { jws: signedJWS };
+}
+\end{lstlisting}
+
+\newpage
+
+\section{Processamento do Consentimento no Cliente}
+\label{apendice:process-consent}
+Implementação da função \texttt{processConsent}, responsável pela gestão do fluxo de consentimento do lado do cliente, incluindo a captura do evento do banner, assinatura digital do consentimento, comunicação com o servidor e verificação do JWS devolvido. Este código ilustra de forma prática como o processo descrito na Secção~\ref{fig:swimlane-solution} é concretizado na extensão do navegador.  
 
 \begin{lstlisting}[language=Javascript]
 async function processConsent(consentData) {
@@ -73,4 +143,67 @@ async function processConsent(consentData) {
 	}
 }
 \end{lstlisting}
-\label{apendice:process-consent}
+
+\newpage
+
+\section{Criação de Certificados com OpenSSL}
+\label{ap:certificados}
+
+Para efeitos de teste, foram gerados certificados e chaves privadas utilizando o OpenSSL. A criação seguiu os seguintes passos:
+
+\subsection{Criação da Root CA}
+
+\begin{lstlisting}[language=sh]
+CANAME=Uminho-RootCA
+openssl genrsa -out $CANAME.key 2048
+openssl req -x509 -new -nodes -key $CANAME.key -sha256 -days 1826 -out $CANAME.crt
+\end{lstlisting}
+
+\subsection{Criação das Chaves e Certificados do Servidor e Cliente}
+
+\begin{lstlisting}[language=sh]
+openssl genrsa -out {server/client}.key 2048
+openssl req -new -key {server/client}.key -out {server/client}.csr
+openssl x509 -req -in {server/client}.csr -CA ca/rootCA.crt -CAkey ca/rootCA.key
+-CAcreateserial -out {server/client}.crt -days 825 -sha256
+\end{lstlisting}
+
+Estes certificados foram posteriormente utilizados pela aplicação para autenticação mútua entre servidor e cliente, garantindo a segurança das comunicações.
+
+\newpage
+
+\section{Criação e Assinatura do JWS no Cliente}
+\label{apendice:jws-client}
+Implementação responsável pela criação e assinatura do \textit{JSON Web Signature} (JWS) no lado do cliente.
+O código demonstra como o consentimento do utilizador é encapsulado num objeto estruturado, assinado digitalmente com a chave privada do cliente e posteriormente validado com a chave pública do servidor.
+A implementação tem como objetivo garantir as propriedades de autenticidade, integridade e não repúdio do registo de consentimento, servindo como evidência verificável da decisão do utilizador no contexto da prova de conceito.
+
+\begin{lstlisting}[language=Javascript]
+createSignedJWS(clientInfo) {
+	const headers = {
+		typ: "JWT",
+		alg: "PS256", // from JWA (RSASSA-PSS using SHA-256 and MGF1 with SHA-256)
+	};
+
+	// Encode header and payload
+	const encodedPayload = this.base64UrlEncode(JSON.stringify(clientInfo.consent));
+
+	// Sign with server private key
+	const signature = this.base64UrlEncode(this.signData(clientInfo.consent));
+
+	const jws = {
+		payload: encodedPayload,
+		signatures: [
+			{
+				header: headers,
+				signature: clientInfo.signature
+			},
+			{
+				header: headers,
+				signature: signature
+			}
+		]
+	};
+	return JSON.stringify(jws);
+}
+\end{lstlisting}

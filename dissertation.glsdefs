@@ -334,3 +334,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ccpa}%
+{%
+name={\acronymfont {\glsentryshort {ccpa}}},%
+sort={CCPA},%
+type={acronym},%
+first={CCPA},%
+firstplural={CCPAs},%
+text={CCPA},%
+plural={CCPAs},%
+description={\textit {California Privacy Rights Act}},%
+descriptionplural={\textit {California Privacy Rights Act}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {California Privacy Rights Act}},%
+longplural={\protect \textit  {California Privacy Rights Act}s},%
+short={CCPA},%
+shortplural={CCPAs},%
+counter={page},%
+parent={},%
+%
+}%
+
