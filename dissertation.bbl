@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -9,6 +9,11 @@
 Electronic signatures and infrastructures (esi); policy and security requirements for trust service providers issuing certificates; part 1: General requirements, October 2023.
 \newblock URL \url{https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.04.01_60/en_31941101v010401p.pdf}.
 \newblock Part 1: General requirements.
+
+\bibitem[Aldred et~al.(2019)Aldred, Baal, Broda, Trumble, and Mahmoud]{Aldred2019}
+Nathaniel Aldred, Luke Baal, Graeham Broda, Steven Trumble, and Qusay~H. Mahmoud.
+\newblock Design and implementation of a blockchain-based consent management system.
+\newblock arXiv preprint arXiv:1912.09882, 2019.
 
 \bibitem[A/S(2025)]{Cookiebot2024}
 Usercentrics A/S.
@@ -77,6 +82,12 @@ Michael~B. Jones, John Bradley, and Nat Sakimura.
 Consent Manager.
 \newblock Technical implementation and architecture overview, 2025.
 \newblock URL \url{https://help.consentmanager.net/books/cmp/page/cross-device-consent-sharing}.
+
+\bibitem[Merlec et~al.(2021)Merlec, Lee, Hong, and In]{Merlec2021}
+Mpyana~Mwamba Merlec, Youn~Kyu Lee, Seng-Phil Hong, and Hoh~Peter In.
+\newblock A smart contract-based dynamic consent management system for personal data usage under gdpr.
+\newblock \emph{Sensors}, 21\penalty0 (23):\penalty0 7994, 2021.
+\newblock \doi{10.3390/s21237994}.
 
 \bibitem[Mozilla(2025)]{MozillaBrowserExtensions}
 Mozilla.

@@ -17,45 +17,45 @@ Warning--entry type for "ETSI_EN_319_411_1" isn't style-file defined
 --line 261 of file dissertation.bib
 Warning--to sort, need author or key in ETSI_EN_319_411_1
 Warning--empty year in NISTMAC
-You've used 25 entries,
+You've used 27 entries,
             2773 wiz_defined-function locations,
-            746 strings with 9733 characters,
-and the built_in function-call counts, 8990 in all, are:
-= -- 814
-> -- 420
+            761 strings with 10195 characters,
+and the built_in function-call counts, 10029 in all, are:
+= -- 899
+> -- 507
 < -- 21
-+ -- 151
-- -- 126
-* -- 584
-:= -- 1396
-add.period$ -- 92
-call.type$ -- 25
-change.case$ -- 118
-chr.to.int$ -- 25
-cite$ -- 53
-duplicate$ -- 436
-empty$ -- 818
-format.name$ -- 158
-if$ -- 1905
++ -- 180
+- -- 153
+* -- 680
+:= -- 1562
+add.period$ -- 99
+call.type$ -- 27
+change.case$ -- 133
+chr.to.int$ -- 27
+cite$ -- 57
+duplicate$ -- 473
+empty$ -- 889
+format.name$ -- 187
+if$ -- 2117
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 9
-newline$ -- 150
-num.names$ -- 96
-pop$ -- 283
+missing$ -- 10
+newline$ -- 161
+num.names$ -- 104
+pop$ -- 313
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 105
 quote$ -- 0
-skip$ -- 359
+skip$ -- 392
 stack$ -- 0
-substring$ -- 114
-swap$ -- 36
+substring$ -- 130
+swap$ -- 38
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 275
+type$ -- 297
 warning$ -- 2
-while$ -- 78
+while$ -- 85
 width$ -- 0
-write$ -- 349
+write$ -- 376
 (There were 8 warnings)

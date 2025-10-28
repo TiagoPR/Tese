@@ -384,10 +384,10 @@ INPUT ./images/klaro_banner.png
 INPUT ./images/klaro_banner.png
 INPUT ./images/swimlanes_solution.png
 INPUT ./images/swimlanes_solution.png
-INPUT ./chapters/ConclusionsAndFutureWork.tex
 INPUT ./chapters/Evaluation.tex
 INPUT ./images/cch.png
 INPUT ./images/cch.png
+INPUT ./chapters/ConclusionsAndFutureWork.tex
 INPUT ./dissertation.bbl
 INPUT ./dissertation.ind
 INPUT ./appendices/SupportWork.tex

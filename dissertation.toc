@@ -8,54 +8,55 @@
 \contentsline {section}{\numberline {1.4}Estrutura da dissertação}{3}{section.1.4}%
 \contentsline {chapter}{\numberline {2}Trabalho Relacionado}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}\acrfull {cmp}}{4}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Fluxo de implementação de uma \acrshort {cmp}}{5}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Limitações das \acrshort {cmp}s Existentes}{9}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Discussão}{10}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}\acrfull {rgpd}}{11}{section.2.3}%
-\contentsline {section}{\numberline {2.4}\textit {{Blockchain}} e Contratos Inteligentes}{12}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Síntese do capítulo}{15}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Prova de Consentimento}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Visão Geral da Arquitetura}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Componentes}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Modelo de confiança}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Certificados digitais}{19}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Assinatura Digital}{20}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Registo do consentimento}{20}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Interacção Entre Componentes}{21}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Lógica de Funcionamento}{22}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Benefícios}{22}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Síntese do capítulo}{23}{section.3.8}%
-\contentsline {chapter}{\numberline {4}Implementação da solução}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Prova de Conceito}{24}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Protótipo e testes funcionais}{25}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Open-Source}{25}{subsection.4.2.1}%
-\contentsline {subsubsection}{A Necessidade de \acrshort {cmp}s Open-Source}{26}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}JWS}{27}{subsection.4.2.2}%
-\contentsline {subsubsection}{Descrição Geral}{27}{subsection.4.2.2}%
-\contentsline {subsubsection}{Aplicação ao Caso de Consentimento}{27}{Item.16}%
-\contentsline {subsubsection}{Vantagens neste contexto}{28}{Item.16}%
-\contentsline {subsection}{\numberline {4.2.3}Servidor e Website}{29}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Extensão no Cliente}{31}{subsection.4.2.4}%
-\contentsline {subsubsection}{Module Bundlers}{31}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Gestão de Certificados}{31}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Fluxo de Consentimento}{33}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}Registo do consentimento}{34}{subsection.4.2.7}%
-\contentsline {section}{\numberline {4.3}Síntese do capítulo}{36}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Conclusões e trabalho futuro}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusões}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabalho futuro}{38}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Complementação do fluxo com \textit {blockchain} e contratos inteligentes}{38}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Integração com keychain do sistema do cliente}{39}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Disponibilização da solução como projeto Open-source}{39}{subsection.5.2.3}%
-\contentsline {chapter}{\numberline {6}Avaliação}{40}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Avaliação Funcional}{40}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Avaliação de Desempenho}{43}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Discussão dos Resultados}{43}{section.6.3}%
-\contentsline {part}{I\hspace {1em}Apêndices}{48}{part.1}%
-\contentsline {chapter}{\numberline {A}Trabalho de apoio}{49}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Implementação do Servidor}{49}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Processamento do Consentimento no Cliente}{51}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Criação de Certificados com OpenSSL}{53}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Criação da Root CA}{53}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Criação das Chaves e Certificados do Servidor e Cliente}{53}{subsection.A.3.2}%
-\contentsline {section}{\numberline {A.4}Criação e Assinatura do JWS no Cliente}{54}{section.A.4}%
+\contentsline {subsection}{\numberline {2.1.1}Fluxo de implementação de uma \acrshort {cmp}}{6}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Limitações das \acrshort {cmp}s Existentes}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Discussão}{11}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}\acrfull {rgpd}}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.4}\textit {{Blockchain}} e Contratos Inteligentes}{13}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Síntese do capítulo}{16}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Prova de Consentimento}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Visão Geral da Arquitetura}{18}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Componentes}{19}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Modelo de confiança}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Certificados digitais}{20}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Assinatura Digital}{21}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Registo do consentimento}{21}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Interacção Entre Componentes}{22}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Lógica de Funcionamento}{23}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Benefícios}{23}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Síntese do capítulo}{24}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Implementação da solução}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Prova de Conceito}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Protótipo e testes funcionais}{26}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Open-Source}{26}{subsection.4.2.1}%
+\contentsline {subsubsection}{A Necessidade de \acrshort {cmp}s Open-Source}{27}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}JWS}{28}{subsection.4.2.2}%
+\contentsline {subsubsection}{Descrição Geral}{28}{subsection.4.2.2}%
+\contentsline {subsubsection}{Aplicação ao Caso de Consentimento}{28}{Item.16}%
+\contentsline {subsubsection}{Vantagens neste contexto}{29}{Item.16}%
+\contentsline {subsection}{\numberline {4.2.3}Servidor e Website}{30}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Extensão no Cliente}{32}{subsection.4.2.4}%
+\contentsline {subsubsection}{Module Bundlers}{32}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Gestão de Certificados}{32}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Fluxo de Consentimento}{34}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Registo do consentimento}{35}{subsection.4.2.7}%
+\contentsline {section}{\numberline {4.3}Síntese do capítulo}{37}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Avaliação}{38}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Avaliação Funcional}{38}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Avaliação de Desempenho}{41}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Discussão dos Resultados}{41}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Síntese do capítulo}{42}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusões e trabalho futuro}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusões}{43}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Trabalho futuro}{44}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Complementação do fluxo com \textit {blockchain} e contratos inteligentes}{44}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Integração com keychain do sistema do cliente}{45}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Disponibilização da solução como projeto Open-source}{45}{subsection.6.2.3}%
+\contentsline {part}{I\hspace {1em}Apêndices}{49}{part.1}%
+\contentsline {chapter}{\numberline {A}Trabalho de apoio}{50}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Implementação do Servidor}{50}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Processamento do Consentimento no Cliente}{52}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Criação de Certificados com OpenSSL}{54}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Criação da Root CA}{54}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Criação das Chaves e Certificados do Servidor e Cliente}{54}{subsection.A.3.2}%
+\contentsline {section}{\numberline {A.4}Criação e Assinatura do JWS no Cliente}{55}{section.A.4}%
