@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -47,6 +47,12 @@ CookieChimp.
 Cristòfol Daudén-Esmel, Jordi Castellà-Roca, and Alexandre Viejo.
 \newblock Blockchain-based access control system for efficient and gdpr-compliant personal data management.
 \newblock \emph{Computer Communications}, 214, 2024.
+
+\bibitem[Durak et~al.(2024)Durak, Talayhan, and Vaudenay]{cryptoeprint:2024/1839}
+F.~Betül Durak, Abdullah Talayhan, and Serge Vaudenay.
+\newblock Cryptographically secure digital consent.
+\newblock Cryptology {ePrint} Archive, Paper 2024/1839, 2024.
+\newblock URL \url{https://eprint.iacr.org/2024/1839}.
 
 \bibitem[{European Parliament and Council}(2016)]{gdpr2016}
 {European Parliament and Council}.

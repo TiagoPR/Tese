@@ -1,7 +1,7 @@
 \chapter{Avaliação}
 \label{cap:avaliacao}
 
-Este capítulo apresenta a avaliação da solução implementada, tanto em termos funcionais como de desempenho. O objetivo é demonstrar a viabilidade da arquitetura proposta, analisando a sua usabilidade, a robustez dos mecanismos criptográficos edesempenho.
+Este capítulo apresenta a avaliação da solução implementada, tanto em termos funcionais como de desempenho. O objetivo é demonstrar a viabilidade da arquitetura proposta, analisando a sua usabilidade, a robustez dos mecanismos criptográficos e desempenho.
 
 \section{Avaliação Funcional}
 
@@ -17,20 +17,22 @@ Para validar o correto funcionamento da solução, foram realizados testes que c
     \item Validação final pelo cliente e registo local do consentimento.
 \end{enumerate}
 
-A Figura~\ref{fig:klarojs-banner} já ilustrou a interface do banner apresentada ao utilizador.  
-De seguida, mostram-se exemplos de payloads e respetivos JWS gerados pelo sistema.
+A Figura~\ref{fig:cch} apresenta a interface da extensão carregada no navegador, ilustrando a integração entre o Klaro.js e a extensão do cliente, responsável por capturar e assinar o consentimento do utilizador.
 
 \begin{figure}[h]
     \centering
 	\includegraphics[width=0.8\textwidth]{images/cch.png}
     \caption{Extensão carregada no browser}
-    %\label{fig:cch}
+    \label{fig:cch}
 \end{figure}
 
 \newpage
 
+De seguida, são apresentados exemplos reais dos dados trocados entre cliente e servidor, representando diferentes decisões de consentimento.  
+As Listagens~\ref{lst:payload_recusar} e~\ref{lst:jws_recusar} mostram o caso em que o utilizador recusa todos os consentimentos, enquanto as Listagens~\ref{lst:payload_aceitar} e~\ref{lst:jws_aceitar} mostram o caso oposto, com aceitação total.
+
 \textbf{Exemplo 1 — Recusar todos os consentimentos}
-\begin{lstlisting}[caption={Payload com rejeição de todos os consentimentos.}]
+\begin{lstlisting}[caption={Payload com rejeição de todos os consentimentos.}, label={lst:payload_recusar}]
 {
   consents: {
     twitter: false,
@@ -49,7 +51,7 @@ De seguida, mostram-se exemplos de payloads e respetivos JWS gerados pelo sistem
 }
 \end{lstlisting}
 
-\begin{lstlisting}[ caption={Exemplo de JWS gerado para recusar todos os consentimentos.}]
+\begin{lstlisting}[ caption={Exemplo de JWS gerado para recusar todos os consentimentos.}, label={lst:jws_recusar}]
 {
     "payload":"eyJjb...",
     "signatures":[
@@ -63,10 +65,11 @@ De seguida, mostram-se exemplos de payloads e respetivos JWS gerados pelo sistem
 }
 \end{lstlisting}
 
-Podemos ver aqui as principais estruturas de dados que são trocadas entre o cliente e servidor.
-
 \textbf{Exemplo 2 — Aceitar todos os consentimentos}
-\begin{lstlisting}[ caption={Payload com aceitação de todos os consentimentos.}]
+
+De forma análoga, a Listagem~\ref{lst:payload_aceitar} apresenta o \textit{payload} correspondente à aceitação de todos os consentimentos, e a Listagem~\ref{lst:jws_aceitar} mostra o JWS resultante com ambas as assinaturas.
+
+\begin{lstlisting}[caption={Payload com aceitação de todos os consentimentos.}, label={lst:payload_aceitar}]
 {
   consents: {
     twitter: true,
@@ -85,7 +88,7 @@ Podemos ver aqui as principais estruturas de dados que são trocadas entre o cli
 }
 \end{lstlisting}
 
-\begin{lstlisting}[caption={Exemplo de JWS gerado para aceitação de todos os consentimentos.}]
+\begin{lstlisting}[caption={Exemplo de JWS gerado para aceitação de todos os consentimentos.}, label={lst:jws_aceitar}]
 {
     "payload":"eyJjb...",
     "signatures":[
@@ -100,11 +103,13 @@ Podemos ver aqui as principais estruturas de dados que são trocadas entre o cli
 }
 \end{lstlisting}
 
-No caso da aceitação dos consentimentos, a funcionalidade e a estrutura dos dados não se altera significativamente.
+No cenário de aceitação dos consentimentos, tanto a funcionalidade como a estrutura dos dados permanecem praticamente inalteradas.
 
 \textbf{Exemplo 3 — Subconjunto de consentimentos (5 serviços)}
 
-Foram também realizados testes com \textit{payloads} reduzidos, contendo apenas 5 serviços. Os resultados confirmam que, consoante for menor o \textit{payload}, melhor são os tempos de verificação e criação dos JWS.
+Adicionalmente, foram realizados testes com \textit{payloads} reduzidos, contendo apenas cinco serviços.
+Os resultados demonstram que, quanto menor for o \textit{payload}, melhores são os tempos de verificação e de criação dos JWS.
+Esses cenários são incluídos na Tabela~\ref{tab:performance}, que resume as medições efetuadas em diferentes condições.
 
 \section{Avaliação de Desempenho}
 
@@ -131,7 +136,7 @@ Estes resultados demonstram que, tanto a criação do JWS, como a verificação 
 
 A análise dos resultados permite constatar que o fluxo funcional de consentimento foi corretamente validado em vários cenários, desde a recusa total até à aceitação de todos os serviços, passando também por subconjuntos de consentimentos. Em todos os casos, a criação e validação de JWS foi executada com sucesso, confirmando a robustez da solução implementada.
 
-No que respeita ao desempenho, verificou-se que o impacto do tamanho do \textit{payload} nos tempos de execução é significativo. Embora exista uma variação ligeira e proporcional entre os cenários de menor e maior dimensão, os valores registados mantêm-se sempre baixos, tanto para a criação de JWS como para a sua verificação no servidor.
+No que respeita ao desempenho verificou-se que o impacto do tamanho do \textit{payload} nos tempos de execução é significativo. Embora exista uma variação ligeira e proporcional entre os cenários de menor e maior dimensão, os valores registados mantêm-se sempre baixos, tanto para a criação de JWS como para a sua verificação no servidor.
 
 Em termos práticos, estes resultados demonstram que a solução consegue cumprir os objetivos estabelecidos: assegurar a transparência e a auditabilidade dos consentimentos digitais através do registo JWS, preservando simultaneamente a integridade e a autenticidade das assinaturas, sem comprometer a experiência de utilização ou a escalabilidade do sistema.
 
@@ -139,4 +144,4 @@ Em termos práticos, estes resultados demonstram que a solução consegue cumpri
 
 Este capítulo mostra que a solução funciona corretamente em todos os cenários de consentimento, com criação e verificação de JWS rápidas e robustas, garantindo transparência, segurança e auditabilidade sem prejudicar a experiência do utilizador.
 
-No capítulo seguinte são apresentadas as conclusões finais deste trabalho, destacando os principais contributos alcançados e a forma como estes respondem às limitações identificadas no trabalho relacionado. Serão igualmente discutidas as perspectivas de evolução futura, apontando caminhos para o aprofundamento e expansão da solução aqui desenvolvida.
+No capítulo seguinte são apresentadas as conclusões finais deste trabalho, destacando os principais contributos alcançados e a forma como estes respondem às limitações identificadas no trabalho relacionado. Serão igualmente discutidas as perspetivas de evolução futura, apontando caminhos para o aprofundamento e expansão da solução aqui desenvolvida.
