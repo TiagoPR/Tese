@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.2)  30 OCT 2025 23:09
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.8.2)  31 OCT 2025 00:00
  restricted system commands enabled.
  file:line:error style messages enabled.
 **dissertation.tex
@@ -1327,12 +1327,12 @@ Package hyperref Info: Link coloring ON on input line 22.
 \openout8 = dissertation.out
 \c@lstlisting=\count441
  (./dissertation.glsdefs) (./covers/Covers.tex
-<images/logos/UM.jpg, id=228, 1084.05pt x 1084.05pt>
+<images/logos/UM.jpg, id=232, 1084.05pt x 1084.05pt>
 File: images/logos/UM.jpg Graphic file (type jpg)
 <use images/logos/UM.jpg>
 Package luatex.def Info: images/logos/UM.jpg  used on input line 3.
 (luatex.def)             Requested size: 73.97716pt x 73.97246pt.
-<images/logos/EE.jpg, id=229, 1084.05pt x 1084.05pt>
+<images/logos/EE.jpg, id=233, 1084.05pt x 1084.05pt>
 File: images/logos/EE.jpg Graphic file (type jpg)
 <use images/logos/EE.jpg>
 Package luatex.def Info: images/logos/EE.jpg  used on input line 3.
@@ -1358,12 +1358,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--16
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1]
-<images/logosB/UM.jpg, id=241, 1084.05pt x 1084.05pt>
+<images/logosB/UM.jpg, id=245, 1084.05pt x 1084.05pt>
 File: images/logosB/UM.jpg Graphic file (type jpg)
 <use images/logosB/UM.jpg>
 Package luatex.def Info: images/logosB/UM.jpg  used on input line 29.
 (luatex.def)             Requested size: 73.97716pt x 73.97246pt.
-<images/logosB/EE.jpg, id=242, 1084.05pt x 1084.05pt>
+<images/logosB/EE.jpg, id=246, 1084.05pt x 1084.05pt>
 File: images/logosB/EE.jpg Graphic file (type jpg)
 <use images/logosB/EE.jpg>
 Package luatex.def Info: images/logosB/EE.jpg  used on input line 29.
@@ -1421,7 +1421,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
  (./preamble/Copyright.tex
-<images/CCBY.png, id=246, 66.2475pt x 24.09pt>
+<images/CCBY.png, id=250, 66.2475pt x 24.09pt>
 File: images/CCBY.png Graphic file (type png)
 <use images/CCBY.png>
 Package luatex.def Info: images/CCBY.png  used on input line 17.
@@ -1538,21 +1538,25 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 36.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\acrshort' on input line 43.
+
+
 
 [6]
 
 [7]
 
 [8]
-<images/consent.png, id=546, 1511.6475pt x 883.3pt>
+<images/consent.png, id=556, 1511.6475pt x 883.3pt>
 File: images/consent.png Graphic file (type png)
 <use images/consent.png>
-Package luatex.def Info: images/consent.png  used on input line 105.
+Package luatex.def Info: images/consent.png  used on input line 112.
 (luatex.def)             Requested size: 455.24411pt x 266.0029pt.
-<images/banner.png, id=548, 693.59125pt x 606.265pt>
+<images/banner.png, id=558, 693.59125pt x 606.265pt>
 File: images/banner.png Graphic file (type png)
 <use images/banner.png>
-Package luatex.def Info: images/banner.png  used on input line 115.
+Package luatex.def Info: images/banner.png  used on input line 122.
 (luatex.def)             Requested size: 455.24411pt x 397.93443pt.
 
 
@@ -1563,7 +1567,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [9<./images/consent.png>]
 
 [10<./images/banner.png>]
-Overfull \hbox (15.72334pt too wide) in paragraph at lines 132--133
+Overfull \hbox (15.72334pt too wide) in paragraph at lines 139--140
 [][]\TU/NewsGotT.ttf(1)/m/n/12 Tarteaucitron[][] ([][]2025[][]). Tarteaucitron.js per-mite ex-ten-sões per-son-al-izadas e um car-rega-mento otimizado
  []
 
@@ -1572,7 +1576,7 @@ Overfull \hbox (15.72334pt too wide) in paragraph at lines 132--133
 [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\acrshort' on input line 142.
+(hyperref)                removing `\acrshort' on input line 149.
 
 
 
@@ -1601,7 +1605,7 @@ Cap\'{\i }tulo 3.
 [21]
 
 [22]
-<images/swimlanes.png, id=725, 2609.75pt x 1214.5375pt>
+<images/swimlanes.png, id=735, 2609.75pt x 1214.5375pt>
 File: images/swimlanes.png Graphic file (type png)
 <use images/swimlanes.png>
 Package luatex.def Info: images/swimlanes.png  used on input line 66.
@@ -1625,44 +1629,44 @@ Cap\'{\i }tulo 4.
 [28]
 
 [29]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 98.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 94.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 103.
-
-
-[30] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 99.
+ (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 
-[31]
-Overfull \hbox (39.18283pt too wide) in paragraph at lines 141--142
+[30]
+Overfull \hbox (39.18283pt too wide) in paragraph at lines 137--138
 \TU/NewsGotT.ttf(1)/m/n/12 pos-te-ri-or-mente val-i-dado pelo cliente com re-curso ao cer-ti-fi-cado público obtido em \TU/lmtt/m/n/12 /api/server_certificate\TU/NewsGotT.ttf(1)/m/n/12 ,
  []
 
 
 
-[32]
-Overfull \hbox (18.53708pt too wide) in paragraph at lines 155--156
+[31]
+Overfull \hbox (18.53708pt too wide) in paragraph at lines 151--152
 []\TU/NewsGotT.ttf(1)/m/n/12 No en-tanto, a ex-ten-são ne-ces-sita ainda de aceder ao cer-ti-fi-cado e à chave pri-vada do cliente (\TU/lmtt/m/n/12 client.crt
  []
 
 
 
+[32]
+
 [33]
-<images/klaro_banner.png, id=862, 761.84625pt x 129.48375pt>
+<images/klaro_banner.png, id=878, 761.84625pt x 129.48375pt>
 File: images/klaro_banner.png Graphic file (type png)
 <use images/klaro_banner.png>
-Package luatex.def Info: images/klaro_banner.png  used on input line 200.
+Package luatex.def Info: images/klaro_banner.png  used on input line 196.
 (luatex.def)             Requested size: 364.19667pt x 61.89857pt.
 
 
 [34<./images/klaro_banner.png>]
-<images/swimlanes_solution.png, id=880, 2609.75pt x 1680.2775pt>
+<images/swimlanes_solution.png, id=893, 2609.75pt x 1680.2775pt>
 File: images/swimlanes_solution.png Graphic file (type png)
 <use images/swimlanes_solution.png>
-Package luatex.def Info: images/swimlanes_solution.png  used on input line 224.
+Package luatex.def Info: images/swimlanes_solution.png  used on input line 220.
 (luatex.def)             Requested size: 455.24411pt x 293.10432pt.
 
 
@@ -1672,7 +1676,7 @@ Package luatex.def Info: images/swimlanes_solution.png  used on input line 224.
 
 [37]
 Cap\'{\i }tulo 5.
-<images/cch.png, id=923, 655.44875pt x 200.75pt>
+<images/cch.png, id=931, 655.44875pt x 200.75pt>
 File: images/cch.png Graphic file (type png)
 <use images/cch.png>
 Package luatex.def Info: images/cch.png  used on input line 24.
@@ -1781,23 +1785,23 @@ L3 programming layer <2025-01-18>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 2894A4AB7BE7711280B65A6BDD1ACE80;9755.
+(rerunfilecheck)             Checksum: DE577D8B49F389FEBAE0CAFA12BA5412;9938.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47806 strings out of 475506
- 381554,1977958 words of node,token memory allocated
+ 47808 strings out of 475506
+ 381536,1977958 words of node,token memory allocated
  1098 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 disc, 4 glue, 4 kern, 20 glyph, 57 attribute, 81 glue_spec, 30 attribute_list, 2 write, 1 close, 21 pdf_action nodes
    avail lists: 1:1,2:6932,3:803,4:1022,5:8111,6:95,7:12846,8:117,9:16432,10:32,11:885
- 69084 multiletter control sequences out of 65536+600000
+ 69085 multiletter control sequences out of 65536+600000
  60 fonts using 3875247 bytes
- 113i,9n,110p,2412b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,9n,110p,2412b,1204s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf><./NewsGotT.ttf><./NewsGotTLight.ttf><./NewsGotTBold.ttf>
-Output written on dissertation.pdf (71 pages, 920052 bytes).
+Output written on dissertation.pdf (71 pages, 921080 bytes).
 
-PDF statistics: 1346 PDF objects out of 1440 (max. 8388607)
- 1226 compressed objects within 13 object streams
- 484 named destinations out of 1000 (max. 131072)
- 456 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1354 PDF objects out of 1440 (max. 8388607)
+ 1234 compressed objects within 13 object streams
+ 485 named destinations out of 1000 (max. 131072)
+ 464 words of extra memory for PDF output out of 10000 (max. 100000000)
 

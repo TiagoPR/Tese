@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex dissertation"] 1761865755.56316 "dissertation.aux" "dissertation.bbl" "dissertation" 1761865761.05943 0
+["bibtex dissertation"] 1761868053.75277 "dissertation.aux" "dissertation.bbl" "dissertation" 1761868818.82097 0
   "./dissertation.bib" 1761777498.47399 10528 c580a1d0bf9cc5e3bca78c59fe35bcfc ""
   "/usr/share/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1742685315 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "dissertation.aux" 1761865760.50052 19280 11db1deb3fa435d7687901d802e3c43d "lualatex"
+  "dissertation.aux" 1761868818.29126 19425 42d002d43f63858cbb12303c01720095 "lualatex"
   (generated)
   "dissertation.bbl"
   "dissertation.blg"
   (rewritten before read)
-["lualatex"] 1761865755.65219 "dissertation.tex" "dissertation.pdf" "dissertation" 1761865761.05976 0
+["lualatex"] 1761868813.46906 "dissertation.tex" "dissertation.pdf" "dissertation" 1761868818.82147 0
   "/etc/texmf/tex/generic/config/language.dat" 1742685315 2774 23432d78ba890d76256b3f33c553a888 ""
   "/home/tiagopr/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1755714708.65507 81824 77dc340f491815e92fe0c8e326f731b4 ""
   "/home/tiagopr/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmmono12-regular.luc" 1744845139.92134 81759 f006975dd4d7a778e352ab473f64378e ""
@@ -331,22 +331,22 @@
   "chapters/ConclusionsAndFutureWork.tex" 1761865550.60033 6866 502a592eb9b26ca31f52aa2ce8ee4e05 ""
   "chapters/Evaluation.tex" 1761865376.1609 7563 d598aeb8fc90fc723b4261c5397ae21f ""
   "chapters/Introduction.tex" 1761863842.43665 7842 29e7a4a03e920acd4197a9bd18b91840 ""
-  "chapters/RelatedWork.tex" 1761864684.68995 36353 98d461470fb87c4255692a6a82e4660e ""
-  "chapters/Solution.tex" 1761865749.03366 27170 c5ab17cdd7ca18156573fd7e6a06179b ""
+  "chapters/RelatedWork.tex" 1761868071.52585 37466 40b8d5e2e86e4ee82bec18d6d02a7cdf ""
+  "chapters/Solution.tex" 1761867654.42578 25726 c68f05cea0d2d69cfab9db82ba4c7e2c ""
   "covers/BackCover.tex" 1761779922.10225 213 c6bb7a940dc5c5e72db7f1f0a4eb575a ""
   "covers/Covers.tex" 1698655236 719 53118a96e7cf96d2acbe16fc92cad624 ""
   "dissertation.acr" 1760888600.42629 3025 8dc75569d63ef24a87d9dc8d4702fdb5 ""
-  "dissertation.aux" 1761865760.50052 19280 11db1deb3fa435d7687901d802e3c43d "lualatex"
-  "dissertation.bbl" 1761865755.63044 8152 e00b52ed7607ca57df5fc94191573408 "bibtex dissertation"
+  "dissertation.aux" 1761868818.29126 19425 42d002d43f63858cbb12303c01720095 "lualatex"
+  "dissertation.bbl" 1761868053.8289 8152 e00b52ed7607ca57df5fc94191573408 "bibtex dissertation"
   "dissertation.gls" 1760888600.42962 6 9f404503043ec80c08484be9f659189e ""
-  "dissertation.glsdefs" 1761865760.50386 7089 2639d429bbc6c038b8727e87a731b901 "lualatex"
-  "dissertation.ind" 1761865760.12718 0 d41d8cd98f00b204e9800998ecf8427e "makeindex dissertation.idx"
-  "dissertation.lof" 1761865760.50386 1068 cf002abc1e338b7720f944c7927ef8a3 "lualatex"
-  "dissertation.lot" 1761865760.50386 465 a831633bd8b8c5ae9c87192c9688c50e "lualatex"
-  "dissertation.out" 1761865760.50386 9755 2894a4ab7be7711280b65a6bdd1ace80 "lualatex"
+  "dissertation.glsdefs" 1761868818.2946 7089 2639d429bbc6c038b8727e87a731b901 "lualatex"
+  "dissertation.ind" 1761868817.91126 0 d41d8cd98f00b204e9800998ecf8427e "makeindex dissertation.idx"
+  "dissertation.lof" 1761868818.2946 1068 cf002abc1e338b7720f944c7927ef8a3 "lualatex"
+  "dissertation.lot" 1761868818.2946 465 a831633bd8b8c5ae9c87192c9688c50e "lualatex"
+  "dissertation.out" 1761868818.2946 9938 de577d8b49f389febae0cafa12ba5412 "lualatex"
   "dissertation.sty" 1761856278.07416 5398 a62550737f7c3e10d8d4b619e95a755f ""
   "dissertation.tex" 1761596788.35044 2637 8939ab1cbd001356613d5030c9789cba ""
-  "dissertation.toc" 1761865760.50386 5270 82e348e4ffb7460229dc9214eca1adb4 "lualatex"
+  "dissertation.toc" 1761868818.2946 5374 6198218fafbab26ccb3f74ff4f2f6a59 "lualatex"
   "images/CCBY.png" 1698655236 5980 c0073af0ea68a8a57ddd233bb3891625 ""
   "images/banner.png" 1754478516.14176 66205 744d96ae5b78018a31a72bf11591b427 ""
   "images/cch.png" 1759415277.75297 14887 8bc0fcefd595320fe82d4c6634ca9c08 ""
@@ -359,7 +359,7 @@
   "images/swimlanes.png" 1760804245.01539 122404 0f61c57d867bbc9e8a547ad2472f9064 ""
   "images/swimlanes_solution.png" 1759098295.57013 181842 7095b10a22e8053b2249df4c26676333 ""
   "preamble/Abstract.tex" 1761767530.10032 3733 dc5acd3d3982ee7bd6c85cc80c870f12 ""
-  "preamble/Acknowledgements.tex" 1698655236 391 a78f50faabc4fba94c2639e148051aaa ""
+  "preamble/Acknowledgements.tex" 1761868811.80782 1736 927a23581c4e51d283220aacdf82b781 ""
   "preamble/Copyright.tex" 1760890769.11976 4102 9ba5ba6461315aaf221376f8e70158e1 ""
   "preamble/StatementofIntegrity.tex" 1698655236 605 981f450552369bfea63b28af5579d330 ""
   (generated)
@@ -376,8 +376,8 @@
   "dissertation.pdf"
   "dissertation.toc"
   (rewritten before read)
-["makeindex dissertation.idx"] 1755444137.41369 "dissertation.idx" "dissertation.ind" "dissertation" 1761865761.05916 0
-  "dissertation.idx" 1761865757.72381 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex dissertation.idx"] 1755444137.41369 "dissertation.idx" "dissertation.ind" "dissertation" 1761868818.82055 0
+  "dissertation.idx" 1761868815.48122 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
   (generated)
   "dissertation.ilg"
   "dissertation.ind"
