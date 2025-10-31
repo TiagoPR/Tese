@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.10.28)  31 OCT 2025 13:18
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.10.28)  31 OCT 2025 20:49
  restricted system commands enabled.
  file:line:error style messages enabled.
 **dissertation.tex
@@ -1415,12 +1415,12 @@ Package hyperref Info: Link coloring ON on input line 22.
 \openout8 = dissertation.out
 \c@lstlisting=\count426
  (./dissertation.glsdefs) (./covers/Covers.tex
-<images/logos/UM.jpg, id=232, 1084.05pt x 1084.05pt>
+<images/logos/UM.jpg, id=228, 1084.05pt x 1084.05pt>
 File: images/logos/UM.jpg Graphic file (type jpg)
 <use images/logos/UM.jpg>
 Package luatex.def Info: images/logos/UM.jpg  used on input line 3.
 (luatex.def)             Requested size: 73.97716pt x 73.97246pt.
-<images/logos/EE.jpg, id=233, 1084.05pt x 1084.05pt>
+<images/logos/EE.jpg, id=229, 1084.05pt x 1084.05pt>
 File: images/logos/EE.jpg Graphic file (type jpg)
 <use images/logos/EE.jpg>
 Package luatex.def Info: images/logos/EE.jpg  used on input line 3.
@@ -1442,12 +1442,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--16
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./images/logos/UM.jpg><./images/logos/EE.jpg>]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1]
-<images/logosB/UM.jpg, id=245, 1084.05pt x 1084.05pt>
+<images/logosB/UM.jpg, id=241, 1084.05pt x 1084.05pt>
 File: images/logosB/UM.jpg Graphic file (type jpg)
 <use images/logosB/UM.jpg>
 Package luatex.def Info: images/logosB/UM.jpg  used on input line 29.
 (luatex.def)             Requested size: 73.97716pt x 73.97246pt.
-<images/logosB/EE.jpg, id=246, 1084.05pt x 1084.05pt>
+<images/logosB/EE.jpg, id=242, 1084.05pt x 1084.05pt>
 File: images/logosB/EE.jpg Graphic file (type jpg)
 <use images/logosB/EE.jpg>
 Package luatex.def Info: images/logosB/EE.jpg  used on input line 29.
@@ -1503,7 +1503,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
  (./preamble/Copyright.tex
-<images/CCBY.png, id=250, 66.2475pt x 24.09pt>
+<images/CCBY.png, id=246, 66.2475pt x 24.09pt>
 File: images/CCBY.png Graphic file (type png)
 <use images/CCBY.png>
 Package luatex.def Info: images/CCBY.png  used on input line 17.
@@ -1526,7 +1526,12 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 21
 
 ] [4
 
-] [5
+]
+
+LaTeX Font Warning: Font shape `TU/NewsGotT.ttf(1)/b/it' undefined
+(Font)              using `TU/NewsGotT.ttf(1)/b/n' instead on input line 23.
+
+[5
 
 
 ]) (./dissertation.toc [6
@@ -1564,12 +1569,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
-]
-
-LaTeX Font Warning: Font shape `TU/NewsGotT.ttf(1)/b/it' undefined
-(Font)              using `TU/NewsGotT.ttf(1)/b/n' instead on input line 23.
-
-[2]) (./chapters/RelatedWork.tex [3]
+] [2]) (./chapters/RelatedWork.tex [3]
 Cap\'{\i }tulo 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1587,12 +1587,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 43.
 
 [6] [7] [8]
-<images/consent.png, id=556, 1511.6475pt x 883.3pt>
+<images/consent.png, id=555, 1511.6475pt x 883.3pt>
 File: images/consent.png Graphic file (type png)
 <use images/consent.png>
 Package luatex.def Info: images/consent.png  used on input line 112.
 (luatex.def)             Requested size: 455.24411pt x 266.0029pt.
-<images/banner.png, id=558, 693.59125pt x 606.265pt>
+<images/banner.png, id=557, 693.59125pt x 606.265pt>
 File: images/banner.png Graphic file (type png)
 <use images/banner.png>
 Package luatex.def Info: images/banner.png  used on input line 122.
@@ -1611,7 +1611,7 @@ Cap\'{\i }tulo 3.
 [20
 
 ] [21] [22]
-<images/swimlanes.png, id=736, 2609.75pt x 1214.5375pt>
+<images/swimlanes.png, id=735, 2609.75pt x 1214.5375pt>
 File: images/swimlanes.png Graphic file (type png)
 <use images/swimlanes.png>
 Package luatex.def Info: images/swimlanes.png  used on input line 66.
@@ -1620,39 +1620,39 @@ Package luatex.def Info: images/swimlanes.png  used on input line 66.
 Cap\'{\i }tulo 4.
 [26
 
-] [27] [28] [29]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 94.
+] [27] [28]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 82.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 99.
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 87.
+ [29] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 ) [30]
-Overfull \hbox (39.18283pt too wide) in paragraph at lines 137--138
+Overfull \hbox (39.18283pt too wide) in paragraph at lines 125--126
 \TU/NewsGotT.ttf(1)/m/n/12 pos-te-ri-or-mente va-li-dado pelo cli-ente com re-curso ao cer-ti-fi-cado pú-blico ob-tido em \TU/lmtt/m/n/12 /api/server_certificate\TU/NewsGotT.ttf(1)/m/n/12 ,
  []
 
 [31]
-Overfull \hbox (18.53708pt too wide) in paragraph at lines 151--152
+Overfull \hbox (18.53708pt too wide) in paragraph at lines 139--140
 []\TU/NewsGotT.ttf(1)/m/n/12 No en-tanto, a ex-ten-são ne-ces-sita ainda de ace-der ao cer-ti-fi-cado e à chave pri-vada do cli-ente (\TU/lmtt/m/n/12 client.crt
  []
 
-[32] [33]
-<images/klaro_banner.png, id=879, 761.84625pt x 129.48375pt>
+[32]
+<images/klaro_banner.png, id=865, 761.84625pt x 129.48375pt>
 File: images/klaro_banner.png Graphic file (type png)
 <use images/klaro_banner.png>
-Package luatex.def Info: images/klaro_banner.png  used on input line 196.
+Package luatex.def Info: images/klaro_banner.png  used on input line 184.
 (luatex.def)             Requested size: 364.19667pt x 61.89857pt.
- [34<./images/klaro_banner.png>]
-<images/swimlanes_solution.png, id=895, 2609.75pt x 1680.2775pt>
+ [33<./images/klaro_banner.png>]
+<images/swimlanes_solution.png, id=882, 2609.75pt x 1680.2775pt>
 File: images/swimlanes_solution.png Graphic file (type png)
 <use images/swimlanes_solution.png>
-Package luatex.def Info: images/swimlanes_solution.png  used on input line 220.
+Package luatex.def Info: images/swimlanes_solution.png  used on input line 208.
 (luatex.def)             Requested size: 455.24411pt x 293.10432pt.
- [35<./images/swimlanes_solution.png>] [36]) (./chapters/Evaluation.tex [37]
+ [34<./images/swimlanes_solution.png>] [35]) (./chapters/Evaluation.tex [36]
 Cap\'{\i }tulo 5.
-<images/cch.png, id=932, 655.44875pt x 200.75pt>
+<images/cch.png, id=922, 655.44875pt x 200.75pt>
 File: images/cch.png Graphic file (type png)
 <use images/cch.png>
 Package luatex.def Info: images/cch.png  used on input line 24.
@@ -1660,13 +1660,13 @@ Package luatex.def Info: images/cch.png  used on input line 24.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38
+[37
 
-] [39<./images/cch.png>] [40] [41]) (./chapters/ConclusionsAndFutureWork.tex [42]
+] [38<./images/cch.png>] [39] [40]) (./chapters/ConclusionsAndFutureWork.tex [41]
 Cap\'{\i }tulo 6.
-[43
+[42
 
-] [44]) (./dissertation.bbl [45]
+] [43]) (./dissertation.bbl [44]
 Underfull \hbox (badness 3068) in paragraph at lines 9--12
 []\TU/NewsGotT.ttf(1)/m/n/12 Elec-tro-nic sig-na-tu-res and in-fras-truc-tu-res (esi); po-licy and se-cu-rity re-qui-re-ments for trust ser-
  []
@@ -1696,18 +1696,20 @@ Underfull \hbox (badness 7540) in paragraph at lines 24--28
 []\TU/NewsGotT.ttf(1)/m/n/12 Auth0.  Sig-ning al-go-rithms, 2025.  URL [][]$\TU/lmtt/m/n/12 https://auth0.com/docs/get-[]started/
  []
 
-[46
+[45
 
-] [47]) [48] (./dissertation.ind) [49
+] [46]) [47] (./dissertation.ind) [48
 
 
 ] (./appendices/SupportWork.tex
 Ap\^endice A.
-[50
+[49
 
-] [51] [52] [53] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+] [50] [51] [52] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) [54]) (./covers/BackCover.tex [55] [56
+) [53]) (./covers/BackCover.tex [54] [55
+
+] [56
 
 ]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
@@ -1721,23 +1723,23 @@ L3 programming layer <2024-01-22>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: DE577D8B49F389FEBAE0CAFA12BA5412;9938.
+(rerunfilecheck)             Checksum: B069F44C17EC88C2545CA9DF4C10C119;9816.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47385 strings out of 476553
- 381567,1977958 words of node,token memory allocated
- 1110 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 disc, 4 glue, 4 kern, 20 glyph, 59 attribute, 81 glue_spec, 31 attribute_list, 2 write, 1 close, 22 pdf_action nodes
-   avail lists: 1:1,2:6929,3:805,4:1022,5:8111,6:95,7:12885,8:117,9:16432,10:32,11:1070
- 67584 multiletter control sequences out of 65536+600000
+ 47414 strings out of 476553
+ 381551,1977958 words of node,token memory allocated
+ 1122 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 disc, 4 glue, 4 kern, 20 glyph, 61 attribute, 81 glue_spec, 32 attribute_list, 2 write, 1 close, 23 pdf_action nodes
+   avail lists: 1:2,2:6929,3:803,4:1022,5:8111,6:95,7:12885,8:118,9:16432,10:32,11:1070
+ 67613 multiletter control sequences out of 65536+600000
  61 fonts using 4001015 bytes
- 120i,9n,118p,2385b,1212s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 120i,9n,118p,2385b,1118s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf><./NewsGotT.ttf><./NewsGotTLight.ttf><./NewsGotTBold.ttf>
-Output written on dissertation.pdf (71 pages, 920919 bytes).
+Output written on dissertation.pdf (71 pages, 918521 bytes).
 
-PDF statistics: 1355 PDF objects out of 1440 (max. 8388607)
- 1235 compressed objects within 13 object streams
+PDF statistics: 1350 PDF objects out of 1440 (max. 8388607)
+ 1230 compressed objects within 13 object streams
  485 named destinations out of 1000 (max. 131072)
- 464 words of extra memory for PDF output out of 10000 (max. 100000000)
+ 456 words of extra memory for PDF output out of 10000 (max. 100000000)
 

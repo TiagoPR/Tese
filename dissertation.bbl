@@ -24,13 +24,13 @@ Usercentrics A/S.
 Auth0.
 \newblock Signing algorithms, 2025.
 \newblock URL \url{https://auth0.com/docs/get-started/applications/signing-algorithms}.
-\newblock Acedido em: 19 de Outubro de 2025.
+\newblock Acesso em: 19 de Outubro de 2025.
 
 \bibitem[Brady(2020)]{ScottBrady2020}
 Scott Brady.
 \newblock Jwts: Which signing algorithm should i use?
 \newblock \url{ https://www.scottbrady.io/jose/jwts-which-signing-algorithm-should-i-use }, 2020.
-\newblock Acedido em: 19 de Outubro de 2025.
+\newblock Acesso em: 19 de Outubro de 2025.
 
 \bibitem[Buterin(2014)]{buterin2014next}
 Vitalik Buterin.
@@ -110,7 +110,7 @@ Satoshi Nakamoto.
 National~Institute of~Standards and Technology.
 \newblock Glossary: Message authentication code (mac).
 \newblock \url{ https://csrc.nist.gov/glossary/term/message_authentication_code }.
-\newblock Acedido em: 19 de Outubro de 2025.
+\newblock Acesso em: 19 de Outubro de 2025.
 
 \bibitem[{Osano}(2025)]{osano}
 {Osano}.

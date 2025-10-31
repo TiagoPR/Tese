@@ -3,17 +3,16 @@
 % O que se quer no resumo então?
 
 %Escrever aqui o resumo (pt)
-A gestão do consentimento de acesso e processamento de dados é uma das questões centrais para garantir a privacidade de todos os utilizadores, tendo em consideração regulamentação já existentes para o cumprimento da mesma. Esta dissertação explora \acrfull{cmp} existentes, destacando as suas características, limitações e potencialidades de forma a criar soluções mais auditáveis e transparentes. 
+A proteção da privacidade dos utilizadores tornou-se cada vez mais complexo com a crescente recolha de dados pessoais e a exigência de conformidade com regulamentos como o \acrfull{rgpd}.
+Embora existam plataformas para gerir consentimentos, estas não oferecem ao utilizador uma forma clara de comprovar se as suas escolhas foram respeitadas.
 
-Foi realizada uma análise ao tratamento de dados, incluindo plataformas como Osano, Cookiebot, Klaro.js, entre outras, englobando soluções e abordagens complementares para a gestão deste mesmo consentimento, baseadas em tecnologias como \textit{blockchain} e contratos inteligentes.
-Verificou-se que as soluções já existentes, embora robustas, apresentam limitações no que toca à auditoria e transparência do fluxo de dados entre clientes e provedores de serviço. 
-Assim, foi proposta uma solução que permite recolher consentimentos verificáveis, isto é, que servem como prova para os utilizadores no caso de não conformidade com as suas escolhas. 
+Esta dissertação propõe uma abordagem que permite registar consentimentos de forma verificável e imutável, criando evidências que podem ser usadas como prova em caso de incumprimento.
+O sistema desenvolvido gera registos que garantem integridade e não repúdio, permitindo ao utilizador demonstrar as suas escolhas.
+Os testes realizados demonstraram que é possível gerar registos fiáveis, capazes de sustentar disputas e aumentar a autonomia do utilizador.
 
-Os resultados obtidos permitem demonstrar uma prova de conceito de um sistema que integra a recolha de consentimento com mecanismos de prova, permitindo garantir que as autorizações recolhidas são armazenadas de forma verificável, imutável e não repudiável. 
-Desta forma, esta dissertação propõe o desenvolvimento de uma solução que reforça a confiança dos utilizadores no tratamento dos seus dados, promovendo uma maior transparência e autonomia na gestão destes mesmos dados por parte do utilizador.
+Este trabalho apresenta uma solução prática que abre caminho para evoluções futuras orientadas para maior controlo e confiança na gestão de consentimento.
 
-\paragraph{Palavras-chave} consentimento, \acrshort{cmp}, \acrshort{rgpd}, auditoria, prova, transparência, auditabilidade, imutabilidade, privacidade, \textit{open source}, assinaturas digitais, certificados, JWS, não-repúdio
-
+\paragraph{Palavras-chave} consentimento, \acrshort{cmp}, \acrshort{rgpd}, transparência, privacidade
 % Demasiado genericos, rever
 
 \cleardoublepage
@@ -21,12 +20,14 @@ Desta forma, esta dissertação propõe o desenvolvimento de uma solução que r
 \chapter*{Abstract}
 
 %Write abstract here (en)
-The management of consent for data access and processing is one of the central issues in ensuring user privacy, taking into account existing regulations that govern compliance. This dissertation explores existing \acrfull{cmp}s, highlighting their characteristics, limitations, and potential to create more auditable and transparent solutions. 
+Protecting user privacy has become a central challenge with the growing collection of personal data and the need to comply with regulations such as \acrfull{gdpr}.
+Existing consent management platforms allow users to express their preferences but do not provide a clear way for them to verify whether those choices were respected.
 
-An analysis was carried out on data processing, including platforms such as Osano, Cookiebot, and Klaro.js, among others, encompassing solutions and complementary approaches to consent management based on technologies like \textit{blockchain} and smart contracts. It was found that existing solutions, although robust, present limitations in terms of the auditability and transparency of data flows between clients and service providers. Thus, a solution was proposed that enables the collection of verifiable consents, that is, consents that serve as proof for users in cases of non-compliance with their choices. 
+This dissertation proposes an approach that records consent in a verifiable and immutable manner, creating evidence that can be used as proof in cases of non-compliance.
+The developed system generates records that ensure integrity and non-repudiation, allowing users to demonstrate their choices.
+Tests have shown that it is possible to produce reliable records capable of supporting disputes and increasing user autonomy.
 
-The results obtained demonstrate a proof of concept of a system that integrates consent collection with verification mechanisms, ensuring that the collected authorizations are stored in a verifiable, immutable, and non-repudiable way. In this way, this dissertation proposes the development of a solution that strengthens user trust in data processing, promoting greater transparency and autonomy in the management of their personal data.
+This work proposes a practical solution that opens the door to future developments aimed at greater control and confidence in consent management.
 
-\paragraph{Keywords} consent, \acrshort{cmp}, \acrshort{gdpr}, auditing, transparency, auditability, proof, immutability, privacy, \textit{open source}, digital signatures, certificates, JWS, non-repudiation
-
+\paragraph{Keywords} consent, \acrshort{cmp}, \acrshort{gdpr}, transparency, privacy
 \cleardoublepage

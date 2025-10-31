@@ -362,3 +362,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{jws}%
+{%
+name={\acronymfont {\glsentryshort {jws}}},%
+sort={JWS},%
+type={acronym},%
+first={JWS},%
+firstplural={JWSs},%
+text={JWS},%
+plural={JWSs},%
+description={\textit {JSON Web Signatures}},%
+descriptionplural={\textit {JSON Web Signatures}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \textit  {JSON Web Signatures}},%
+longplural={\protect \textit  {JSON Web Signatures}s},%
+short={JWS},%
+shortplural={JWSs},%
+counter={page},%
+parent={},%
+%
+}%
+

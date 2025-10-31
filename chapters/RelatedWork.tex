@@ -38,11 +38,11 @@ Uma \acrshort{cmp} funciona como um intermediário entre o utilizador e os servi
 A recolha de consentimentos do lado do servidor apresenta desafios significativos, tanto em termos de arquitetura como de conformidade regulatória. Este problema é exacerbado pelo facto de que a maioria das soluções de \acrshort{cmp} disponíveis são proprietárias, limitando a transparência e dificultando a auditabilidade das ferramentas.
 
 As plataformas fechadas não permitem compreender facilmente como os dados são processados e armazenados após o consentimento. Esta falta de visibilidade cria barreiras à adoção de práticas verdadeiramente transparentes, essenciais para assegurar conformidade com regulamentações como o \acrshort{rgpd}
-Os \acrshort{cmp}s open-source oferecem maior flexibilidade e transparência, permitindo que as organizações compreendam e adaptem o funcionamento interno da ferramenta. Isto garante que os consentimentos são armazenados de forma consistente e auditável, favorece a confiança do utilizador, promove conformidade regulatória e facilita a integração com diferentes serviços e fluxos de recolha de dados.
+Os \acrshort{cmp}s \textit{open-source} oferecem maior flexibilidade e transparência, permitindo que as organizações compreendam e adaptem o funcionamento interno da ferramenta. Isto garante que os consentimentos são armazenados de forma consistente e auditável, favorece a confiança do utilizador, promove conformidade regulatória e facilita a integração com diferentes serviços e fluxos de recolha de dados.
 
 \subsection{Fluxo de implementação de uma \acrshort{cmp}}
 
-O fluxo típico para um \textit{provedor de serviços} mostrar que um website está em conformidade com os regulamentos pode ser representado no diagrama de atividades da Figura~\ref{fig:diagrama-cmp}.
+O fluxo típico para um \textit{provedor de serviços} apresentar ao utilizador as opções de consentimento, de acordo com os regulamentos, pode ser representado no diagrama de atividades da Figura~\ref{fig:diagrama-cmp}.
 Este diagrama ilustra de forma genérica a integração de uma \acrshort{cmp} num website.
 No âmbito da pesquisa realizada sobre soluções existentes, este fluxo foi exemplificado com a plataforma CookieChimp, utilizada apenas para efeitos de análise comparativa.
 
@@ -148,7 +148,7 @@ Apesar dessas soluções estarem bem posicionadas para garantir a conformidade l
 
 \section{Limitações das \acrshort{cmp}s Existentes}
 
-As \acrshort{cmp}s desempenham um papel crucial ao fornecer aos utilizadores uma forma de consentir explicitamente o uso dos seus dados pessoais. Entre as soluções, Osano, Cookiebot, Tarteaucitron.js, Klaro.js, Consent Manager e CookieChimp. Cada uma destas plataformas oferece funcionalidades específicas e foca-se na conformidade com regulamentos de privacidade, como o \acrshort{rgpd}. No entanto, apesar da sua importância, essas plataformas apresentam várias limitações que comprometem a transparência, a auditabilidade e a confiança no processamento de dados.
+As \acrshort{cmp}s desempenham um papel crucial ao fornecer aos utilizadores uma forma de consentir explicitamente o uso dos seus dados pessoais. Entre as plataformas apresentadas anteriormente, Osano, Cookiebot, Tarteaucitron.js, Klaro.js, Consent Manager e CookieChimp, oferecem funcionalidades específicas e focam-se na conformidade com regulamentos de privacidade, como o \acrshort{rgpd}. No entanto, apesar da sua importância, essas plataformas apresentam várias limitações que comprometem a transparência, a auditabilidade e a confiança no processamento de dados.
 
 Para uma gestão de consentimento mais eficiente e alinhada com as expectativas dos utilizadores e as exigências regulamentares, certas características são fundamentais.
 Por exemplo, a capacidade de uma auditoria do processo, garantindo que os utilizadores possam comprovar a confiabilidade da plataforma.
@@ -164,7 +164,7 @@ A tabela \ref{tab:cmp-caracteristicas} compara algumas das plataformas mais popu
 \label{tab:cmp-caracteristicas}
 \begin{table}[H]
 \centering
-\caption{Comparação das principais características das \acrshort{cmp}s existentes}
+\caption{Comparação das principais características das \acrshort{cmp}s existentes.}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
@@ -215,9 +215,9 @@ A assinatura digital é um mecanismo criptográfico baseado em criptografia de c
 
 Desta forma, a assinatura digital assegura três propriedades essenciais \citep{digitalsignatures}:
 \begin{itemize}
-    \item \textbf{Autenticidade}: confirma que a mensagem foi assinada pela entidade detentora da chave privada correspondente.
-    \item \textbf{Integridade}: garante que o conteúdo não foi alterado após a assinatura.
-    \item \textbf{Não repúdio}: impede que o autor negue a sua participação no processo, tornando a assinatura uma evidência legalmente relevante.
+    \item Autenticidade: confirma que a mensagem foi assinada pela entidade detentora da chave privada correspondente.
+    \item Integridade: garante que o conteúdo não foi alterado após a assinatura.
+    \item Não repúdio: impede que o autor negue a sua participação no processo, tornando a assinatura uma evidência legalmente relevante.
 \end{itemize}
 
 As assinaturas digitais constituem o fundamento de sistemas confiáveis de registo de consentimentos, transações financeiras e documentos eletrónicos, sendo amplamente utilizadas em padrões de segurança e infraestruturas de chave pública.
@@ -231,7 +231,7 @@ O conceito de \textit{blockchain} foi inicialmente popularizado com o surgimento
 
 Além do Bitcoin, outro marco importante na evolução da tecnologia \textit{blockchain} foi o surgimento da Ethereum \citep{buterin2014next}, que introduziu a capacidade de executar contratos inteligentes. Diferente do Bitcoin, cujo foco principal é a transferência segura de valor, a Ethereum foi projetada para suportar aplicações descentralizadas através de contratos inteligentes, permitindo que regras e condições predefinidas sejam automaticamente executadas sem necessidade de intermediários. Essas capacidades tornaram a Ethereum uma das principais plataformas para aplicações \textit{blockchain}, incluindo soluções para gestão de consentimento de dados baseadas em contratos inteligentes \citep{Frank2018}.
 
-Nos últimos anos, investigadores têm proposto diferentes abordagens baseadas no uso de contratos inteligentes e na tecnologia \textit{blockchain}, que oferecem características desejáveis, como transparência, rastreabilidade, não-repúdio e imutabilidade. Essas propostas podem ser classificadas de acordo com dois principais cenários:
+Nos últimos anos, investigadores têm proposto diferentes abordagens baseadas no uso de contratos inteligentes e na tecnologia \textit{blockchain} para a gestão de consentimento, que oferecem características desejáveis, como transparência, rastreabilidade, não-repúdio e imutabilidade. Essas propostas podem ser classificadas de acordo com dois principais cenários:
 
 \begin{itemize}
     \item Consentimento gerido pelo titular: Quando um utilizador tem autonomia e deseja partilhar os seus dados pessoais com terceiros, mantendo o controlo total sobre as permissões concedidas e podendo revogá-las a qualquer momento \citep{Merlec2021}.

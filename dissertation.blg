@@ -19,7 +19,7 @@ Warning--to sort, need author or key in ETSI_EN_319_411_1
 Warning--empty year in NISTMAC
 You've used 28 entries,
             2773 wiz_defined-function locations,
-            766 strings with 10390 characters,
+            766 strings with 10389 characters,
 and the built_in function-call counts, 10452 in all, are:
 = -- 936
 > -- 537

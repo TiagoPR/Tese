@@ -5,11 +5,11 @@ O presente capítulo descreve a arquitetura conceptual da solução proposta par
 
 \section{Visão Geral da Arquitetura}
 
-É proposto um sistema que define um fluxo de consentimento no qual cada decisão do utilizador é registada, assinada e validada juntamente com o \textit{Provedor de Serviços}, assegurando que nenhuma das partes pode manipular ou negar a informação posteriormente. Para tal, existem duas entidades principais:
+É proposto um sistema que define um fluxo de consentimento no qual cada decisão do utilizador é registada, assinada e validada juntamente com o \textit{provedor de serviços}, assegurando que nenhuma das partes pode manipular ou negar a informação posteriormente. Para tal, existem duas entidades principais:
 
 \begin{itemize}
     \item \acrfull{ds}: o utilizador final que interage com a interface web do serviço e fornece o consentimento e que tem uma extensão de navegador à escuta dos eventos do navegador. O \acrshort{ds} é responsável por assinar digitalmente o consentimento antes de o enviar para validação, criando uma prova verificável da sua decisão.
-    \item \acrfull{sp}: o provedor de serviços que disponibiliza o website com o \acrshort{cmp} à escolha e mantém um servidor para a troca de informação. Isto é, recebe os consentimentos assinados pelo \acrshort{ds}, valida a assinatura do utilizador, assina novamente o consentimento e mantém um registo imutável. Este registo permite auditoria, revogação e consulta futura.
+    \item \acrfull{sp}: o \textit{provedor de serviços} que disponibiliza o website com o \acrshort{cmp} à escolha e mantém um servidor para a troca de informação. Isto é, recebe os consentimentos assinados pelo \acrshort{ds}, valida a assinatura do utilizador, assina novamente o consentimento e mantém um registo imutável. Este registo permite auditoria e consulta futura.
 \end{itemize}
 
 O fluxo completo do sistema pode ser descrito de forma conceptual:
@@ -51,7 +51,7 @@ Para garantir estas propriedades, o consentimento é assinado digitalmente tanto
 
 A ausência de cifragem no registo de consentimento simplifica o processo de verificação e auditoria, mas aumenta o risco de exposição de informação pessoal. Mesmo que o registo não contenha dados diretamente identificáveis, como o nome ou o e-mail, pode incluir identificadores indiretos, por exemplo, identificadores únicos, que podem permitir reconhecer ou reidentificar o utilizador. Para reduzir este risco e garantir conformidade com o princípio da confidencialidade previsto nas legislações, recomenda-se a aplicação de técnicas complementares de pseudonimização ou cifragem seletiva, de modo a equilibrar a transparência com a proteção da privacidade do utilizador.
 
-\section{Interacção Entre Componentes}
+\section{Interação Entre Componentes}
 
 A figura~\ref{fig:swimlane1} ilustra o fluxo completo de troca de mensagens e assinaturas durante o processo de consentimento. O sistema envolve três componentes principais: o \textit{cliente}, que inclui a extensão do navegador para capturar e assinar digitalmente os consentimentos; a \textit{interface web} do \textit{prestador de serviços}, que apresenta o \textit{banner} de consentimento; e o \textit{servidor}, responsável por validar e assinar os registos de consentimento.
 
@@ -65,7 +65,7 @@ Desta forma, o fluxo garante que, tanto o cliente como o servidor, dispõem de p
 \begin{center}
 \includegraphics[width=1\textwidth]{images/swimlanes.png}
 \end{center}
-\caption{Diagrama do protocolo de prova de consentimento}
+\caption{Diagrama do protocolo de \textit{Prova de Consentimento}.}
 \label{fig:swimlane1}
 \end{figure}
 
@@ -83,6 +83,6 @@ Deste modo, contribui para a redução dos riscos associados ao incumprimento da
 
 \section{Síntese do capítulo}
 
-Neste capítulo foi apresentada a arquitetura conceptual da solução de prova de consentimento, detalhando os principais componentes, a lógica de funcionamento e os mecanismos criptográficos, como certificados digitais e assinaturas digitais. Através da Prova de Conceito, demonstrou-se a viabilidade do modelo conceptual, validando a autenticidade, integridade, não repúdio, transparência e auditabilidade dos registos de consentimento num ambiente simplificado, sem recorrer ainda a uma implementação completa.
+Neste capítulo foi apresentada a arquitetura conceptual da solução de \textit{Prova de Consentimento}, detalhando os principais componentes, a lógica de funcionamento e os mecanismos criptográficos, como certificados digitais e assinaturas digitais. Através da Prova de Conceito, demonstrou-se a viabilidade do modelo conceptual, validando a autenticidade, integridade, não repúdio, transparência e auditabilidade dos registos de consentimento num ambiente simplificado, sem recorrer ainda a uma implementação completa.
 
 O capítulo seguinte descreve a implementação prática desta arquitetura, materializada num protótipo funcional que integra os princípios validados na Prova de Conceito. Nesta fase, são exploradas tecnologias reais e fluxos completos, permitindo avaliar o desempenho, a interoperabilidade e a experiência de utilização, evidenciando os benefícios e limitações do sistema face às limitações identificadas no trabalho relacionado (\ref{cap:relacionado}).
